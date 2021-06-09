@@ -14,6 +14,7 @@
   <!-- Page plugins -->
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/argon.css?v=1.2.0" type="text/css">
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -37,7 +38,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tata_usaha/siswa.html">
+              <a class="nav-link" href="<?= base_url(); ?>tata_usaha/siswa">
                 <i class="ni ni-planet text-orange"></i>
                 <span class="nav-link-text">Siswa</span>
               </a>
@@ -239,6 +240,12 @@
   <script src="<?= base_url(); ?>assets/js/Chart.extension.js"></script>
   <!-- Argon JS -->
   <script src="<?= base_url(); ?>assets/js/argon.js?v=1.2.0"></script>
+  <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready( function () {
+      $('#myTable').DataTable();
+    });
+  </script>
 </body>
 
 </html>

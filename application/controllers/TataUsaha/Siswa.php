@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class TataUsaha extends CI_Controller {
+class Siswa extends CI_Controller {
   
 	public function index()
 	{
-    $data['konten'] = 'tata_usaha/dashboard'; 
+    $data['konten'] = 'tata_usaha/siswa'; 
     $data['siswa']  = $this->ModelSiswa->getAll();
 		$this->load->view('tata_usaha/template', $data);
 	}
