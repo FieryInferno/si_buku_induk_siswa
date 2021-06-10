@@ -30,4 +30,9 @@ class ModelSiswa extends CI_Model {
       'kelas'     => $this->input->post('kelas')
     ], ['id_siswa'  => $id_siswa]);
   }
+
+  public function hapus($id_siswa)
+  {
+    $this->db->delete('siswa', ['id_siswa'  => $id_siswa]);
+  }
 }

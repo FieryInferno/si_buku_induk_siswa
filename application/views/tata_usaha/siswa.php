@@ -44,6 +44,7 @@
                       <td><?= $key['kelas']; ?></td>
                       <td>
                         <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-success">Edit</a>
+                        <a href="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_siswa']); ?>" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
                   <?php }

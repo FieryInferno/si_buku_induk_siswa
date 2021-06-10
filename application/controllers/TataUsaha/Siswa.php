@@ -62,4 +62,15 @@ class Siswa extends CI_Controller {
     $data['konten'] = 'tata_usaha/editSiswa';
 		$this->load->view('tata_usaha/template', $data);
 	}
+
+  public function hapus($id_siswa)
+  {
+    $this->ModelSiswa->hapus($id_siswa);
+    $this->session->set_flashdata('pesan', 
+      '<div class="alert alert-success" role="alert">
+        Berhasil hapus data
+      </div>'
+    );
+    redirect('tata_usaha/siswa');
+  }
 }
