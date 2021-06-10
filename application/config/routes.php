@@ -8,6 +8,7 @@ $route['translate_uri_dashes']  = FALSE;
 $route['tata_usaha']                                    = 'TataUsaha/TataUsaha';
 $route['tata_usaha/siswa']                              = 'TataUsaha/Siswa';
 $route['tata_usaha/siswa/tambah']                       = 'TataUsaha/Siswa/tambah';
+$route['tata_usaha/siswa/(:any)']                       = 'TataUsaha/Siswa/index/$1';
 $route['tata_usaha/siswa/edit/(:any)']                  = 'TataUsaha/Siswa/edit/$1';
 $route['tata_usaha/siswa/hapus/(:any)']                 = 'TataUsaha/Siswa/hapus/$1';
 $route['tata_usaha/nilai']                              = 'TataUsaha/Nilai';

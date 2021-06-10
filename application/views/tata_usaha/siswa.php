@@ -22,6 +22,10 @@
         <div class="card-header bg-transparent border-0">
           <h3 class="text-dark mb-0">Data Siswa</h3>
           <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/tambah">Tambah</a>
+          <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa">Semua Data</a>
+          <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/aktif">Aktif</a>
+          <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/alumni">Alumni</a>
+          <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/pindah">Pindah</a>
           <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
         </div>
         <div class="card-body bg-transparent border-0">

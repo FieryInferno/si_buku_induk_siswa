@@ -3,10 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Siswa extends CI_Controller {
   
-	public function index()
+	public function index($status = null)
 	{
     $data['konten'] = 'tata_usaha/siswa'; 
-    $data['siswa']  = $this->ModelSiswa->getAll();
+    $data['siswa']  = $this->ModelSiswa->getAll($status);
 		$this->load->view('tata_usaha/template', $data);
 	}
   

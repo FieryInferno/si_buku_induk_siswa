@@ -3,9 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ModelSiswa extends CI_Model {
   
-	public function getAll()
+	public function getAll($status)
 	{
     $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas');
+    if ($status) {
+      $this->db->where('status', $status);
+    }
     return $this->db->get('siswa')->result_array();
 	}
   
