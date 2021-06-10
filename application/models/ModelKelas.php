@@ -22,4 +22,9 @@ class ModelKelas extends CI_Model {
   {
     $this->db->update('kelas', ['nama_kelas'  => $this->input->post('nama_kelas')], ['id_kelas' => $id_kelas]);
   }
+
+  public function hapus($id_kelas)
+  {
+    $this->db->delete('kelas', ['id_kelas' => $id_kelas]);
+  }
 }

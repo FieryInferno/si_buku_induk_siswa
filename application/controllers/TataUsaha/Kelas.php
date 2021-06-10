@@ -58,4 +58,15 @@ class Kelas extends CI_Controller {
     $data['konten'] = 'tata_usaha/editKelas';
 		$this->load->view('tata_usaha/template', $data);
 	}
+
+  public function hapus($id_kelas)
+  {
+    $this->ModelKelas->hapus($id_kelas);
+    $this->session->set_flashdata('pesan', 
+      '<div class="alert alert-success" role="alert">
+        Berhasil hapus data
+      </div>'
+    );
+    redirect('tata_usaha/kelas');
+  }
 }
