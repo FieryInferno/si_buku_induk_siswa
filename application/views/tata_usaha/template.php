@@ -15,6 +15,8 @@
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/argon.css?v=1.2.0" type="text/css">
   <link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="<?= base_url(); ?>assets/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" href="<?= base_url(); ?>assets/css/buttons.bootstrap5.min.css">
 </head>
 
 <body>
@@ -253,9 +255,24 @@
   <!-- Argon JS -->
   <script src="<?= base_url(); ?>assets/js/argon.js?v=1.2.0"></script>
   <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script src="<?= base_url(); ?>assets/js/dataTables.buttons.min.js"></script>
+  <script src="<?= base_url(); ?>assets/js/buttons.bootstrap5.min.js"></script>
+  <script src="<?= base_url(); ?>assets/js/buttons.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="<?= base_url(); ?>assets/js/buttons.html5.min.js"></script>
+  <script src="<?= base_url(); ?>assets/js/buttons.print.min.js"></script>
   <script>
     $(document).ready( function () {
-      $('#myTable').DataTable();
+      $('#myTable').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+              { extend: 'excel', className: 'btn-success' },
+              { extend: 'pdf', className: 'btn-success' },
+              { extend: 'print', className: 'btn-success' },
+            ]
+        });
     });
   </script>
 </body>
