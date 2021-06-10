@@ -32,6 +32,7 @@
                   <th scope="col">No. Induk</th>
                   <th scope="col">Nama</th>
                   <th scope="col">Kelas</th>
+                  <th scope="col">Status</th>
                   <th scope="col">Aksi</th>
                 </tr>
               </thead>
@@ -41,7 +42,8 @@
                     <tr>
                       <td><?= $key['no_induk']; ?></td>
                       <td><?= $key['nama']; ?></td>
-                      <td><?= $key['kelas']; ?></td>
+                      <td><?= $key['nama_kelas']; ?></td>
+                      <td><?= $key['status']; ?></td>
                       <td>
                         <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-success">Edit</a>
                         <a href="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_siswa']); ?>" class="btn btn-danger">Hapus</a>

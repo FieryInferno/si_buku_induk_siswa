@@ -5,6 +5,7 @@ class ModelSiswa extends CI_Model {
   
 	public function getAll()
 	{
+    $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas');
     return $this->db->get('siswa')->result_array();
 	}
   
