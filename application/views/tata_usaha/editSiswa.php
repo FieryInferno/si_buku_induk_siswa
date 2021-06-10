@@ -49,8 +49,12 @@
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-first-name">Kelas</label>
-                    <input type="text" id="input-first-name" class="form-control" placeholder="Kelas" name="kelas" required value="<?= $kelas; ?>">
+                    <label class="form-control-label" for="input-first-name">Status</label>
+                    <select name="status" id="status" name="status" class="form-control">
+                      <option value="aktif" <?= $status == 'aktif' ? 'selected' : '' ; ?>>Aktif</option>
+                      <option value="alumni" <?= $status == 'alumni' ? 'selected' : '' ; ?>>Alumni</option>
+                      <option value="pindah" <?= $status == 'pindah' ? 'selected' : '' ; ?>>Pindah</option>
+                    </select>
                   </div>
                 </div>
               </div>

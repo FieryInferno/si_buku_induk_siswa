@@ -27,7 +27,7 @@ class ModelSiswa extends CI_Model {
     $this->db->update('siswa', [
       'no_induk'  => $this->input->post('no_induk'),
       'nama'      => $this->input->post('nama'),
-      'kelas'     => $this->input->post('kelas')
+      'status'    => $this->input->post('status')
     ], ['id_siswa'  => $id_siswa]);
   }
 
