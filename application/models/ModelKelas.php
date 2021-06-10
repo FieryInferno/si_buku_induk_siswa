@@ -27,4 +27,9 @@ class ModelKelas extends CI_Model {
   {
     $this->db->delete('kelas', ['id_kelas' => $id_kelas]);
   }
+
+  public function lihat($id_kelas)
+  {
+    return $this->db->get_where('siswa', ['kelas' => $id_kelas])->result_array();
+  }
 }

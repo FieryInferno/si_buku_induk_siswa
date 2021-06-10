@@ -7,7 +7,8 @@
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
               <li class="breadcrumb-item"><a href="<?= base_url(); ?>"><i class="fas fa-home"></i></a></li>
               <li class="breadcrumb-item"><a href="<?= base_url(); ?>">Dashboards</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Kelas</li>
+              <li class="breadcrumb-item"><a href="<?= base_url(); ?>tata_usaha/siswa">Siswa</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Lihat</li>
             </ol>
           </nav>
         </div>
@@ -20,8 +21,8 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header bg-transparent border-0">
-          <h3 class="text-dark mb-0">Data Kelas</h3>
-          <a class="col-1 btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/kelas/tambah">Tambah</a>
+          <h3 class="text-dark mb-0">Data Anggota Kelas</h3>
+          <a class="col-1 btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/tambah">Tambah</a>
           <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
         </div>
         <div class="card-body bg-transparent border-0">
@@ -29,19 +30,20 @@
             <table class="table align-items-center table-flush" id="myTable">
               <thead class="thead-dark">
                 <tr>
-                  <th scope="col">Kelas</th>
-                  <th scope="col">Aksi</th>
+                  <th scope="col" class="sort" data-sort="name">No. Induk</th>
+                  <th scope="col" class="sort" data-sort="budget">Nama</th>
+                  <th scope="col" class="sort" data-sort="status">Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">
                 <?php
                   foreach ($kelas as $key) { ?>
                     <tr>
-                      <td><?= $key['nama_kelas']; ?></td>
+                      <td><?= $key['no_induk']; ?></td>
+                      <td><?= $key['nama']; ?></td>
                       <td>
-                        <a href="<?= base_url('tata_usaha/kelas/lihat/' . $key['id_kelas']); ?>" class="btn btn-primary">Lihat Anggota</a>
-                        <a href="<?= base_url('tata_usaha/kelas/edit/' . $key['id_kelas']); ?>" class="btn btn-success">Edit</a>
-                        <a href="<?= base_url('tata_usaha/kelas/hapus/' . $key['id_kelas']); ?>" class="btn btn-danger">Hapus</a>
+                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-success">Edit</a>
+                        <a href="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_siswa']); ?>" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
                   <?php }

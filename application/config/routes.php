@@ -17,3 +17,4 @@ $route['tata_usaha/kelas']              = 'TataUsaha/Kelas';
 $route['tata_usaha/kelas/tambah']       = 'TataUsaha/Kelas/tambah';
 $route['tata_usaha/kelas/edit/(:any)']  = 'TataUsaha/Kelas/edit/$1';
 $route['tata_usaha/kelas/hapus/(:any)'] = 'TataUsaha/kelas/hapus/$1';
+$route['tata_usaha/kelas/lihat/(:any)'] = 'TataUsaha/kelas/lihat/$1';

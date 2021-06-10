@@ -69,4 +69,11 @@ class Kelas extends CI_Controller {
     );
     redirect('tata_usaha/kelas');
   }
+
+  public function lihat($id_kelas)
+  {
+    $data['konten'] = 'tata_usaha/lihatKelas'; 
+    $data['kelas']  = $this->ModelKelas->lihat($id_kelas);
+		$this->load->view('tata_usaha/template', $data);
+  }
 }
