@@ -44,4 +44,9 @@ class ModelKelas extends CI_Model {
       $this->db->update('siswa', ['kelas' => $id_kelas], ['id_siswa'  => $key]);
     }
   }
+
+  public function hapusAnggota($id_siswa)
+  {
+    $this->db->update('siswa', ['kelas' => NULL], ['id_siswa' => $id_siswa]);
+  }
 }
