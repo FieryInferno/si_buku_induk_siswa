@@ -2,6 +2,25 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
+
+  public function __construct()
+  {
+    parent::__construct();
+    if ($this->session->level) {
+      switch ($this->session->level) {
+        case 'tu':
+          redirect('tata_usaha');
+          break;
+        case 'siswa':
+          redirect('siswa');
+          break;
+        
+        default:
+          # code...
+          break;
+      }
+    }
+  }
   
 	public function index()
 	{

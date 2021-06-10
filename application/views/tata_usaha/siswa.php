@@ -21,28 +21,36 @@
       <div class="card shadow">
         <div class="card-header bg-transparent border-0">
           <h3 class="text-dark mb-0">Data Siswa</h3>
+          <a class="col-1 btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/tambah">Tambah</a>
+          <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
         </div>
-        <div class="table-responsive">
-          <table class="table align-items-center table-dark table-flush" id="myTable">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col" class="sort" data-sort="name">No. Induk</th>
-                <th scope="col" class="sort" data-sort="budget">Nama</th>
-                <th scope="col" class="sort" data-sort="status">Kelas</th>
-              </tr>
-            </thead>
-            <tbody class="list">
-              <?php
-                foreach ($siswa as $key) { ?>
-                  <tr>
-                    <td><?= $key['no_induk']; ?></td>
-                    <td><?= $key['nama']; ?></td>
-                    <td><?= $key['kelas']; ?></td>
-                  </tr>
-                <?php }
-              ?>
-            </tbody>
-          </table>
+        <div class="card-body bg-transparent border-0">
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush" id="myTable">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col" class="sort" data-sort="name">No. Induk</th>
+                  <th scope="col" class="sort" data-sort="budget">Nama</th>
+                  <th scope="col" class="sort" data-sort="status">Kelas</th>
+                  <th scope="col" class="sort" data-sort="status">Aksi</th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                <?php
+                  foreach ($siswa as $key) { ?>
+                    <tr>
+                      <td><?= $key['no_induk']; ?></td>
+                      <td><?= $key['nama']; ?></td>
+                      <td><?= $key['kelas']; ?></td>
+                      <td>
+                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-success">Edit</a>
+                      </td>
+                    </tr>
+                  <?php }
+                ?>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
