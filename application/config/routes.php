@@ -13,3 +13,6 @@ $route['tata_usaha/siswa/hapus/(:any)'] = 'TataUsaha/Siswa/hapus/$1';
 $route['tata_usaha/nilai']              = 'TataUsaha/Nilai';
 $route['tata_usaha/nilai/tambah']       = 'TataUsaha/nilai/tambah';
 $route['tata_usaha/nilai/edit']         = 'TataUsaha/nilai/edit';
+$route['tata_usaha/kelas']              = 'TataUsaha/Kelas';
+$route['tata_usaha/kelas/tambah']       = 'TataUsaha/Kelas/tambah';
+$route['tata_usaha/kelas/edit/(:any)']  = 'TataUsaha/Kelas/edit/$1';
