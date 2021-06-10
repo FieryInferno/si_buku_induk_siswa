@@ -22,7 +22,7 @@
       <div class="card shadow">
         <div class="card-header bg-transparent border-0">
           <h3 class="text-dark mb-0">Data Anggota Kelas</h3>
-          <a class="col-1 btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/tambah">Tambah</a>
+          <a class="btn btn-primary text-white" href="<?= base_url('tata_usaha/kelas/anggota/tambah/' . $id_kelas); ?>">Tambah</a>
           <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
         </div>
         <div class="card-body bg-transparent border-0">
@@ -42,8 +42,7 @@
                       <td><?= $key['no_induk']; ?></td>
                       <td><?= $key['nama']; ?></td>
                       <td>
-                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-success">Edit</a>
-                        <a href="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_siswa']); ?>" class="btn btn-danger">Hapus</a>
+                        <a href="<?= base_url('tata_usaha/kelas/anggota/hapus/' . $key['id_siswa']); ?>" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
                   <?php }

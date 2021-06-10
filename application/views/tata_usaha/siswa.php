@@ -21,7 +21,7 @@
       <div class="card shadow">
         <div class="card-header bg-transparent border-0">
           <h3 class="text-dark mb-0">Data Siswa</h3>
-          <a class="col-1 btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/tambah">Tambah</a>
+          <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/tambah">Tambah</a>
           <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
         </div>
         <div class="card-body bg-transparent border-0">
@@ -29,10 +29,10 @@
             <table class="table align-items-center table-flush" id="myTable">
               <thead class="thead-dark">
                 <tr>
-                  <th scope="col" class="sort" data-sort="name">No. Induk</th>
-                  <th scope="col" class="sort" data-sort="budget">Nama</th>
-                  <th scope="col" class="sort" data-sort="status">Kelas</th>
-                  <th scope="col" class="sort" data-sort="status">Aksi</th>
+                  <th scope="col">No. Induk</th>
+                  <th scope="col">Nama</th>
+                  <th scope="col">Kelas</th>
+                  <th scope="col">Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">

@@ -17,8 +17,7 @@ class ModelSiswa extends CI_Model {
   {
     $this->db->insert('siswa', [
       'no_induk'  => $this->input->post('no_induk'),
-      'nama'      => $this->input->post('nama'),
-      'kelas'     => $this->input->post('kelas')
+      'nama'      => $this->input->post('nama')
     ]);
   }
 

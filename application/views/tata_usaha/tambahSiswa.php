@@ -46,14 +46,6 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-first-name">Kelas</label>
-                    <input type="text" id="input-first-name" class="form-control" placeholder="Kelas" name="kelas" required>
-                  </div>
-                </div>
-              </div>
               <button class="btn btn-primary" type="submit">Tambah</button>
             </div>
           </form>

@@ -34,6 +34,23 @@ class Kelas extends CI_Controller {
 		$this->load->view('tata_usaha/template', $data);
 	}
   
+	public function tambahAnggota($id_kelas)
+	{
+    if ($this->input->post()) {
+      $this->ModelKelas->tambahAnggota($id_kelas);
+      $this->session->set_flashdata('pesan', 
+        '<div class="alert alert-success" role="alert">
+          Berhasil tambah data
+        </div>'
+      );
+      redirect('tata_usaha/kelas/lihat/' . $id_kelas);
+    }
+    $data['konten']   = 'tata_usaha/tambahAnggotaKelas';
+    $data['siswa']    = $this->ModelKelas->siswaBelumPunyaKelas();
+    $data['id_kelas'] = $id_kelas;
+		$this->load->view('tata_usaha/template', $data);
+	}
+  
 	public function edit($id_kelas)
 	{
     if ($this->input->post()) {
@@ -72,8 +89,9 @@ class Kelas extends CI_Controller {
 
   public function lihat($id_kelas)
   {
-    $data['konten'] = 'tata_usaha/lihatKelas'; 
-    $data['kelas']  = $this->ModelKelas->lihat($id_kelas);
+    $data['konten']   = 'tata_usaha/lihatKelas'; 
+    $data['kelas']    = $this->ModelKelas->lihat($id_kelas);
+    $data['id_kelas'] = $id_kelas;
 		$this->load->view('tata_usaha/template', $data);
   }
 }

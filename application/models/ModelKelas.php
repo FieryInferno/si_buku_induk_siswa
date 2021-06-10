@@ -32,4 +32,16 @@ class ModelKelas extends CI_Model {
   {
     return $this->db->get_where('siswa', ['kelas' => $id_kelas])->result_array();
   }
+
+  public function siswaBelumPunyaKelas()
+  {
+    return $this->db->get_where('siswa', ['kelas'  => NULL])->result_array();
+  }
+
+  public function tambahAnggota($id_kelas)
+  {
+    foreach ($this->input->post('siswa') as $key) {
+      $this->db->update('siswa', ['kelas' => $id_kelas], ['id_siswa'  => $key]);
+    }
+  }
 }
