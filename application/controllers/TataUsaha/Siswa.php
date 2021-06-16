@@ -15,6 +15,8 @@ class Siswa extends CI_Controller {
     if ($this->input->post()) {
       $this->form_validation->set_rules('no_induk', 'No Induk', 'trim|numeric|required');
       $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+      $this->form_validation->set_rules('username', 'Username', 'trim|required');
+      $this->form_validation->set_rules('password', 'Password', 'trim|required');
       if ($this->form_validation->run()) {
         $this->ModelSiswa->tambah();
         $this->session->set_flashdata('pesan', 

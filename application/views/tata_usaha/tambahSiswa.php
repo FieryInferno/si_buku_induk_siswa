@@ -45,6 +45,18 @@
                     <input type="text" id="input-email" class="form-control" placeholder="Nama Siswa" name="nama" required>
                   </div>
                 </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Username</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="Username" name="username" required>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Password</label>
+                    <input type="password" id="input-email" class="form-control" placeholder="Password" name="password" required>
+                  </div>
+                </div>
               </div>
               <button class="btn btn-primary" type="submit">Tambah</button>
             </div>

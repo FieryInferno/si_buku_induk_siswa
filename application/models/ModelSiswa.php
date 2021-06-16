@@ -5,7 +5,7 @@ class ModelSiswa extends CI_Model {
   
 	public function getAll($status)
 	{
-    $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas');
+    $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left outer');
     if ($status) {
       $this->db->where('status', $status);
     }
@@ -22,6 +22,12 @@ class ModelSiswa extends CI_Model {
     $this->db->insert('siswa', [
       'no_induk'  => $this->input->post('no_induk'),
       'nama'      => $this->input->post('nama')
+    ]);
+
+    $this->db->insert('user', [
+      'username'  => $this->input->post('username'),
+      'password'  => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+      'level'     => 'siswa'
     ]);
   }
 
