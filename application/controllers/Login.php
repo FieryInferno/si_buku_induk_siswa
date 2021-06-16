@@ -49,7 +49,8 @@ class Login extends CI_Controller {
           default:
             $this->session->set_userdata([
               'username'  => $data['username'],
-              'level'     => $data['level']
+              'level'     => $data['level'],
+              'id_user'   => $data['id_user']
             ]);
             switch ($data['level']) {
               case 'tu':

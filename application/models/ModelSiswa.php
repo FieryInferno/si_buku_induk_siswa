@@ -19,15 +19,18 @@ class ModelSiswa extends CI_Model {
 
   public function tambah()
   {
+    $id_user  = uniqid();
     $this->db->insert('siswa', [
       'no_induk'  => $this->input->post('no_induk'),
-      'nama'      => $this->input->post('nama')
+      'nama'      => $this->input->post('nama'),
+      'id_user'   => $id_user
     ]);
 
     $this->db->insert('user', [
       'username'  => $this->input->post('username'),
       'password'  => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-      'level'     => 'siswa'
+      'level'     => 'siswa',
+      'id_user'   => $id_user
     ]);
   }
 
@@ -43,5 +46,12 @@ class ModelSiswa extends CI_Model {
   public function hapus($id_siswa)
   {
     $this->db->delete('siswa', ['id_siswa'  => $id_siswa]);
+  }
+
+  public function getBiodata()
+  {
+    $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left outer');
+    $this->db->join('user', 'siswa.id_user = user.id_user');
+    return $this->db->get_where('siswa', ['siswa.id_user'  => $this->session->id_user])->row_array();
   }
 }
