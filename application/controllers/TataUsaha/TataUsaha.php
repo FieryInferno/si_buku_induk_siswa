@@ -5,7 +5,11 @@ class TataUsaha extends CI_Controller {
   
 	public function index()
 	{
-    $data['konten'] = 'tata_usaha/dashboard'; 
+    $data['totalSiswa']   = $this->ModelSiswa->getAll(NULL);
+    $data['siswaAktif']   = $this->ModelSiswa->getAll('aktif');
+    $data['siswaAlumni']  = $this->ModelSiswa->getAll('alumni');
+    $data['siswaPindah']  = $this->ModelSiswa->getAll('pindah');
+    $data['konten']       = 'tata_usaha/dashboard'; 
 		$this->load->view('tata_usaha/template', $data);
 	}
 }
