@@ -57,6 +57,12 @@
                 <span class="nav-link-text">Kelas</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url(); ?>tata_usaha/mata_pelajaran">
+                <i class="ni ni-bullet-list-67 text-default"></i>
+                <span class="nav-link-text">Mata Pelajaran</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
