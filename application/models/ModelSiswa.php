@@ -35,6 +35,13 @@ class ModelSiswa extends CI_Model {
       'level'     => 'siswa',
       'id_user'   => $id_user
     ]);
+
+    $this->db->insert('orang_tua', [
+      'nama_orang_tua'          => $this->input->post('nama_orang_tua'),
+      'tempat_lahir_orang_tua'  => $this->input->post('tempat_lahir_orang_tua'),
+      'tanggal_lahir_orang_tua' => $this->input->post('tanggal_lahir_orang_tua'),
+      'id_user'                 => $id_user
+    ]);
   }
 
   public function edit($id_siswa)
