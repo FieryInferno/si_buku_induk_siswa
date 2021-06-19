@@ -37,9 +37,12 @@ class ModelSiswa extends CI_Model {
   public function edit($id_siswa)
   {
     $this->db->update('siswa', [
-      'no_induk'  => $this->input->post('no_induk'),
-      'nama'      => $this->input->post('nama'),
-      'status'    => $this->input->post('status')
+      'no_induk'      => $this->input->post('no_induk'),
+      'nama'          => $this->input->post('nama'),
+      'status'        => $this->input->post('status'),
+      'alamat'        => $this->input->post('alamat'),
+      'tempat_lahir'  => $this->input->post('tempat_lahir'),
+      'tanggal_lahir' => $this->input->post('tanggal_lahir'),
     ], ['id_siswa'  => $id_siswa]);
   }
 
