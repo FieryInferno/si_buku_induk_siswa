@@ -10,53 +10,35 @@ class Nilai extends CI_Controller {
 		$this->load->view('tata_usaha/template', $data);
 	}
   
-	public function tambah()
+	public function tambah($id_siswa)
 	{
     if ($this->input->post()) {
-      $this->form_validation->set_rules('nilai', 'Nilai', 'trim|numeric|required');
-      if ($this->form_validation->run()) {
-        $this->ModelNilai->tambah();
-        $this->session->set_flashdata('pesan', 
-          '<div class="alert alert-success" role="alert">
-            Berhasil tambah data
-          </div>'
-        );
-        redirect('tata_usaha/nilai');
-      } else {
-        $this->session->set_flashdata('pesan', 
-          '<div class="alert alert-danger" role="alert">'
-            . validation_errors() . 
-          '</div>'
-        );
-      }
+      $this->ModelNilai->tambah($id_siswa);
+      $this->session->set_flashdata('pesan', 
+        '<div class="alert alert-success" role="alert">
+          Berhasil tambah data
+        </div>'
+      );
+      redirect('tata_usaha/nilai');
     }
-    $data['konten'] = 'tata_usaha/nilai'; 
-    $data['nilai']  = $this->ModelNilai->getAll();
+    $data['id_siswa'] = $id_siswa;
+    $data['konten']   = 'tata_usaha/inputNilai';
 		$this->load->view('tata_usaha/template', $data);
 	}
   
-	public function edit()
+	public function edit($id_siswa)
 	{
     if ($this->input->post()) {
-      $this->form_validation->set_rules('nilai', 'Nilai', 'trim|numeric|required');
-      if ($this->form_validation->run()) {
-        $this->ModelNilai->edit();
-        $this->session->set_flashdata('pesan', 
-          '<div class="alert alert-success" role="alert">
-            Berhasil edit data
-          </div>'
-        );
-        redirect('tata_usaha/nilai');
-      } else {
-        $this->session->set_flashdata('pesan', 
-          '<div class="alert alert-danger" role="alert">'
-            . validation_errors() . 
-          '</div>'
-        );
-      }
+      $this->ModelNilai->edit($id_siswa);
+      $this->session->set_flashdata('pesan', 
+        '<div class="alert alert-success" role="alert">
+          Berhasil edit data
+        </div>'
+      );
+      redirect('tata_usaha/nilai');
     }
-    $data['konten'] = 'tata_usaha/nilai'; 
-    $data['nilai']  = $this->ModelNilai->getAll();
+    $data           = $this->ModelNilai->getById($id_siswa);
+    $data['konten'] = 'tata_usaha/editNilai';
 		$this->load->view('tata_usaha/template', $data);
 	}
 }
