@@ -47,6 +47,24 @@
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group">
+                    <label class="form-control-label" for="input-email">Alamat</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="Alamat" name="alamat" required>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Tempat Lahir</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" required>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Tanggal Lahir</label>
+                    <input type="date" id="input-email" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir" required>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
                     <label class="form-control-label" for="input-email">Username</label>
                     <input type="text" id="input-email" class="form-control" placeholder="Username" name="username" required>
                   </div>

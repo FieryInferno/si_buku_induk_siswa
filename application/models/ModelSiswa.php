@@ -21,9 +21,12 @@ class ModelSiswa extends CI_Model {
   {
     $id_user  = uniqid();
     $this->db->insert('siswa', [
-      'no_induk'  => $this->input->post('no_induk'),
-      'nama'      => $this->input->post('nama'),
-      'id_user'   => $id_user
+      'no_induk'      => $this->input->post('no_induk'),
+      'nama'          => $this->input->post('nama'),
+      'alamat'        => $this->input->post('alamat'),
+      'tempat_lahir'  => $this->input->post('tempat_lahir'),
+      'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+      'id_user'       => $id_user
     ]);
 
     $this->db->insert('user', [
