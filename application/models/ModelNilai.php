@@ -8,6 +8,7 @@ class ModelNilai extends CI_Model {
     $data = $this->db->get_where('siswa', ['siswa.status' => 'aktif'])->result_array();
     for ($i=0; $i < count($data); $i++) {
       $key                = $data[$i];
+      $this->db->join('mata_pelajaran', 'nilai.id_mata_pelajaran = mata_pelajaran.id_mata_pelajaran');
       $data[$i]['nilai']  = $this->db->get_where('nilai', ['id_siswa' => $key['id_siswa']])->result_array();
       $totalNilai         = 0;
       foreach ($data[$i]['nilai'] as $key) {

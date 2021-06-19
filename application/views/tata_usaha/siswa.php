@@ -88,26 +88,26 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                              <form>
-                                <div class="form-group row">
-                                  <label for="staticEmail" class="col-sm-4 col-form-label">Nama</label>
-                                  <div class="col-sm-8">
-                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $key['nama_orang_tua']; ?>">
+                                <form>
+                                  <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Nama</label>
+                                    <div class="col-sm-8">
+                                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $key['nama_orang_tua']; ?>">
+                                    </div>
                                   </div>
-                                </div>
-                                <div class="form-group row">
-                                  <label for="staticEmail" class="col-sm-4 col-form-label">Tempat Lahir</label>
-                                  <div class="col-sm-8">
-                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $key['tempat_lahir']; ?>">
+                                  <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Tempat Lahir</label>
+                                    <div class="col-sm-8">
+                                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $key['tempat_lahir']; ?>">
+                                    </div>
                                   </div>
-                                </div>
-                                <div class="form-group row">
-                                  <label for="staticEmail" class="col-sm-4 col-form-label">Tanggal Lahir</label>
-                                  <div class="col-sm-8">
-                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= tgl_indo($key['tanggal_lahir']); ?>">
+                                  <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Tanggal Lahir</label>
+                                    <div class="col-sm-8">
+                                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= tgl_indo($key['tanggal_lahir']); ?>">
+                                    </div>
                                   </div>
-                                </div>
-                              </form>
+                                </form>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
