@@ -37,14 +37,14 @@ class Siswa extends CI_Controller {
 		$this->load->view('tata_usaha/template', $data);
 	}
   
-	public function edit($id_siswa)
+	public function edit($id_user)
 	{
     if ($this->input->post()) {
       $this->form_validation->set_rules('no_induk', 'No Induk', 'trim|numeric|required');
       $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
       $this->form_validation->set_rules('status', 'Status', 'required');
       if ($this->form_validation->run()) {
-        $this->ModelSiswa->edit($id_siswa);
+        $this->ModelSiswa->edit($id_user);
         $this->session->set_flashdata('pesan', 
           '<div class="alert alert-success" role="alert">
             Berhasil edit data
@@ -59,14 +59,14 @@ class Siswa extends CI_Controller {
         );
       }
     }
-    $data           = $this->ModelSiswa->get($id_siswa);
+    $data           = $this->ModelSiswa->get($id_user);
     $data['konten'] = 'tata_usaha/editSiswa';
 		$this->load->view('tata_usaha/template', $data);
 	}
 
-  public function hapus($id_siswa)
+  public function hapus($id_user)
   {
-    $this->ModelSiswa->hapus($id_siswa);
+    $this->ModelSiswa->hapus($id_user);
     $this->session->set_flashdata('pesan', 
       '<div class="alert alert-success" role="alert">
         Berhasil hapus data

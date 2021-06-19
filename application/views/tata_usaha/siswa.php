@@ -92,32 +92,32 @@
                                 <div class="form-group row">
                                   <label for="staticEmail" class="col-sm-4 col-form-label">Nama</label>
                                   <div class="col-sm-8">
-                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $key['nama_orang_tua']; ?>" readonly>
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $key['nama_orang_tua']; ?>">
                                   </div>
                                 </div>
                                 <div class="form-group row">
                                   <label for="staticEmail" class="col-sm-4 col-form-label">Tempat Lahir</label>
                                   <div class="col-sm-8">
-                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $key['tempat_lahir']; ?>" readonly>
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $key['tempat_lahir']; ?>">
                                   </div>
                                 </div>
                                 <div class="form-group row">
                                   <label for="staticEmail" class="col-sm-4 col-form-label">Tanggal Lahir</label>
                                   <div class="col-sm-8">
-                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= tgl_indo($key['tanggal_lahir']); ?>" readonly>
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= tgl_indo($key['tanggal_lahir']); ?>">
                                   </div>
                                 </div>
                               </form>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-primary">Edit</a>
+                                <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_user']); ?>" class="btn btn-primary">Edit</a>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-success">Edit</a>
-                        <a href="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_siswa']); ?>" class="btn btn-danger">Hapus</a>
+                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_user']); ?>" class="btn btn-success">Edit</a>
+                        <a href="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_user']); ?>" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
                   <?php }

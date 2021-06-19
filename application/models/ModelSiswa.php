@@ -13,9 +13,11 @@ class ModelSiswa extends CI_Model {
     return $this->db->get('siswa')->result_array();
 	}
   
-	public function get($id_siswa)
+	public function get($id_user)
 	{
-    return $this->db->get_where('siswa', ['id_siswa'  => $id_siswa])->row_array();
+    $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left outer');
+    $this->db->join('orang_tua', 'siswa.id_user = orang_tua.id_user', 'left outer');
+    return $this->db->get_where('siswa', ['siswa.id_user'  => $id_user])->row_array();
 	}
 
   public function tambah()
@@ -45,7 +47,7 @@ class ModelSiswa extends CI_Model {
     ]);
   }
 
-  public function edit($id_siswa)
+  public function edit($id_user)
   {
     $this->db->update('siswa', [
       'no_induk'      => $this->input->post('no_induk'),
@@ -54,12 +56,19 @@ class ModelSiswa extends CI_Model {
       'alamat'        => $this->input->post('alamat'),
       'tempat_lahir'  => $this->input->post('tempat_lahir'),
       'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-    ], ['id_siswa'  => $id_siswa]);
+    ], ['id_user'     => $id_user]);
+
+    $this->db->update('orang_tua', [
+      'nama_orang_tua'          => $this->input->post('nama_orang_tua'),
+      'tempat_lahir_orang_tua'  => $this->input->post('tempat_lahir_orang_tua'),
+      'tanggal_lahir_orang_tua' => $this->input->post('tanggal_lahir_orang_tua'),
+    ], ['id_user' => $id_user]);
   }
 
-  public function hapus($id_siswa)
+  public function hapus($id_user)
   {
-    $this->db->delete('siswa', ['id_siswa'  => $id_siswa]);
+    $this->db->delete('siswa', ['id_user'  => $id_user]);
+    $this->db->delete('orang_tua', ['id_user' => $id_user]);
   }
 
   public function getBiodata()
