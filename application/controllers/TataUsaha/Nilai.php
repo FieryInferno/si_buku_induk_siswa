@@ -7,6 +7,8 @@ class Nilai extends CI_Controller {
 	{
     $data['konten'] = 'tata_usaha/nilai'; 
     $data['nilai']  = $this->ModelNilai->getAll();
+    // print_r($data['nilai']);
+    // die();
 		$this->load->view('tata_usaha/template', $data);
 	}
   
@@ -21,8 +23,9 @@ class Nilai extends CI_Controller {
       );
       redirect('tata_usaha/nilai');
     }
-    $data['id_siswa'] = $id_siswa;
-    $data['konten']   = 'tata_usaha/inputNilai';
+    $data['id_siswa']       = $id_siswa;
+    $data['konten']         = 'tata_usaha/inputNilai';
+    $data['mata_pelajaran'] = $this->ModelMataPelajaran->getAll();
 		$this->load->view('tata_usaha/template', $data);
 	}
   

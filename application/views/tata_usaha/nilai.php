@@ -40,10 +40,10 @@
                     <tr>
                       <td><?= $key['no_induk']; ?></td>
                       <td><?= $key['nama']; ?></td>
-                      <td><?= $key['nilai_rata_rata']; ?></td>
+                      <td><?= $key['rata']; ?></td>
                       <td>
                         <?php
-                          if ($key['nilai_rata_rata']) { ?>
+                          if ($key['rata']) { ?>
                             <!-- Button trigger modal -->
                             <a href="<?= base_url('tata_usaha/nilai/edit/' . $key['id_siswa']); ?>" class="btn btn-primary">
                               Edit Nilai

@@ -33,54 +33,16 @@
             <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
             <div class="pl-lg-4">
               <div class="row">
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Pendidikan Agama</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Pendidikan Agama" name="pendidikan_agama" required>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Pendidikan Kewarganegaraan</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Pendidikan Kewarganegaraan" name="pkn" required>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Bahasa Indonesia</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Bahasa Indonesia" name="bahasa_indonesia" required>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Matematika Wajib</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Matematika Wajib" name="matematika_wajib" required>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Sejarah Indonesia</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Sejarah Indonesia" name="sejarah_indonesia" required>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Bahasa Inggris</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Bahasa Inggris" name="bahasa_inggris" required>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Seni Budaya</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Seni Budaya" name="seni_budaya" required>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Pendidikan Jasmani dan Kesehatan</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Pendidikan Jasmani dan Kesehatan" name="penjaskes" required>
-                  </div>
-                </div>
+                <?php 
+                  foreach ($mata_pelajaran as $key) { ?>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username"><?= $key['nama_mata_pelajaran']; ?></label>
+                        <input type="text" id="input-username" class="form-control" placeholder="<?= $key['nama_mata_pelajaran']; ?>" name="<?= $key['id_mata_pelajaran']; ?>" required>
+                      </div>
+                    </div>
+                  <?php }
+                ?>
               </div>
               <button class="btn btn-primary" type="submit">Tambah</button>
             </div>
