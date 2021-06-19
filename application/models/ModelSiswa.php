@@ -6,6 +6,7 @@ class ModelSiswa extends CI_Model {
 	public function getAll($status)
 	{
     $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left outer');
+    $this->db->join('orang_tua', 'siswa.id_user = orang_tua.id_user', 'left outer');
     if ($status) {
       $this->db->where('status', $status);
     }
