@@ -35,6 +35,8 @@
                 <tr>
                   <th scope="col">No. Induk</th>
                   <th scope="col">Nama</th>
+                  <th scope="col">Alamat</th>
+                  <th scope="col">Tempat/Tanggal Lahir</th>
                   <th scope="col">Kelas</th>
                   <th scope="col">Status</th>
                   <th scope="col">Aksi</th>
@@ -46,6 +48,8 @@
                     <tr>
                       <td><?= $key['no_induk']; ?></td>
                       <td><?= $key['nama']; ?></td>
+                      <td><?= $key['alamat']; ?></td>
+                      <td><?= $key['tempat_lahir'] . '/' . $key['tanggal_lahir']; ?></td>
                       <td><?= $key['nama_kelas']; ?></td>
                       <td><?= $key['status']; ?></td>
                       <td>
