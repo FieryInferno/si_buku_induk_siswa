@@ -21,6 +21,7 @@
             <th><?= $key['nama_mata_pelajaran']; ?></th>
           <?php }
         ?>
+        <th>Nilai Rata - Rata</th>
       </tr>
     </thead>
     <tbody>
@@ -32,13 +33,15 @@
             <?php
               $kolom  = array_column($key['nilai'], 'id_mata_pelajaran');
               foreach ($mata_pelajaran as $value) {
-                if (($cari = array_search($value['id_mata_pelajaran'], $kolom)) !== NULL) {
+                if (($cari = array_search($value['id_mata_pelajaran'], $kolom)) !== FALSE) {
                   echo '<td>' . $key['nilai'][$cari]['nilai'] . '</td>';
                 } else {
                   echo '<td></td>';
                 }
+                unset($kolom[$cari]); 
               }
             ?>
+            <td><?= $key['rata']; ?></td>
           </tr>
         <?php }
       ?>
