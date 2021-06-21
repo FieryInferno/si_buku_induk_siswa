@@ -21,7 +21,7 @@
       <div class="card shadow">
         <div class="card-header bg-transparent border-0">
           <h3 class="text-dark mb-2">Data Nilai</h3>
-          <a href="<?= base_url(); ?>tata_usaha/nilai/cetak" class="btn btn-primary">Cetak</a>
+          <a href="<?= base_url(); ?>tata_usaha/nilai/cetak" class="btn btn-primary" target="_blank">Cetak</a>
           <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
         </div>
         <div class="card-body bg-transparent border-0">

@@ -1,14 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+require_once("./vendor/autoload.php");
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
 class Nilai extends CI_Controller {
   
 	public function index()
 	{
     $data['konten'] = 'tata_usaha/nilai'; 
     $data['nilai']  = $this->ModelNilai->getAll();
-    // print_r($data['nilai']);
-    // die();
 		$this->load->view('tata_usaha/template', $data);
 	}
   
@@ -46,4 +48,24 @@ class Nilai extends CI_Controller {
     $data['id_siswa']       = $id_siswa;
 		$this->load->view('tata_usaha/template', $data);
 	}
+
+  public function cetak()
+  {
+    $data['nilai']          = $this->ModelNilai->getAll();
+    $data['mata_pelajaran'] = $this->ModelMataPelajaran->getAll();
+    ob_start();
+      $this->load->view('nilai_pdf', $data);
+      $html = ob_get_contents();
+    ob_end_clean();
+    ob_clean();
+    $filename   = uniqid();
+    $options  	= new Options();
+    $options->set('isRemoteEnabled', TRUE);
+    $dompdf = new Dompdf($options);
+    $dompdf->loadHtml($html);
+    $dompdf->setPaper('legal', 'landscape');
+    $dompdf->render();
+    $output = $dompdf->output();
+    $dompdf->stream($filename, array("Attachment" => 0) );
+  }
 }
