@@ -272,13 +272,14 @@
   <script>
     $(document).ready( function () {
       $('#myTable').DataTable({
-            dom: 'Bfrtip',
-            buttons: [
-              { extend: 'excel', className: 'btn-success' },
-              { extend: 'pdf', className: 'btn-success' },
-              { extend: 'print', className: 'btn-success' },
-            ]
-        });
+        dom: 'Bfrtip',
+        buttons: [
+          { extend: 'excel', className: 'btn-success' },
+          { extend: 'pdf', className: 'btn-success' },
+          { extend: 'print', className: 'btn-success' },
+        ]
+      });
+      $('#tableNilai').DataTable();
     });
   </script>
 </body>

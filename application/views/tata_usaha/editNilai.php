@@ -23,7 +23,7 @@
         <div class="card-header">
           <div class="row align-items-center">
             <div class="col-8">
-              <h3 class="mb-0">Edit Siswa</h3>
+              <h3 class="mb-0">Tambah Siswa</h3>
             </div>
           </div>
         </div>
@@ -33,54 +33,16 @@
             <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
             <div class="pl-lg-4">
               <div class="row">
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Pendidikan Agama</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Pendidikan Agama" name="pendidikan_agama" required value="<?= $pendidikan_agama; ?>">
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Pendidikan Kewarganegaraan</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Pendidikan Kewarganegaraan" name="pkn" required value="<?= $pkn; ?>">
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Bahasa Indonesia</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Bahasa Indonesia" name="bahasa_indonesia" required value="<?= $bahasa_indonesia; ?>">
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Matematika Wajib</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Matematika Wajib" name="matematika_wajib" required value="<?= $matematika; ?>">
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Sejarah Indonesia</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Sejarah Indonesia" name="sejarah_indonesia" required value="<?= $sejarah_indonesia; ?>">
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Bahasa Inggris</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Bahasa Inggris" name="bahasa_inggris" required value="<?= $bahasa_inggris; ?>">
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Seni Budaya</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Seni Budaya" name="seni_budaya" required value="<?= $seni_budaya; ?>">
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Pendidikan Jasmani dan Kesehatan</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Nilai Pendidikan Jasmani dan Kesehatan" name="penjaskes" required value="<?= $penjaskes; ?>">
-                  </div>
-                </div>
+                <?php 
+                  foreach ($mata_pelajaran as $key) { ?>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username"><?= $key['nama_mata_pelajaran']; ?></label>
+                        <input type="text" id="input-username" class="form-control" placeholder="<?= $key['nama_mata_pelajaran']; ?>" name="<?= $key['id_mata_pelajaran']; ?>" required value="<?= $nilai['id_mata_pelajaran'] == $key['id_mata_pelajaran'] ? $nilai['nilai'] : '' ; ?>">
+                      </div>
+                    </div>
+                  <?php }
+                ?>
               </div>
               <button class="btn btn-primary" type="submit">Edit</button>
             </div>

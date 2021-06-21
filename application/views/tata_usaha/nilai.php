@@ -20,12 +20,13 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header bg-transparent border-0">
-          <h3 class="text-dark mb-0">Data Nilai</h3>
+          <h3 class="text-dark mb-2">Data Nilai</h3>
+          <a href="<?= base_url(); ?>tata_usaha/nilai/cetak" class="btn btn-primary">Cetak</a>
           <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
         </div>
         <div class="card-body bg-transparent border-0">
           <div class="table-responsive">
-            <table class="table align-items-center table-flush" id="myTable">
+            <table class="table align-items-center table-flush" id="tableNilai">
               <thead class="thead-dark">
                 <tr>
                   <th scope="col">No. Induk</th>

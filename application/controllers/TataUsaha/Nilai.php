@@ -40,8 +40,10 @@ class Nilai extends CI_Controller {
       );
       redirect('tata_usaha/nilai');
     }
-    $data           = $this->ModelNilai->getById($id_siswa);
-    $data['konten'] = 'tata_usaha/editNilai';
+    $data['nilai']          = $this->ModelNilai->getById($id_siswa);
+    $data['konten']         = 'tata_usaha/editNilai';
+    $data['mata_pelajaran'] = $this->ModelMataPelajaran->getAll();
+    $data['id_siswa']       = $id_siswa;
 		$this->load->view('tata_usaha/template', $data);
 	}
 }
