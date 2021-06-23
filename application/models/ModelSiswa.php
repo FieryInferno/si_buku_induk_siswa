@@ -69,6 +69,7 @@ class ModelSiswa extends CI_Model {
   {
     $this->db->delete('siswa', ['id_user'  => $id_user]);
     $this->db->delete('orang_tua', ['id_user' => $id_user]);
+    $this->db->delete('user', ['id_user' => $id_user]);
   }
 
   public function getBiodata()
