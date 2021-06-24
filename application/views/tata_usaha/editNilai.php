@@ -34,11 +34,11 @@
             <div class="pl-lg-4">
               <div class="row">
                 <?php 
-                  foreach ($mata_pelajaran as $key) { ?>
+                  foreach ($nilai as $key) { ?>
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-username"><?= $key['nama_mata_pelajaran']; ?></label>
-                        <input type="text" id="input-username" class="form-control" placeholder="<?= $key['nama_mata_pelajaran']; ?>" name="<?= $key['id_mata_pelajaran']; ?>" required value="<?= $nilai['id_mata_pelajaran'] == $key['id_mata_pelajaran'] ? $nilai['nilai'] : '' ; ?>">
+                        <input type="text" id="input-username" class="form-control" placeholder="<?= $key['nama_mata_pelajaran']; ?>" name="<?= $key['id_mata_pelajaran']; ?>" required value="<?= $key['nilai'] ? $key['nilai'] : '' ; ?>">
                       </div>
                     </div>
                   <?php }
