@@ -17,6 +17,7 @@ class Siswa extends CI_Controller {
       $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
       $this->form_validation->set_rules('username', 'Username', 'trim|required');
       $this->form_validation->set_rules('password', 'Password', 'trim|required');
+      $this->form_validation->set_rules('jenis', 'Jenis', 'trim|required');
       if ($this->form_validation->run()) {
         $this->ModelSiswa->tambah();
         $this->session->set_flashdata('pesan', 
@@ -42,7 +43,6 @@ class Siswa extends CI_Controller {
     if ($this->input->post()) {
       $this->form_validation->set_rules('no_induk', 'No Induk', 'trim|numeric|required');
       $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-      $this->form_validation->set_rules('status', 'Status', 'required');
       if ($this->form_validation->run()) {
         $this->ModelSiswa->edit($id_user);
         $this->session->set_flashdata('pesan', 
@@ -73,5 +73,23 @@ class Siswa extends CI_Controller {
       </div>'
     );
     redirect('tata_usaha/siswa');
+  }
+
+  public function registrasi($id_user)
+  {
+    $this->ModelSiswa->registrasi($id_user);
+    $this->session->set_flashdata('pesan', 
+      '<div class="alert alert-success" role="alert">
+        Berhasil registrasi data
+      </div>'
+    );
+    redirect('tata_usaha/siswa');
+  }
+
+  public function cetak($id_user)
+  {
+    $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left');
+    $data = $this->db->get_where('siswa', ['id_user'  => $id_user])->row_array();
+		$this->load->view('tata_usaha/biodataSiswaPdf', $data);
   }
 }

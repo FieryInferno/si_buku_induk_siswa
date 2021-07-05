@@ -72,18 +72,6 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-first-name">Status</label>
-                    <select name="status" id="status" name="status" class="form-control">
-                      <option value="aktif" <?= $status == 'aktif' ? 'selected' : '' ; ?>>Aktif</option>
-                      <option value="alumni" <?= $status == 'alumni' ? 'selected' : '' ; ?>>Alumni</option>
-                      <option value="pindah" <?= $status == 'pindah' ? 'selected' : '' ; ?>>Pindah</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
               <button class="btn btn-primary pull-right" type="submit">Edit</button>
             </div>
           </form>

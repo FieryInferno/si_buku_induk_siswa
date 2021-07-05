@@ -29,7 +29,8 @@ class ModelSiswa extends CI_Model {
       'alamat'        => $this->input->post('alamat'),
       'tempat_lahir'  => $this->input->post('tempat_lahir'),
       'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-      'id_user'       => $id_user
+      'id_user'       => $id_user,
+      'jenis'         => $this->input->post('jenis')
     ]);
 
     $this->db->insert('user', [
@@ -52,7 +53,6 @@ class ModelSiswa extends CI_Model {
     $this->db->update('siswa', [
       'no_induk'      => $this->input->post('no_induk'),
       'nama'          => $this->input->post('nama'),
-      'status'        => $this->input->post('status'),
       'alamat'        => $this->input->post('alamat'),
       'tempat_lahir'  => $this->input->post('tempat_lahir'),
       'tanggal_lahir' => $this->input->post('tanggal_lahir'),
@@ -70,6 +70,11 @@ class ModelSiswa extends CI_Model {
     $this->db->delete('siswa', ['id_user'  => $id_user]);
     $this->db->delete('orang_tua', ['id_user' => $id_user]);
     $this->db->delete('user', ['id_user' => $id_user]);
+  }
+
+  public function registrasi($id_user)
+  {
+    $this->db->update('siswa', ['status'  => $this->input->post('status')], ['id_user'  => $id_user]);
   }
 
   public function getBiodata()

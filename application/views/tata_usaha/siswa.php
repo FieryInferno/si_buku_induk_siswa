@@ -116,8 +116,73 @@
                             </div>
                           </div>
                         </div>
+                        
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrasi<?= $key['id_user']; ?>">
+                          Registrasi
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="registrasi<?= $key['id_user']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Registrasi</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <form action="<?= base_url('tata_usaha/siswa/registrasi/' . $key['id_user']); ?>" method="post">
+                                <div class="modal-body">
+                                  <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Status</label>
+                                    <div class="col-sm-8">
+                                      <select name="status" id="status" class="form-control">
+                                        <option value="aktif" <?= $key['status'] == 'aktif' ? 'selected' : '' ; ?>>Aktif</option>
+                                        <option value="pindah" <?= $key['status'] == 'pindah' ? 'selected' : '' ; ?>>Pindah</option>
+                                        <option value="lulus" <?= $key['status'] == 'lulus' ? 'selected' : '' ; ?>>Lulus</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-success">Simpan</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_user']); ?>" class="btn btn-primary" target="_blank">Cetak</a>
+
                         <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_user']); ?>" class="btn btn-success">Edit</a>
-                        <a href="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_user']); ?>" class="btn btn-danger">Hapus</a>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_user']; ?>">
+                          Hapus
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal<?= $key['id_user']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Hapus data siswa</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                Anda yakin akan menghapus data siswa <?= $key['nama']; ?>?
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <a href="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_user']); ?>" class="btn btn-danger">Hapus</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   <?php }

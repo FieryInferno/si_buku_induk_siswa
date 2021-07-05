@@ -36,6 +36,14 @@
                 <div class="col-lg-6">
                   <h3>Data Siswa</h3>
                   <div class="form-group">
+                    <label class="form-control-label" for="input-username">Jenis Siswa</label>
+                    <select name="jenis" id="jenis" class="form-control" required>
+                      <option>Pilih Jenis</option>
+                      <option value="siswa_baru">Siswa Baru</option>
+                      <option value="pindahan">Pindahan</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
                     <label class="form-control-label" for="input-username">No. Induk Siswa</label>
                     <input type="text" id="input-username" class="form-control" placeholder="No. Induk Siswa" name="no_induk" required>
                   </div>
