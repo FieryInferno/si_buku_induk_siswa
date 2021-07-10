@@ -92,4 +92,11 @@ class Siswa extends CI_Controller {
     $data = $this->db->get_where('siswa', ['id_user'  => $id_user])->row_array();
 		$this->load->view('tata_usaha/biodataSiswaPdf', $data);
   }
+
+  public function siswaKeluar()
+  {
+    $data['konten'] = 'tata_usaha/siswaKeluar'; 
+    $data['siswa']  = $this->ModelSiswa->getSiswaKeluar();
+		$this->load->view('tata_usaha/template', $data);
+  }
 }

@@ -46,6 +46,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="<?= base_url(); ?>tata_usaha/siswa_keluar">
+                <i class="ni ni-key-25 text-info"></i>
+                <span class="nav-link-text">Siswa Keluar</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="<?= base_url(); ?>tata_usaha/nilai">
                 <i class="ni ni-pin-3 text-primary"></i>
                 <span class="nav-link-text">Nilai</span>

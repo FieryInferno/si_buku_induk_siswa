@@ -83,4 +83,11 @@ class ModelSiswa extends CI_Model {
     $this->db->join('user', 'siswa.id_user = user.id_user');
     return $this->db->get_where('siswa', ['siswa.id_user'  => $this->session->id_user])->row_array();
   }
+
+  public function getSiswaKeluar()
+  {
+    $this->db->where_in('status', ['pindah', 'alumni']);
+    $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left outer');
+    return $this->db->get('siswa')->result_array();
+  }
 }
