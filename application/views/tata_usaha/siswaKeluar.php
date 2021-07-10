@@ -23,6 +23,30 @@
           <h3 class="text-dark mb-0">Data Siswa Keluar</h3>
         </div>
         <div class="card-body bg-transparent border-0">
+          <form action="" method="get">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-username">Tahun</label>
+                  <select name="tahun" id="tahun" class="form-control">
+                    <?php
+                      $tg_awal    = date('Y')-10;
+                      $tgl_akhir  = date('Y')+3;
+                      for ($i = $tgl_akhir; $i >= $tg_awal; $i--) {
+                        echo "
+                          <option value='$i'";
+                          if(date('Y') == $i) {
+                            echo "selected";
+                          }
+                        echo">$i</option>";
+                      }
+                    ?>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary mb-3" type="submit">Filter</button>
+          </form>
           <div class="table-responsive">
             <table class="table align-items-center table-flush" id="myTable">
               <thead class="thead-dark">

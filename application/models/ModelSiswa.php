@@ -102,6 +102,7 @@ class ModelSiswa extends CI_Model {
   {
     $this->db->join('siswa', 'siswa.id_user = siswa_keluar.id_user');
     $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left outer');
+    if ($this->input->get('tahun')) $this->db->where('year(tanggal_siswa_keluar)', $this->input->get('tahun'));
     return $this->db->get('siswa_keluar')->result_array();
   }
 }
