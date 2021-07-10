@@ -75,6 +75,20 @@ class ModelSiswa extends CI_Model {
   public function registrasi($id_user)
   {
     $this->db->update('siswa', ['status'  => $this->input->post('status')], ['id_user'  => $id_user]);
+
+    if ($this->input->post('status') == 'pindah' || $this->input->post('status') == 'alumni') {
+      $siswa_keluar = $this->db->get_where('siswa_keluar', ['id_user' => $id_user])->row_array();
+      if ($siswa_keluar) {
+        $this->db->update('siswa_keluar', ['tanggal_siswa_keluar'  => date('Y-m-d')], ['id_user' => $id_user]);
+      } else {
+        $this->db->insert('siswa_keluar', [
+          'id_user'               => $id_user,
+          'tanggal_siswa_keluar'  => date('Y-m-d')
+        ]);
+      }
+    } else {
+      $this->db->delete('siswa_keluar', ['id_user'  => $id_user]);
+    }
   }
 
   public function getBiodata()

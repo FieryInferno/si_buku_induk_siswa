@@ -285,7 +285,9 @@
           { extend: 'print', className: 'btn-success' },
         ]
       });
-      $('#tableNilai').DataTable();
+      $('#tableNilai').DataTable({
+        responsive: true
+      });
     });
   </script>
 </body>

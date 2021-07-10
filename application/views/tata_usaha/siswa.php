@@ -44,25 +44,6 @@
               </thead>
               <tbody class="list">
                 <?php
-                  function tgl_indo($tanggal){
-                    $bulan = array (
-                      1 =>   'Januari',
-                      'Februari',
-                      'Maret',
-                      'April',
-                      'Mei',
-                      'Juni',
-                      'Juli',
-                      'Agustus',
-                      'September',
-                      'Oktober',
-                      'November',
-                      'Desember'
-                    );
-                    $pecahkan = explode('-', $tanggal);
-                    return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
-                  }
-
                   foreach ($siswa as $key) { ?>
                     <tr>
                       <td><?= $key['no_induk']; ?></td>
@@ -73,7 +54,7 @@
                       <td><?= $key['status']; ?></td>
                       <td>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>">
+                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>">
                           Data Orang Tua
                         </button>
 
@@ -92,19 +73,19 @@
                                   <div class="form-group row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Nama</label>
                                     <div class="col-sm-8">
-                                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $key['nama_orang_tua']; ?>">
+                                      <input type="text" readonly class="form-control-plaintext" value="<?= $key['nama_orang_tua']; ?>">
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Tempat Lahir</label>
                                     <div class="col-sm-8">
-                                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $key['tempat_lahir']; ?>">
+                                      <input type="text" readonly class="form-control-plaintext" value="<?= $key['tempat_lahir']; ?>">
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Tanggal Lahir</label>
                                     <div class="col-sm-8">
-                                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= tgl_indo($key['tanggal_lahir']); ?>">
+                                      <input type="text" readonly class="form-control-plaintext" value="<?= tgl_indo($key['tanggal_lahir']); ?>">
                                     </div>
                                   </div>
                                 </form>
@@ -118,7 +99,7 @@
                         </div>
                         
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrasi<?= $key['id_user']; ?>">
+                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#registrasi<?= $key['id_user']; ?>">
                           Registrasi
                         </button>
 
@@ -140,7 +121,7 @@
                                       <select name="status" id="status" class="form-control">
                                         <option value="aktif" <?= $key['status'] == 'aktif' ? 'selected' : '' ; ?>>Aktif</option>
                                         <option value="pindah" <?= $key['status'] == 'pindah' ? 'selected' : '' ; ?>>Pindah</option>
-                                        <option value="lulus" <?= $key['status'] == 'lulus' ? 'selected' : '' ; ?>>Lulus</option>
+                                        <option value="alumni" <?= $key['status'] == 'alumni' ? 'selected' : '' ; ?>>Lulus</option>
                                       </select>
                                     </div>
                                   </div>
@@ -154,12 +135,12 @@
                           </div>
                         </div>
 
-                        <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_user']); ?>" class="btn btn-primary" target="_blank">Cetak</a>
+                        <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_user']); ?>" class="btn btn-sm btn-primary" target="_blank">Cetak</a>
 
-                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_user']); ?>" class="btn btn-success">Edit</a>
+                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_user']); ?>" class="btn btn-sm btn-success">Edit</a>
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_user']; ?>">
+                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_user']; ?>">
                           Hapus
                         </button>
 

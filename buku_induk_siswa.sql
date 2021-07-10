@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Jul 2021 pada 06.48
+-- Waktu pembuatan: 10 Jul 2021 pada 08.42
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -137,7 +137,26 @@ CREATE TABLE `siswa` (
 INSERT INTO `siswa` (`id_siswa`, `id_user`, `no_induk`, `nama`, `kelas`, `status`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `jenis`) VALUES
 (12, '60d193612a3f8', '10104019', 'M. Bagas Setia Permana', NULL, 'aktif', 'Kp. Pasir Gombong', 'Bandung', '2021-06-22', 'siswa_baru'),
 (13, '60d3fa7fa73fe', '10104032', 'Willy', '4', 'pindah', 'Bandung', 'Subang', '2021-06-24', 'siswa_baru'),
-(14, '60e28108cacd1', '10104001', 'Firizki', NULL, 'pindah', 'Tambakan', 'Subang', '2021-07-05', 'siswa_baru');
+(14, '60e28108cacd1', '10104001', 'Firizki', NULL, 'alumni', 'Tambakan', 'Subang', '2021-07-05', 'siswa_baru');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `siswa_keluar`
+--
+
+CREATE TABLE `siswa_keluar` (
+  `id_siswa_keluar` int(11) NOT NULL,
+  `id_user` varchar(191) NOT NULL,
+  `tanggal_siswa_keluar` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `siswa_keluar`
+--
+
+INSERT INTO `siswa_keluar` (`id_siswa_keluar`, `id_user`, `tanggal_siswa_keluar`) VALUES
+(2, '60e28108cacd1', '2021-07-10');
 
 -- --------------------------------------------------------
 
@@ -200,6 +219,12 @@ ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id_siswa`);
 
 --
+-- Indeks untuk tabel `siswa_keluar`
+--
+ALTER TABLE `siswa_keluar`
+  ADD PRIMARY KEY (`id_siswa_keluar`);
+
+--
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
@@ -238,6 +263,12 @@ ALTER TABLE `orang_tua`
 --
 ALTER TABLE `siswa`
   MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT untuk tabel `siswa_keluar`
+--
+ALTER TABLE `siswa_keluar`
+  MODIFY `id_siswa_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
