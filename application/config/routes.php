@@ -26,6 +26,7 @@ $route['tata_usaha/kelas/hapus/(:any)']                 = 'TataUsaha/kelas/hapus
 $route['tata_usaha/kelas/lihat/(:any)']                 = 'TataUsaha/kelas/lihat/$1';
 $route['tata_usaha/kelas/anggota/tambah/(:any)']        = 'TataUsaha/kelas/tambahAnggota/$1';
 $route['tata_usaha/kelas/anggota/hapus/(:any)/(:any)']  = 'TataUsaha/kelas/hapusAnggota/$1/$2';
+$route['tata_usaha/kelas/mata_pelajaran/(:any)']        = 'TataUsaha/kelas/mataPelajaran/$1';
 $route['tata_usaha/mata_pelajaran']                     = 'TataUsaha/MataPelajaran';
 $route['tata_usaha/mata_pelajaran/tambah']              = 'TataUsaha/MataPelajaran/tambah';
 $route['tata_usaha/mata_pelajaran/edit/(:any)']         = 'TataUsaha/MataPelajaran/edit/$1';

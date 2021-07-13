@@ -105,4 +105,12 @@ class Kelas extends CI_Controller {
     );
     redirect('tata_usaha/kelas/lihat/' . $id_kelas);
   }
+
+  public function mataPelajaran($id_kelas)
+  {
+    $data['konten']   = 'tata_usaha/kelasMataPelajaran'; 
+    $data['kelas']    = $this->ModelKelas->mataPelajaran($id_kelas);
+    $data['id_kelas'] = $id_kelas;
+		$this->load->view('tata_usaha/template', $data);
+  }
 }

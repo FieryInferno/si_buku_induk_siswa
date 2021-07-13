@@ -30,6 +30,7 @@
               <thead class="thead-dark">
                 <tr>
                   <th scope="col">Kelas</th>
+                  <th scope="col">Wali Kelas</th>
                   <th scope="col">Aksi</th>
                 </tr>
               </thead>
@@ -38,10 +39,35 @@
                   foreach ($kelas as $key) { ?>
                     <tr>
                       <td><?= $key['nama_kelas']; ?></td>
+                      <td><?= $key['nama_wali_kelas']; ?></td>
                       <td>
                         <a href="<?= base_url('tata_usaha/kelas/lihat/' . $key['id_kelas']); ?>" class="btn btn-primary">Lihat Anggota</a>
+                        <a href="<?= base_url('tata_usaha/kelas/mata_pelajaran/' . $key['id_kelas']); ?>" class="btn btn-info">Mata Pelajaran</a>
                         <a href="<?= base_url('tata_usaha/kelas/edit/' . $key['id_kelas']); ?>" class="btn btn-success">Edit</a>
-                        <a href="<?= base_url('tata_usaha/kelas/hapus/' . $key['id_kelas']); ?>" class="btn btn-danger">Hapus</a>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_kelas']; ?>">Hapus</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal<?= $key['id_kelas']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Hapus</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                Anda yakin akan menghapus data ini?
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <a href="<?= base_url('tata_usaha/kelas/hapus/' . $key['id_kelas']); ?>" class="btn btn-danger">Hapus</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   <?php }

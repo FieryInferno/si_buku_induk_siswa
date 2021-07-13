@@ -5,7 +5,10 @@ class ModelKelas extends CI_Model {
   
   public function tambah()
   {
-    $this->db->insert('kelas', ['nama_kelas'  => $this->input->post('nama_kelas')]);
+    $this->db->insert('kelas', [
+      'nama_kelas'      => $this->input->post('nama_kelas'),
+      'nama_wali_kelas' => $this->input->post('nama_wali_kelas')
+    ]);
   }
 
   public function getAll()
@@ -48,5 +51,11 @@ class ModelKelas extends CI_Model {
   public function hapusAnggota($id_siswa)
   {
     $this->db->update('siswa', ['kelas' => NULL], ['id_siswa' => $id_siswa]);
+  }
+
+  public function mataPelajaran($id_kelas)
+  {
+    $this->db->join('mata_pelajaran', 'kelas_mata_pelajaran.id_mata_pelajaran = mata_pelajaran.id_mata_pelajaran');
+    return $this->db->get_where('kelas_mata_pelajaran', ['id_kelas' => $id_kelas])->result_array();
   }
 }
