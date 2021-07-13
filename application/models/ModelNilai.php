@@ -59,10 +59,11 @@ class ModelNilai extends CI_Model {
 
   public function getById($id_siswa)
   {
+    $this->db->join('mata_pelajaran', 'kelas_mata_pelajaran.id_mata_pelajaran = mata_pelajaran.id_mata_pelajaran');
     $this->db->join('nilai', 'nilai.id_mata_pelajaran = mata_pelajaran.id_mata_pelajaran', 'left outer');
     $this->db->where('nilai.id_siswa', $id_siswa);
     $this->db->or_where('nilai.id_siswa', NULL);
     $this->db->select('mata_pelajaran.id_mata_pelajaran, mata_pelajaran.nama_mata_pelajaran, nilai.nilai');
-    return $this->db->get('mata_pelajaran')->result_array();
+    return $this->db->get('kelas_mata_pelajaran')->result_array();
   }
 }

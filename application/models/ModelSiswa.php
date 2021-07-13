@@ -105,4 +105,11 @@ class ModelSiswa extends CI_Model {
     if ($this->input->get('tahun')) $this->db->where('year(tanggal_siswa_keluar)', $this->input->get('tahun'));
     return $this->db->get('siswa_keluar')->result_array();
   }
+
+  public function mataPelajaran($id_siswa)
+  {
+    $this->db->join('siswa', 'kelas_mata_pelajaran.id_kelas = siswa.kelas');
+    $this->db->join('mata_pelajaran', 'kelas_mata_pelajaran.id_mata_pelajaran = mata_pelajaran.id_mata_pelajaran');
+    return $this->db->get_where('kelas_mata_pelajaran', ['siswa.id_siswa' => $id_siswa])->result_array();
+  }
 }

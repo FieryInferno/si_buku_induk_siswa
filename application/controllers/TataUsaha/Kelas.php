@@ -45,7 +45,7 @@ class Kelas extends CI_Controller {
       );
       redirect('tata_usaha/kelas/lihat/' . $id_kelas);
     }
-    $data['konten']   = 'tata_usaha/anggota_kelas/tambah';
+    $data['konten']   = 'tata_usaha/kelas/anggota_kelas/tambah';
     $data['siswa']    = $this->ModelKelas->siswaBelumPunyaKelas();
     $data['id_kelas'] = $id_kelas;
 		$this->load->view('tata_usaha/template', $data);
@@ -89,7 +89,7 @@ class Kelas extends CI_Controller {
 
   public function lihat($id_kelas)
   {
-    $data['konten']   = 'tata_usaha/anggota_kelas/index'; 
+    $data['konten']   = 'tata_usaha/kelas/anggota_kelas/index'; 
     $data['kelas']    = $this->ModelKelas->lihat($id_kelas);
     $data['id_kelas'] = $id_kelas;
 		$this->load->view('tata_usaha/template', $data);
