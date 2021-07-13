@@ -108,9 +108,36 @@ class Kelas extends CI_Controller {
 
   public function mataPelajaran($id_kelas)
   {
-    $data['konten']   = 'tata_usaha/kelasMataPelajaran'; 
+    $data['konten']   = 'tata_usaha/kelas/mata_pelajaran/index'; 
     $data['kelas']    = $this->ModelKelas->mataPelajaran($id_kelas);
     $data['id_kelas'] = $id_kelas;
+		$this->load->view('tata_usaha/template', $data);
+  }
+
+  public function tambahMataPelajaran($id_kelas)
+  {
+    if ($this->input->post()) {
+      $this->ModelKelas->tambahMataPelajaran($id_kelas);
+      $this->session->set_flashdata('pesan', 
+        '<div class="alert alert-success" role="alert">
+          Berhasil tambah data
+        </div>'
+      );
+      redirect('tata_usaha/kelas/mata_pelajaran/' . $id_kelas);
+    }
+    $data['konten'] = 'tata_usaha/kelas/mata_pelajaran/tambah';
+    
+    $data['mata_pelajaran'] = $this->db->query("SELECT *
+    FROM mata_pelajaran
+    WHERE id_mata_pelajaran NOT IN
+      (SELECT id_mata_pelajaran 
+        FROM kelas_mata_pelajaran
+        WHERE kelas_mata_pelajaran.id_kelas = $id_kelas
+        )
+    ")->result_array();
+
+    $data['id_kelas'] = $id_kelas;
+
 		$this->load->view('tata_usaha/template', $data);
   }
 }

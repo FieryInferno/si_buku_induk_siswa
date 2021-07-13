@@ -48,6 +48,16 @@ class ModelKelas extends CI_Model {
     }
   }
 
+  public function tambahMataPelajaran($id_kelas)
+  {
+    foreach ($this->input->post('mata_pelajaran') as $key) {
+      $this->db->insert('kelas_mata_pelajaran', [
+        'id_kelas'          => $id_kelas,
+        'id_mata_pelajaran' => $key
+      ]);
+    }
+  }
+
   public function hapusAnggota($id_siswa)
   {
     $this->db->update('siswa', ['kelas' => NULL], ['id_siswa' => $id_siswa]);
@@ -56,6 +66,7 @@ class ModelKelas extends CI_Model {
   public function mataPelajaran($id_kelas)
   {
     $this->db->join('mata_pelajaran', 'kelas_mata_pelajaran.id_mata_pelajaran = mata_pelajaran.id_mata_pelajaran');
+    $this->db->select('mata_pelajaran.id_mata_pelajaran');
     return $this->db->get_where('kelas_mata_pelajaran', ['id_kelas' => $id_kelas])->result_array();
   }
 }
