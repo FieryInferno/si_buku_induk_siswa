@@ -99,4 +99,30 @@ class Siswa extends CI_Controller {
     $data['siswa']  = $this->ModelSiswa->getSiswaKeluar();
 		$this->load->view('tata_usaha/template', $data);
   }
+
+  public function usernamePassword()
+  {
+    $data['konten'] = 'tata_usaha/usernamePassword'; 
+    $data['siswa']  = $this->ModelSiswa->getAll('aktif');
+		$this->load->view('tata_usaha/template', $data);
+  }
+
+  public function editUsernamePassword($id_user)
+  {
+    if ($this->input->post()) {
+      $this->db->update('user', [
+        'username'  => $this->input->post('username'),
+        'password'  => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
+      ]);
+      $this->session->set_flashdata('pesan', 
+        '<div class="alert alert-success" role="alert">
+          Berhasil edit username dan password
+        </div>'
+      );
+      redirect('tata_usaha/username_password');
+    }
+    $data           = $this->ModelSiswa->get($id_user);
+    $data['konten'] = 'tata_usaha/editUsernamePassword'; 
+		$this->load->view('tata_usaha/template', $data);
+  }
 }

@@ -32,5 +32,7 @@ $route['tata_usaha/mata_pelajaran']                     = 'TataUsaha/MataPelajar
 $route['tata_usaha/mata_pelajaran/tambah']              = 'TataUsaha/MataPelajaran/tambah';
 $route['tata_usaha/mata_pelajaran/edit/(:any)']         = 'TataUsaha/MataPelajaran/edit/$1';
 $route['tata_usaha/mata_pelajaran/hapus/(:any)']        = 'TataUsaha/MataPelajaran/hapus/$1';
+$route['tata_usaha/username_password']                  = 'TataUsaha/Siswa/usernamePassword';
+$route['tata_usaha/username_password/edit/(:any)']      = 'TataUsaha/Siswa/editUsernamePassword/$1';
 
 $route['siswa'] = 'Siswa/Siswa';
