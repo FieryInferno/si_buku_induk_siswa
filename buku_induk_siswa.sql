@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Jul 2021 pada 08.42
+-- Waktu pembuatan: 13 Jul 2021 pada 11.41
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -29,17 +29,39 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `kelas` (
   `id_kelas` int(11) NOT NULL,
-  `nama_kelas` varchar(191) NOT NULL
+  `nama_kelas` varchar(191) NOT NULL,
+  `nama_wali_kelas` varchar(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `kelas`
 --
 
-INSERT INTO `kelas` (`id_kelas`, `nama_kelas`) VALUES
-(2, 'X IPA 2'),
-(3, 'X Ipa 3'),
-(4, 'X Ipa 4');
+INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `nama_wali_kelas`) VALUES
+(2, 'X IPA 2', ''),
+(3, 'X Ipa 3', ''),
+(4, 'X Ipa 4', ''),
+(5, 'VII F', 'Suhendar');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kelas_mata_pelajaran`
+--
+
+CREATE TABLE `kelas_mata_pelajaran` (
+  `id_kelas_mata_pelajaran` int(11) NOT NULL,
+  `id_kelas` varchar(191) NOT NULL,
+  `id_mata_pelajaran` varchar(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kelas_mata_pelajaran`
+--
+
+INSERT INTO `kelas_mata_pelajaran` (`id_kelas_mata_pelajaran`, `id_kelas`, `id_mata_pelajaran`) VALUES
+(1, '5', '2'),
+(2, '5', '3');
 
 -- --------------------------------------------------------
 
@@ -81,11 +103,8 @@ CREATE TABLE `nilai` (
 --
 
 INSERT INTO `nilai` (`id_nilai`, `id_siswa`, `id_mata_pelajaran`, `nilai`) VALUES
-(18, 12, 2, 80),
-(19, 12, 3, 90),
-(20, 12, 4, 80),
-(21, 12, 5, 70),
-(22, 12, 6, 60);
+(23, 12, 2, 90),
+(24, 12, 3, 70);
 
 -- --------------------------------------------------------
 
@@ -135,8 +154,8 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`id_siswa`, `id_user`, `no_induk`, `nama`, `kelas`, `status`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `jenis`) VALUES
-(12, '60d193612a3f8', '10104019', 'M. Bagas Setia Permana', NULL, 'aktif', 'Kp. Pasir Gombong', 'Bandung', '2021-06-22', 'siswa_baru'),
-(13, '60d3fa7fa73fe', '10104032', 'Willy', '4', 'pindah', 'Bandung', 'Subang', '2021-06-24', 'siswa_baru'),
+(12, '60d193612a3f8', '10104019', 'M. Bagas Setia Permana', '5', 'aktif', 'Kp. Pasir Gombong', 'Bandung', '2021-06-22', 'siswa_baru'),
+(13, '60d3fa7fa73fe', '10104032', 'Willy', '5', 'alumni', 'Bandung', 'Subang', '2021-06-24', 'siswa_baru'),
 (14, '60e28108cacd1', '10104001', 'Firizki', NULL, 'alumni', 'Tambakan', 'Subang', '2021-07-05', 'siswa_baru');
 
 -- --------------------------------------------------------
@@ -156,7 +175,8 @@ CREATE TABLE `siswa_keluar` (
 --
 
 INSERT INTO `siswa_keluar` (`id_siswa_keluar`, `id_user`, `tanggal_siswa_keluar`) VALUES
-(2, '60e28108cacd1', '2021-07-10');
+(2, '60e28108cacd1', '2021-07-10'),
+(3, '60d3fa7fa73fe', '2021-07-10');
 
 -- --------------------------------------------------------
 
@@ -191,6 +211,12 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id_kelas`),
   ADD UNIQUE KEY `nama_kelas` (`nama_kelas`);
+
+--
+-- Indeks untuk tabel `kelas_mata_pelajaran`
+--
+ALTER TABLE `kelas_mata_pelajaran`
+  ADD PRIMARY KEY (`id_kelas_mata_pelajaran`);
 
 --
 -- Indeks untuk tabel `mata_pelajaran`
@@ -238,7 +264,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `kelas_mata_pelajaran`
+--
+ALTER TABLE `kelas_mata_pelajaran`
+  MODIFY `id_kelas_mata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `mata_pelajaran`
@@ -250,7 +282,7 @@ ALTER TABLE `mata_pelajaran`
 -- AUTO_INCREMENT untuk tabel `nilai`
 --
 ALTER TABLE `nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `orang_tua`
@@ -268,7 +300,7 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT untuk tabel `siswa_keluar`
 --
 ALTER TABLE `siswa_keluar`
-  MODIFY `id_siswa_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_siswa_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
