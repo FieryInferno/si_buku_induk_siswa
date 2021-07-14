@@ -113,7 +113,7 @@ class Siswa extends CI_Controller {
       $this->db->update('user', [
         'username'  => $this->input->post('username'),
         'password'  => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
-      ]);
+      ], ['id_user' => $id_user]);
       $this->session->set_flashdata('pesan', 
         '<div class="alert alert-success" role="alert">
           Berhasil edit username dan password
