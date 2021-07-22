@@ -63,14 +63,6 @@
                     <label class="form-control-label" for="input-email">Tanggal Lahir</label>
                     <input type="date" id="input-email" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir" required>
                   </div>
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-email">Username</label>
-                    <input type="text" id="input-email" class="form-control" placeholder="Username" name="username" required>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-email">Password</label>
-                    <input type="password" id="input-email" class="form-control" placeholder="Password" name="password" required>
-                  </div>
                 </div>
                 <div class="col-lg-6">
                   <h3>Data Orang Tua Siswa</h3>
@@ -88,7 +80,29 @@
                   </div>
                 </div>
               </div>
-              <button class="btn btn-primary pull-right" type="submit">Tambah</button>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#exampleModal">Tambah</button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Tambah</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Apakah anda yakin akan menambah data ini?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button class="btn btn-primary" type="submit">Tambah</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </form>
         </div>

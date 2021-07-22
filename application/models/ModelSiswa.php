@@ -36,8 +36,6 @@ class ModelSiswa extends CI_Model {
     ]);
 
     $this->db->insert('user', [
-      'username'  => $this->input->post('username'),
-      'password'  => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
       'level'     => 'siswa',
       'id_user'   => $id_user
     ]);
