@@ -53,19 +53,19 @@ class Nilai extends CI_Controller {
   {
     $data['nilai']          = $this->ModelNilai->getAll();
     $data['mata_pelajaran'] = $this->ModelMataPelajaran->getAll();
-    ob_start();
+    // ob_start();
       $this->load->view('nilai_pdf', $data);
-      $html = ob_get_contents();
-    ob_end_clean();
-    ob_clean();
-    $filename   = uniqid();
-    $options  	= new Options();
-    $options->set('isRemoteEnabled', TRUE);
-    $dompdf = new Dompdf($options);
-    $dompdf->loadHtml($html);
-    $dompdf->setPaper('legal', 'landscape');
-    $dompdf->render();
-    $output = $dompdf->output();
-    $dompdf->stream($filename, array("Attachment" => 0) );
+    //   $html = ob_get_contents();
+    // ob_end_clean();
+    // ob_clean();
+    // $filename   = uniqid();
+    // $options  	= new Options();
+    // $options->set('isRemoteEnabled', TRUE);
+    // $dompdf = new Dompdf($options);
+    // $dompdf->loadHtml($html);
+    // $dompdf->setPaper('legal', 'landscape');
+    // $dompdf->render();
+    // $output = $dompdf->output();
+    // $dompdf->stream($filename, array("Attachment" => 0) );
   }
 }

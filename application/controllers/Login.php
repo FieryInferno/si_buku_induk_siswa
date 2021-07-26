@@ -52,6 +52,10 @@ class Login extends CI_Controller {
               'level'     => $data['level'],
               'id_user'   => $data['id_user']
             ]);
+            if ($data['level']  == 'siswa') {
+              $siswa  = $this->db->get_where('siswa', ['id_user'  => $data['id_user']])->row_array();
+              $this->session->set_userdata(['id_kelas'  => $siswa['kelas']]);
+            }
             switch ($data['level']) {
               case 'tu':
                 redirect('tata_usaha');
