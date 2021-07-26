@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Jul 2021 pada 11.41
+-- Waktu pembuatan: 26 Jul 2021 pada 09.39
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -41,7 +41,9 @@ INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `nama_wali_kelas`) VALUES
 (2, 'X IPA 2', ''),
 (3, 'X Ipa 3', ''),
 (4, 'X Ipa 4', ''),
-(5, 'VII F', 'Suhendar');
+(5, 'VII F', 'Suhendar'),
+(6, 'X IPS 10', 'Rian Piarna'),
+(7, 'XI IPA 2', 'Nunu Nugraha');
 
 -- --------------------------------------------------------
 
@@ -61,7 +63,13 @@ CREATE TABLE `kelas_mata_pelajaran` (
 
 INSERT INTO `kelas_mata_pelajaran` (`id_kelas_mata_pelajaran`, `id_kelas`, `id_mata_pelajaran`) VALUES
 (1, '5', '2'),
-(2, '5', '3');
+(2, '5', '3'),
+(3, '6', '2'),
+(4, '6', '4'),
+(5, '6', '6'),
+(6, '7', '2'),
+(7, '7', '3'),
+(8, '7', '5');
 
 -- --------------------------------------------------------
 
@@ -104,7 +112,10 @@ CREATE TABLE `nilai` (
 
 INSERT INTO `nilai` (`id_nilai`, `id_siswa`, `id_mata_pelajaran`, `nilai`) VALUES
 (23, 12, 2, 90),
-(24, 12, 3, 70);
+(24, 12, 3, 70),
+(25, 16, 2, 70),
+(26, 16, 3, 89),
+(27, 16, 5, 84);
 
 -- --------------------------------------------------------
 
@@ -128,7 +139,9 @@ INSERT INTO `orang_tua` (`id_orang_tua`, `id_user`, `nama_orang_tua`, `tempat_la
 (1, '60cd511d3c507', 'Dadang Supriatna', 'Subang', '2021-06-17'),
 (5, '60d193612a3f8', 'Dadang Supriatna', 'Subang', '2021-06-22'),
 (6, '60d3fa7fa73fe', 'Dadang Supriatna', 'Subang', '2021-06-24'),
-(7, '60e28108cacd1', 'Dadang Supriatna', 'Subang', '2021-07-05');
+(7, '60e28108cacd1', 'Dadang Supriatna', 'Subang', '2021-07-05'),
+(9, '60f7bff2930c6', 'Dadang Supriatna', 'Subang', '2021-07-22'),
+(10, '60f9187c0eda2', 'Dadang Supriatna', 'Subang', '2021-07-21');
 
 -- --------------------------------------------------------
 
@@ -155,8 +168,10 @@ CREATE TABLE `siswa` (
 
 INSERT INTO `siswa` (`id_siswa`, `id_user`, `no_induk`, `nama`, `kelas`, `status`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `jenis`) VALUES
 (12, '60d193612a3f8', '10104019', 'M. Bagas Setia Permana', '5', 'aktif', 'Kp. Pasir Gombong', 'Bandung', '2021-06-22', 'siswa_baru'),
-(13, '60d3fa7fa73fe', '10104032', 'Willy', '5', 'alumni', 'Bandung', 'Subang', '2021-06-24', 'siswa_baru'),
-(14, '60e28108cacd1', '10104001', 'Firizki', NULL, 'alumni', 'Tambakan', 'Subang', '2021-07-05', 'siswa_baru');
+(13, '60d3fa7fa73fe', '10104032', 'Willy', '5', 'pindah', 'Bandung', 'Subang', '2021-06-24', 'siswa_baru'),
+(14, '60e28108cacd1', '10104001', 'Firizki', '6', 'alumni', 'Tambakan', 'Subang', '2021-07-05', 'siswa_baru'),
+(16, '60f7bff2930c6', '10104090', 'Febriana Rokhman Permana', '7', 'aktif', 'Subang', 'Bandung', '2021-06-28', 'siswa_baru'),
+(17, '60f9187c0eda2', '10104013', 'Indriya Nur Oktaviani', NULL, 'aktif', 'Subang', 'Subang', '2021-07-22', 'siswa_baru');
 
 -- --------------------------------------------------------
 
@@ -176,7 +191,7 @@ CREATE TABLE `siswa_keluar` (
 
 INSERT INTO `siswa_keluar` (`id_siswa_keluar`, `id_user`, `tanggal_siswa_keluar`) VALUES
 (2, '60e28108cacd1', '2021-07-10'),
-(3, '60d3fa7fa73fe', '2021-07-10');
+(3, '60d3fa7fa73fe', '2021-07-21');
 
 -- --------------------------------------------------------
 
@@ -196,10 +211,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
-('1', 'tata_usaha', '$2y$10$ZjBCcnQ2mXfmQS.AnJp9Sur7in/SDMLdlwqC0feC5N8qLcpD0y/E2', 'tu'),
-('60d193612a3f8', 'bagassetia', '$2y$10$Q/C/ro.rM1K3G38yY4XAXejOExjIAb1fefU5xk3mUY7nsXkrwTGPO', 'siswa'),
-('60d3fa7fa73fe', 'willyrifqi', '$2y$10$NOzN5XaOUEU6hN03BBqzxOjrzk53lnnHSQ6AG64GCgiJD9NQSPvHq', 'siswa'),
-('60e28108cacd1', 'firizki', '$2y$10$ltyq6BjHZ69evPOhzJE..eReKZFBSUDyhlYG8C29L/1hDHbPrlC7G', 'siswa');
+('1', 'tata_usaha', '$2y$10$04uVtARjAYoJZFbx8cpCzu6pAy1Iq0YmpQqAe0MKSTkGtRPoJrcUa', 'tu'),
+('60d193612a3f8', 'bagassetia271', '$2y$10$04uVtARjAYoJZFbx8cpCzu6pAy1Iq0YmpQqAe0MKSTkGtRPoJrcUa', 'siswa'),
+('60d3fa7fa73fe', 'willy', '$2y$10$04uVtARjAYoJZFbx8cpCzu6pAy1Iq0YmpQqAe0MKSTkGtRPoJrcUa', 'siswa'),
+('60e28108cacd1', 'firizki', '$2y$10$04uVtARjAYoJZFbx8cpCzu6pAy1Iq0YmpQqAe0MKSTkGtRPoJrcUa', 'siswa'),
+('60f7bff2930c6', 'febriana', '$2y$10$fcnIKlFcoEQAi4JJ0JxdWe/pgAyBdZjXG3zAR8LTgi90/DqM74Y1G', 'siswa'),
+('60f9187c0eda2', '', '', 'siswa');
 
 --
 -- Indexes for dumped tables
@@ -264,43 +281,43 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `kelas_mata_pelajaran`
 --
 ALTER TABLE `kelas_mata_pelajaran`
-  MODIFY `id_kelas_mata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kelas_mata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
-  MODIFY `id_mata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_mata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `nilai`
 --
 ALTER TABLE `nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT untuk tabel `orang_tua`
 --
 ALTER TABLE `orang_tua`
-  MODIFY `id_orang_tua` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_orang_tua` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `siswa_keluar`
 --
 ALTER TABLE `siswa_keluar`
-  MODIFY `id_siswa_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_siswa_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
