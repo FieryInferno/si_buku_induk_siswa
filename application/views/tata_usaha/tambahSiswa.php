@@ -65,7 +65,7 @@
                   </div>
                 </div>
                 <div class="col-lg-6">
-                  <h3>Data Orang Tua Siswa</h3>
+                  <h3>Detail Siswa</h3>
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Nama</label>
                     <input type="text" id="input-email" class="form-control" placeholder="Nama Orang Tua" name="nama_orang_tua" required>

@@ -54,16 +54,14 @@
                       <td><?= $key['status']; ?></td>
                       <td>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>">
-                          Data Orang Tua
-                        </button>
+                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>">Detail Siswa</button>
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal<?= $key['id_siswa']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Data Orang Tua</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Detail Siswa</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
