@@ -33,27 +33,33 @@
             <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
             <div class="pl-lg-4">
               <div class="row">
-                <div class="col-lg-6">
-                  <h3>Data Siswa</h3>
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">Jenis Siswa</label>
-                    <select name="jenis" id="jenis" class="form-control" required>
-                      <option>Pilih Jenis</option>
-                      <option value="siswa_baru">Siswa Baru</option>
-                      <option value="pindahan">Pindahan</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-username">No. Induk Siswa</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="No. Induk Siswa" name="no_induk" required>
-                  </div>
+                <div class="col-lg-12">
+                  <h2>Data Pribadi</h2>
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Nama Siswa</label>
                     <input type="text" id="input-email" class="form-control" placeholder="Nama Siswa" name="nama" required>
                   </div>
                   <div class="form-group">
-                    <label class="form-control-label" for="input-email">Alamat</label>
-                    <input type="text" id="input-email" class="form-control" placeholder="Alamat" name="alamat" required>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jenis_kelamin1" name="jenis_kelamin" class="custom-control-input" value="laki-laki">
+                      <label class="custom-control-label" for="jenis_kelamin1">Laki - Laki</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jenis_kelamin2" name="jenis_kelamin" class="custom-control-input" value="perempuan">
+                      <label class="custom-control-label" for="jenis_kelamin2">Perempuan</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">NISN</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="NISN" name="nisn" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">NIS</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="NIS" name="nis" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">NIK</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="NIK" name="nik" required>
                   </div>
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Tempat Lahir</label>
@@ -61,10 +67,18 @@
                   </div>
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Tanggal Lahir</label>
-                    <input type="date" id="input-email" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir" required>
+                    <input type="date" id="input-email" class="form-control" placeholder="NIK" name="nik" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Alamat</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="Alamat" name="alamat" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Anak Ke-</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="Anak Ke-" name="anak_ke" required>
                   </div>
                 </div>
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6">
                   <h3>Detail Siswa</h3>
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Nama</label>
@@ -78,7 +92,7 @@
                     <label class="form-control-label" for="input-email">Tanggal Lahir</label>
                     <input type="date" id="input-email" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir_orang_tua" required>
                   </div>
-                </div>
+                </div> -->
               </div>
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#exampleModal">Tambah</button>
