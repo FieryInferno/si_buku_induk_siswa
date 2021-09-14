@@ -77,6 +77,19 @@
                     <label class="form-control-label" for="input-email">Anak Ke-</label>
                     <input type="text" id="input-email" class="form-control" placeholder="Anak Ke-" name="anak_ke" required>
                   </div>
+                  <h2>Data Ayah Kandung</h2>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Nama Ayah Kandung</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="Nama Ayah Kandung" name="nama_ayah" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">NIK Ayah</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="NIK Ayah" name="nik_ayah" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Tanggal Lahir Ayah</label>
+                    <input type="date" id="input-email" class="form-control" placeholder="NIK Ayah" name="tgl_lahir_ayah" required>
+                  </div>
                 </div>
                 <!-- <div class="col-lg-6">
                   <h3>Detail Siswa</h3>
