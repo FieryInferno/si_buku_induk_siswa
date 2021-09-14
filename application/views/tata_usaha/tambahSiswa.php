@@ -29,12 +29,22 @@
         </div>
         <div class="card-body">
           <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
-          <form action="<?= base_url(); ?>tata_usaha/siswa/tambah" method="post">
+          <form action="<?= base_url(); ?>tata_usaha/siswa/tambah" method="post" enctype="nultipart/form-data">
             <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
             <div class="pl-lg-4">
               <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-2">
+                  <img src="<?= base_url(); ?>assets/images/user.jpg" alt="" width="100%" class="img-preview">
+                </div>
+                <div class="col-lg-10">
                   <h2>Data Pribadi</h2>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Foto</label>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="foto" onchange="previewImg()" name="foto" required>
+                      <label class="custom-file-label" for="customFileLang">Select file</label>
+                    </div>
+                  </div>
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Nama Siswa</label>
                     <input type="text" id="input-email" class="form-control" placeholder="Nama Siswa" name="nama" required>
@@ -106,21 +116,6 @@
                     <input type="date" id="input-email" class="form-control" placeholder="NIK Ibu" name="tgl_lahir_ibu" required>
                   </div>
                 </div>
-                <!-- <div class="col-lg-6">
-                  <h3>Detail Siswa</h3>
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-email">Nama</label>
-                    <input type="text" id="input-email" class="form-control" placeholder="Nama Orang Tua" name="nama_orang_tua" required>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-email">Tempat Lahir</label>
-                    <input type="text" id="input-email" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir_orang_tua" required>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-email">Tanggal Lahir</label>
-                    <input type="date" id="input-email" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir_orang_tua" required>
-                  </div>
-                </div> -->
               </div>
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#exampleModal">Tambah</button>
