@@ -10,20 +10,22 @@ class Siswa extends CI_Controller {
 		$this->load->view('tata_usaha/template', $data);
 	}
   
-	public function tambah()
+	public function create()
 	{
-    if ($this->input->post()) {
-      $this->ModelSiswa->tambah();
-      $this->session->set_flashdata('pesan', 
-        '<div class="alert alert-success" role="alert">
-          Berhasil tambah data
-        </div>'
-      );
-      redirect('tata_usaha/siswa');
-    }
     $data['konten'] = 'tata_usaha/tambahSiswa';
 		$this->load->view('tata_usaha/template', $data);
 	}
+
+  public function store()
+  {
+    $this->ModelSiswa->tambah();
+    $this->session->set_flashdata('pesan', 
+      '<div class="alert alert-success" role="alert">
+        Berhasil tambah data
+      </div>'
+    );
+    redirect('tata_usaha/siswa');
+  }
   
 	public function edit($id_user)
 	{

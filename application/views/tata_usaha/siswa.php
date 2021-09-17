@@ -33,12 +33,12 @@
             <table class="table align-items-center table-flush" id="myTable">
               <thead class="thead-dark">
                 <tr>
-                  <th scope="col">No. Induk</th>
+                  <th scope="col">NISN</th>
                   <th scope="col">Nama</th>
                   <th scope="col">Alamat</th>
                   <th scope="col">Tempat/Tanggal Lahir</th>
+                  <th scope="col">Jenis Kelamin</th>
                   <th scope="col">Kelas</th>
-                  <th scope="col">Status</th>
                   <th scope="col">Aksi</th>
                 </tr>
               </thead>
@@ -46,62 +46,19 @@
                 <?php
                   foreach ($siswa as $key) { ?>
                     <tr>
-                      <td><?= $key['no_induk']; ?></td>
+                      <td><?= $key['nisn']; ?></td>
                       <td><?= $key['nama']; ?></td>
                       <td><?= $key['alamat']; ?></td>
                       <td><?= $key['tempat_lahir'] . '/' . tgl_indo($key['tanggal_lahir']); ?></td>
+                      <td><?= $key['jenis_kelamin']; ?></td>
                       <td><?= $key['nama_kelas']; ?></td>
-                      <td><?= $key['status']; ?></td>
                       <td>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>">Detail Siswa</button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal<?= $key['id_siswa']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Detail Siswa</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                <form>
-                                  <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Nama</label>
-                                    <div class="col-sm-8">
-                                      <input type="text" readonly class="form-control-plaintext" value="<?= $key['nama_orang_tua']; ?>">
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Tempat Lahir</label>
-                                    <div class="col-sm-8">
-                                      <input type="text" readonly class="form-control-plaintext" value="<?= $key['tempat_lahir']; ?>">
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Tanggal Lahir</label>
-                                    <div class="col-sm-8">
-                                      <input type="text" readonly class="form-control-plaintext" value="<?= tgl_indo($key['tanggal_lahir']); ?>">
-                                    </div>
-                                  </div>
-                                </form>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_user']); ?>" class="btn btn-primary">Edit</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        <a href="<?= base_url('tata_usaha/siswa/detail/' . $key['id_siswa']); ?>" class="btn btn-sm btn-primary">Detail Siswa</a>
                         
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#registrasi<?= $key['id_user']; ?>">
+                        <!-- <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#registrasi<?= $key['id_user']; ?>">
                           Registrasi
                         </button>
-
-                        <!-- Modal -->
+                        
                         <div class="modal fade" id="registrasi<?= $key['id_user']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -131,19 +88,19 @@
                               </form>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
 
-                        <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_user']); ?>" class="btn btn-sm btn-primary" target="_blank">Cetak</a>
+                        <!-- <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_user']); ?>" class="btn btn-sm btn-primary" target="_blank">Cetak</a> -->
 
-                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_user']); ?>" class="btn btn-sm btn-success">Edit</a>
+                        <!-- <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_user']); ?>" class="btn btn-sm btn-success">Edit</a> -->
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_user']; ?>">
+                        <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_user']; ?>">
                           Hapus
-                        </button>
+                        </button> -->
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal<?= $key['id_user']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <!-- <div class="modal fade" id="exampleModal<?= $key['id_user']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -161,7 +118,7 @@
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
                       </td>
                     </tr>
                   <?php }
