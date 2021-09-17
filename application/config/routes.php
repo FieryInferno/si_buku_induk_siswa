@@ -7,11 +7,12 @@ $route['translate_uri_dashes']  = FALSE;
 
 $route['tata_usaha']  = 'TataUsaha/TataUsaha';
 
-$route['tata_usaha/siswa']['get']             = 'TataUsaha/Siswa';
-$route['tata_usaha/siswa/tambah']['get']      = 'TataUsaha/Siswa/create';
-$route['tata_usaha/siswa/tambah']['post']     = 'TataUsaha/Siswa/store';
-$route['tata_usaha/siswa/(:any)']['get']      = 'TataUsaha/Siswa/show/$1';
-$route['tata_usaha/siswa/edit/(:any)']['get'] = 'TataUsaha/Siswa/edit/$1';
+$route['tata_usaha/siswa']['get']               = 'TataUsaha/Siswa';
+$route['tata_usaha/siswa/tambah']['get']        = 'TataUsaha/Siswa/create';
+$route['tata_usaha/siswa/tambah']['post']       = 'TataUsaha/Siswa/store';
+$route['tata_usaha/siswa/(:any)']['get']        = 'TataUsaha/Siswa/show/$1';
+$route['tata_usaha/siswa/edit/(:any)']['get']   = 'TataUsaha/Siswa/edit/$1';
+$route['tata_usaha/siswa/edit/(:any)']['post']  = 'TataUsaha/Siswa/update/$1';
 $route['tata_usaha/siswa/hapus/(:any)']                 = 'TataUsaha/Siswa/hapus/$1';
 $route['tata_usaha/siswa/registrasi/(:any)']            = 'TataUsaha/Siswa/registrasi/$1';
 $route['tata_usaha/siswa/cetak/(:any)']                 = 'TataUsaha/Siswa/cetak/$1';

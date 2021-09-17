@@ -20,10 +20,10 @@ class ModelSiswa extends CI_Model {
     $foto     = $this->uploadFoto();
 
     $this->db->insert('user', [
-      'id_user'   => $id_user,
-      'username'  => $username,
-      'password'  => password_hash($username, PASSWORD_DEFAULT),
-      'level'     => 'siswa',
+      'id_user'     => $id_user,
+      'username'    => $username,
+      'password'    => password_hash($username, PASSWORD_DEFAULT),
+      'level'       => 'siswa',
       'created_at'  => date('Y-m-d')
     ]);
     
@@ -44,25 +44,48 @@ class ModelSiswa extends CI_Model {
       'nama_ibu'            => $this->input->post('nama_ibu'),
       'nik_ibu'             => $this->input->post('nik_ibu'),
       'tanggal_lahir_ibu'   => $this->input->post('tanggal_lahir_ibu'),
-      'foto'                => $foto
+      'foto'                => $foto,
+      'created_at'          => date('Y-m-d')
     ]);
   }
 
-  public function edit($id_user)
+  public function edit($id_siswa)
   {
-    $this->db->update('siswa', [
-      'no_induk'      => $this->input->post('no_induk'),
-      'nama'          => $this->input->post('nama'),
-      'alamat'        => $this->input->post('alamat'),
-      'tempat_lahir'  => $this->input->post('tempat_lahir'),
-      'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-    ], ['id_user'     => $id_user]);
+    if ($_FILES['foto']['name'] !== '') {
+      $foto = $this->uploadFoto();
+      file_exists('assets/images/' . $this->input->post('foto_lama')) ? unlink('assets/images/' . $this->input->post('foto_lama')) : '';
+    } else {
+      $foto = $this->input->post('foto_lama');
+    }
 
-    $this->db->update('orang_tua', [
-      'nama_orang_tua'          => $this->input->post('nama_orang_tua'),
-      'tempat_lahir_orang_tua'  => $this->input->post('tempat_lahir_orang_tua'),
-      'tanggal_lahir_orang_tua' => $this->input->post('tanggal_lahir_orang_tua'),
-    ], ['id_user' => $id_user]);
+    $siswa    = $this->find($id_siswa);
+    $username = preg_replace("/[^a-zA-Z]/", "", $this->input->post('nama'));
+
+    $this->db->update('user', [
+      'username'    => $username,
+      'password'    => password_hash($username, PASSWORD_DEFAULT),
+      'updated_at'  => date('Y-m-d')
+    ], ['id_user' => $siswa['id_user']]);
+
+    $this->db->update('siswa', [
+      'nama'                => $this->input->post('nama'),
+      'jenis_kelamin'       => $this->input->post('jenis_kelamin'),
+      'nisn'                => $this->input->post('nisn'),
+      'nis'                 => $this->input->post('nis'),
+      'nik'                 => $this->input->post('nik'),
+      'tempat_lahir'        => $this->input->post('tempat_lahir'),
+      'tanggal_lahir'       => $this->input->post('tanggal_lahir'),
+      'alamat'              => $this->input->post('alamat'),
+      'anak_ke'             => $this->input->post('anak_ke'),
+      'nama_ayah'           => $this->input->post('nama_ayah'),
+      'nik_ayah'            => $this->input->post('nik_ayah'),
+      'tanggal_lahir_ayah'  => $this->input->post('tanggal_lahir_ayah'),
+      'nama_ibu'            => $this->input->post('nama_ibu'),
+      'nik_ibu'             => $this->input->post('nik_ibu'),
+      'tanggal_lahir_ibu'   => $this->input->post('tanggal_lahir_ibu'),
+      'foto'                => $foto,
+      'updated_at'          => date('Y-m-d')
+    ], ['id_siswa'  => $id_siswa]);
   }
 
   public function hapus($id_user)

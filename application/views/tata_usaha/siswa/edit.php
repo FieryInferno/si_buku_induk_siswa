@@ -29,7 +29,8 @@
         </div>
         <div class="card-body">
           <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
-          <form action="<?= base_url(); ?>tata_usaha/siswa/tambah" method="post" enctype="multipart/form-data">
+          <form action="<?= base_url('tata_usaha/siswa/edit/' . $id_siswa); ?>" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="put">
             <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
             <div class="pl-lg-4">
               <div class="row">
@@ -41,7 +42,8 @@
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Foto</label>
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="foto" onchange="previewImg()" name="foto" required>
+                      <input type="file" class="custom-file-input" id="foto" onchange="previewImg()" name="foto">
+                      <input type="hidden" name="foto_lama" value="<?= $foto; ?>">
                       <label class="custom-file-label" for="customFileLang">Select file</label>
                     </div>
                   </div>
@@ -118,24 +120,24 @@
                 </div>
               </div>
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#exampleModal">Tambah</button>
+              <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#exampleModal">Edit</button>
 
               <!-- Modal -->
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Tambah</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Edit</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
-                      Apakah anda yakin akan menambah data ini?
+                      Apakah anda yakin akan mengedit data ini?
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button class="btn btn-primary" type="submit">Tambah</button>
+                      <button class="btn btn-success" type="submit">Edit</button>
                     </div>
                   </div>
                 </div>

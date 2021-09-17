@@ -36,29 +36,21 @@ class Siswa extends CI_Controller {
   
 	public function edit($id_siswa)
 	{
-    // if ($this->input->post()) {
-    //   $this->form_validation->set_rules('no_induk', 'No Induk', 'trim|numeric|required');
-    //   $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-    //   if ($this->form_validation->run()) {
-    //     $this->ModelSiswa->edit($id_user);
-    //     $this->session->set_flashdata('pesan', 
-    //       '<div class="alert alert-success" role="alert">
-    //         Berhasil edit data
-    //       </div>'
-    //     );
-    //     redirect('tata_usaha/siswa');
-    //   } else {
-    //     $this->session->set_flashdata('pesan', 
-    //       '<div class="alert alert-danger" role="alert">'
-    //         . validation_errors() . 
-    //       '</div>'
-    //     );
-    //   }
-    // }
     $data           = $this->ModelSiswa->find($id_siswa);
     $data['konten'] = 'tata_usaha/siswa/edit';
 		$this->load->view('tata_usaha/template', $data);
 	}
+
+  public function update($id_siswa)
+  { 
+    $this->ModelSiswa->edit($id_siswa);
+    $this->session->set_flashdata('pesan', 
+      '<div class="alert alert-success" role="alert">
+        Berhasil edit data
+      </div>'
+    );
+    redirect('tata_usaha/siswa');
+  }
 
   public function hapus($id_user)
   {
