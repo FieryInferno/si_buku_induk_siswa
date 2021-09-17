@@ -92,7 +92,7 @@
 
                         <!-- <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_user']); ?>" class="btn btn-sm btn-primary" target="_blank">Cetak</a> -->
 
-                        <!-- <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_user']); ?>" class="btn btn-sm btn-success">Edit</a> -->
+                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-sm btn-success">Edit</a>
 
                         <!-- Button trigger modal -->
                         <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_user']; ?>">

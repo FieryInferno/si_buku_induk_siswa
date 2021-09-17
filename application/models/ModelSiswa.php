@@ -12,14 +12,6 @@ class ModelSiswa extends CI_Model {
     }
     return $this->db->get('siswa')->result_array();
 	}
-  
-	public function get($id_user)
-	{
-    $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left outer');
-    $this->db->join('orang_tua', 'siswa.id_user = orang_tua.id_user', 'left outer');
-    $this->db->join('user', 'siswa.id_user = user.id_user');
-    return $this->db->get_where('siswa', ['siswa.id_user'  => $id_user])->row_array();
-	}
 
   public function tambah()
   {

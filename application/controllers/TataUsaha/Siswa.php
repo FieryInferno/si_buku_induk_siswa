@@ -5,7 +5,7 @@ class Siswa extends CI_Controller {
   
 	public function index($status = null)
 	{
-    $data['konten'] = 'tata_usaha/siswa'; 
+    $data['konten'] = 'tata_usaha/siswa/index'; 
     $data['siswa']  = $this->ModelSiswa->getAll($status);
 		$this->load->view('tata_usaha/template', $data);
 	}
@@ -30,33 +30,33 @@ class Siswa extends CI_Controller {
   public function show($id_siswa)
   {
     $data           = $this->ModelSiswa->find($id_siswa);
-    $data['konten'] = 'tata_usaha/siswa/detail.php'; 
+    $data['konten'] = 'tata_usaha/siswa/detail'; 
 		$this->load->view('tata_usaha/template', $data);
   }
   
-	public function edit($id_user)
+	public function edit($id_siswa)
 	{
-    if ($this->input->post()) {
-      $this->form_validation->set_rules('no_induk', 'No Induk', 'trim|numeric|required');
-      $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-      if ($this->form_validation->run()) {
-        $this->ModelSiswa->edit($id_user);
-        $this->session->set_flashdata('pesan', 
-          '<div class="alert alert-success" role="alert">
-            Berhasil edit data
-          </div>'
-        );
-        redirect('tata_usaha/siswa');
-      } else {
-        $this->session->set_flashdata('pesan', 
-          '<div class="alert alert-danger" role="alert">'
-            . validation_errors() . 
-          '</div>'
-        );
-      }
-    }
-    $data           = $this->ModelSiswa->get($id_user);
-    $data['konten'] = 'tata_usaha/editSiswa';
+    // if ($this->input->post()) {
+    //   $this->form_validation->set_rules('no_induk', 'No Induk', 'trim|numeric|required');
+    //   $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+    //   if ($this->form_validation->run()) {
+    //     $this->ModelSiswa->edit($id_user);
+    //     $this->session->set_flashdata('pesan', 
+    //       '<div class="alert alert-success" role="alert">
+    //         Berhasil edit data
+    //       </div>'
+    //     );
+    //     redirect('tata_usaha/siswa');
+    //   } else {
+    //     $this->session->set_flashdata('pesan', 
+    //       '<div class="alert alert-danger" role="alert">'
+    //         . validation_errors() . 
+    //       '</div>'
+    //     );
+    //   }
+    // }
+    $data           = $this->ModelSiswa->find($id_siswa);
+    $data['konten'] = 'tata_usaha/siswa/edit';
 		$this->load->view('tata_usaha/template', $data);
 	}
 
