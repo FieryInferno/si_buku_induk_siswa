@@ -5,9 +5,8 @@ class ModelSiswa extends CI_Model {
   
 	public function getAll($status)
 	{
-    $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left outer');
-    $this->db->join('orang_tua', 'siswa.id_user = orang_tua.id_user', 'left outer');
-    $this->db->join('user', 'siswa.id_user = user.id_user');
+    $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left outer'); 
+    $this->db->join('user', 'siswa.user_id = user.id_user');
     if ($status) {
       $this->db->where('status', $status);
     }
@@ -25,26 +24,35 @@ class ModelSiswa extends CI_Model {
   public function tambah()
   {
     $id_user  = uniqid();
-    $this->db->insert('siswa', [
-      'no_induk'      => $this->input->post('no_induk'),
-      'nama'          => $this->input->post('nama'),
-      'alamat'        => $this->input->post('alamat'),
-      'tempat_lahir'  => $this->input->post('tempat_lahir'),
-      'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-      'id_user'       => $id_user,
-      'jenis'         => $this->input->post('jenis')
-    ]);
+    $username = preg_replace("/[^a-zA-Z]/", "", $this->input->post('nama'));
+    $foto     = $this->uploadFoto();
 
     $this->db->insert('user', [
+      'id_user'   => $id_user,
+      'username'  => $username,
+      'password'  => password_hash($username, PASSWORD_DEFAULT),
       'level'     => 'siswa',
-      'id_user'   => $id_user
+      'created_at'  => date('Y-m-d')
     ]);
-
-    $this->db->insert('orang_tua', [
-      'nama_orang_tua'          => $this->input->post('nama_orang_tua'),
-      'tempat_lahir_orang_tua'  => $this->input->post('tempat_lahir_orang_tua'),
-      'tanggal_lahir_orang_tua' => $this->input->post('tanggal_lahir_orang_tua'),
-      'id_user'                 => $id_user
+    
+    $this->db->insert('siswa', [
+      'user_id'             => $id_user,
+      'nama'                => $this->input->post('nama'),
+      'jenis_kelamin'       => $this->input->post('jenis_kelamin'),
+      'nisn'                => $this->input->post('nisn'),
+      'nis'                 => $this->input->post('nis'),
+      'nik'                 => $this->input->post('nik'),
+      'tempat_lahir'        => $this->input->post('tempat_lahir'),
+      'tanggal_lahir'       => $this->input->post('tanggal_lahir'),
+      'alamat'              => $this->input->post('alamat'),
+      'anak_ke'             => $this->input->post('anak_ke'),
+      'nama_ayah'           => $this->input->post('nama_ayah'),
+      'nik_ayah'            => $this->input->post('nik_ayah'),
+      'tanggal_lahir_ayah'  => $this->input->post('tanggal_lahir_ayah'),
+      'nama_ibu'            => $this->input->post('nama_ibu'),
+      'nik_ibu'             => $this->input->post('nik_ibu'),
+      'tanggal_lahir_ibu'   => $this->input->post('tanggal_lahir_ibu'),
+      'foto'                => $foto
     ]);
   }
 
@@ -111,5 +119,25 @@ class ModelSiswa extends CI_Model {
     $this->db->join('siswa', 'kelas_mata_pelajaran.id_kelas = siswa.kelas');
     $this->db->join('mata_pelajaran', 'kelas_mata_pelajaran.id_mata_pelajaran = mata_pelajaran.id_mata_pelajaran');
     return $this->db->get_where('kelas_mata_pelajaran', ['siswa.id_siswa' => $id_siswa])->result_array();
+  }
+
+  private function uploadFoto()
+  {
+    $config['upload_path']          = './assets/images';
+    $config['allowed_types']        = 'gif|jpg|png';
+
+    $this->upload->initialize($config);
+
+    if (!$this->upload->do_upload('foto'))
+    {
+      $this->session->set_flashdata('pesan', 
+        '<div class="alert alert-danger" role="alert">'
+          . $this->upload->display_errors() . 
+        '</div>'
+      );
+      redirect('tata_usaha/siswa/tambah');
+    } else {
+      return $this->upload->data('file_name');
+    }
   }
 }

@@ -29,7 +29,7 @@
         </div>
         <div class="card-body">
           <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
-          <form action="<?= base_url(); ?>tata_usaha/siswa/tambah" method="post" enctype="nultipart/form-data">
+          <form action="<?= base_url(); ?>tata_usaha/siswa/tambah" method="post" enctype="multipart/form-data">
             <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
             <div class="pl-lg-4">
               <div class="row">
@@ -77,7 +77,7 @@
                   </div>
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Tanggal Lahir</label>
-                    <input type="date" id="input-email" class="form-control" placeholder="NIK" name="nik" required>
+                    <input type="date" id="input-email" class="form-control" placeholder="NIK" name="tanggal_lahir" required>
                   </div>
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Alamat</label>
@@ -99,7 +99,7 @@
                   </div>
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Tanggal Lahir Ayah</label>
-                    <input type="date" id="input-email" class="form-control" placeholder="NIK Ayah" name="tgl_lahir_ayah" required>
+                    <input type="date" id="input-email" class="form-control" placeholder="NIK Ayah" name="tanggal_lahir_ayah" required>
                   </div>
                   
                   <h2>Data Ibu Kandung</h2>
@@ -113,7 +113,7 @@
                   </div>
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Tanggal Lahir Ibu</label>
-                    <input type="date" id="input-email" class="form-control" placeholder="NIK Ibu" name="tgl_lahir_ibu" required>
+                    <input type="date" id="input-email" class="form-control" placeholder="NIK Ibu" name="tanggal_lahir_ibu" required>
                   </div>
                 </div>
               </div>

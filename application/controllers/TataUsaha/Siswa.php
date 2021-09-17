@@ -13,24 +13,13 @@ class Siswa extends CI_Controller {
 	public function tambah()
 	{
     if ($this->input->post()) {
-      $this->form_validation->set_rules('no_induk', 'No Induk', 'trim|numeric|required');
-      $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-      $this->form_validation->set_rules('jenis', 'Jenis', 'trim|required');
-      if ($this->form_validation->run()) {
-        $this->ModelSiswa->tambah();
-        $this->session->set_flashdata('pesan', 
-          '<div class="alert alert-success" role="alert">
-            Berhasil tambah data
-          </div>'
-        );
-        redirect('tata_usaha/siswa');
-      } else {
-        $this->session->set_flashdata('pesan', 
-          '<div class="alert alert-danger" role="alert">'
-            . validation_errors() . 
-          '</div>'
-        );
-      }
+      $this->ModelSiswa->tambah();
+      $this->session->set_flashdata('pesan', 
+        '<div class="alert alert-success" role="alert">
+          Berhasil tambah data
+        </div>'
+      );
+      redirect('tata_usaha/siswa');
     }
     $data['konten'] = 'tata_usaha/tambahSiswa';
 		$this->load->view('tata_usaha/template', $data);
