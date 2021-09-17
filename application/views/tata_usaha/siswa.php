@@ -22,10 +22,10 @@
         <div class="card-header bg-transparent border-0">
           <h3 class="text-dark mb-0">Data Siswa</h3>
           <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/tambah">Tambah</a>
-          <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa">Semua Data</a>
+          <!-- <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa">Semua Data</a>
           <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/aktif">Aktif</a>
           <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/alumni">Alumni</a>
-          <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/pindah">Pindah</a>
+          <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/pindah">Pindah</a> -->
           <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
         </div>
         <div class="card-body bg-transparent border-0">
@@ -53,7 +53,7 @@
                       <td><?= $key['jenis_kelamin']; ?></td>
                       <td><?= $key['nama_kelas']; ?></td>
                       <td>
-                        <a href="<?= base_url('tata_usaha/siswa/detail/' . $key['id_siswa']); ?>" class="btn btn-sm btn-primary">Detail Siswa</a>
+                        <a href="<?= base_url('tata_usaha/siswa/' . $key['id_siswa']); ?>" class="btn btn-sm btn-primary">Detail Siswa</a>
                         
                         <!-- <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#registrasi<?= $key['id_user']; ?>">
                           Registrasi

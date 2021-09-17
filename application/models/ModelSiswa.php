@@ -140,4 +140,9 @@ class ModelSiswa extends CI_Model {
       return $this->upload->data('file_name');
     }
   }
+
+  public function find($id_siswa)
+  {
+    return $this->db->get_where('siswa', ['id_siswa'  => $id_siswa])->row_array();
+  }
 }

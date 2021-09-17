@@ -12,7 +12,7 @@ class Siswa extends CI_Controller {
   
 	public function create()
 	{
-    $data['konten'] = 'tata_usaha/tambahSiswa';
+    $data['konten'] = 'tata_usaha/siswa/tambah';
 		$this->load->view('tata_usaha/template', $data);
 	}
 
@@ -25,6 +25,13 @@ class Siswa extends CI_Controller {
       </div>'
     );
     redirect('tata_usaha/siswa');
+  }
+
+  public function show($id_siswa)
+  {
+    $data           = $this->ModelSiswa->find($id_siswa);
+    $data['konten'] = 'tata_usaha/siswa/detail.php'; 
+		$this->load->view('tata_usaha/template', $data);
   }
   
 	public function edit($id_user)
