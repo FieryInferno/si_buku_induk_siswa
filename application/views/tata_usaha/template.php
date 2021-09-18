@@ -71,8 +71,14 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= base_url(); ?>tata_usaha/username_password">
-                <i class="ni ni-circle-08 text-pink"></i>
+                <i class="ni ni-key-25 text-pink"></i>
                 <span class="nav-link-text">Kelola Username dan Password</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url(); ?>tata_usaha/profile_sekolah">
+                <i class="ni ni-circle-08 text-black"></i>
+                <span class="nav-link-text">Profile Sekolah</span>
               </a>
             </li>
           </ul>

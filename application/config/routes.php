@@ -14,10 +14,12 @@ $route['tata_usaha/siswa/(:any)']['get']        = 'TataUsaha/Siswa/show/$1';
 $route['tata_usaha/siswa/edit/(:any)']['get']   = 'TataUsaha/Siswa/edit/$1';
 $route['tata_usaha/siswa/edit/(:any)']['post']  = 'TataUsaha/Siswa/update/$1';
 $route['tata_usaha/siswa/hapus/(:any)']         = 'TataUsaha/Siswa/destroy/$1';
-$route['tata_usaha/siswa/registrasi/(:any)']            = 'TataUsaha/Siswa/registrasi/$1';
-$route['tata_usaha/siswa/cetak/(:any)']                 = 'TataUsaha/Siswa/cetak/$1';
-$route['tata_usaha/siswa_keluar']                       = 'TataUsaha/SiswaKeluar';
-$route['tata_usaha/siswa_keluar/detail/(:any)']         = 'TataUsaha/SiswaKeluar/detail/$1';
+$route['tata_usaha/siswa/registrasi/(:any)']    = 'TataUsaha/Siswa/registrasi/$1';
+$route['tata_usaha/siswa/cetak/(:any)']         = 'TataUsaha/Siswa/cetak/$1';
+$route['tata_usaha/siswa_keluar']               = 'TataUsaha/SiswaKeluar';
+$route['tata_usaha/siswa_keluar/detail/(:any)'] = 'TataUsaha/SiswaKeluar/detail/$1';
+
+$route['tata_usaha/profile_sekolah']  = 'TataUsaha/ProfileSekolah';            
 
 $route['tata_usaha/nilai']                              = 'TataUsaha/Nilai';
 $route['tata_usaha/nilai/tambah/(:any)']                = 'TataUsaha/nilai/tambah/$1';

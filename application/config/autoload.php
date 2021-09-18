@@ -7,4 +7,4 @@ $autoload['drivers']    = array();
 $autoload['helper']     = array('url', 'tanggal_helper');
 $autoload['config']     = array();
 $autoload['language']   = array();
-$autoload['model']      = array('ModelUser', 'ModelSiswa', 'ModelNilai', 'ModelKelas', 'ModelMataPelajaran');
+$autoload['model']      = array('ModelUser', 'ModelSiswa', 'ModelNilai', 'ModelKelas', 'ModelMataPelajaran', 'ModelProfileSekolah');
