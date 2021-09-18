@@ -88,11 +88,11 @@ class ModelSiswa extends CI_Model {
     ], ['id_siswa'  => $id_siswa]);
   }
 
-  public function hapus($id_user)
+  public function hapus($id_siswa)
   {
-    $this->db->delete('siswa', ['id_user'  => $id_user]);
-    $this->db->delete('orang_tua', ['id_user' => $id_user]);
-    $this->db->delete('user', ['id_user' => $id_user]);
+    $siswa  = $this->find($id_siswa);
+    $this->db->delete('siswa', ['id_siswa'  => $siswa['id_siswa']]);
+    $this->db->delete('user', ['id_user' => $siswa['user_id']]);
   }
 
   public function registrasi($id_user)

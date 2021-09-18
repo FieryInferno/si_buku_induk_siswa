@@ -95,12 +95,12 @@
                         <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-sm btn-success">Edit</a>
 
                         <!-- Button trigger modal -->
-                        <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_user']; ?>">
+                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>">
                           Hapus
-                        </button> -->
+                        </button>
 
                         <!-- Modal -->
-                        <!-- <div class="modal fade" id="exampleModal<?= $key['id_user']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal<?= $key['id_siswa']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -109,16 +109,19 @@
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
-                              <div class="modal-body">
-                                Anda yakin akan menghapus data siswa <?= $key['nama']; ?>?
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <a href="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_user']); ?>" class="btn btn-danger">Hapus</a>
-                              </div>
+                              <form action="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_siswa']); ?>" method="post">
+                                <input type="hidden" name="_method" name="delete">
+                                <div class="modal-body">
+                                  Anda yakin akan menghapus data siswa <?= $key['nama']; ?>?
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-danger">Hapus</button>
+                                </div>
+                              </form>
                             </div>
                           </div>
-                        </div> -->
+                        </div>
                       </td>
                     </tr>
                   <?php }

@@ -52,9 +52,9 @@ class Siswa extends CI_Controller {
     redirect('tata_usaha/siswa');
   }
 
-  public function hapus($id_user)
+  public function destroy($id_siswa)
   {
-    $this->ModelSiswa->hapus($id_user);
+    $this->ModelSiswa->hapus($id_siswa);
     $this->session->set_flashdata('pesan', 
       '<div class="alert alert-success" role="alert">
         Berhasil hapus data
