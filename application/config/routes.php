@@ -19,7 +19,9 @@ $route['tata_usaha/siswa/cetak/(:any)']         = 'TataUsaha/Siswa/cetak/$1';
 $route['tata_usaha/siswa_keluar']               = 'TataUsaha/SiswaKeluar';
 $route['tata_usaha/siswa_keluar/detail/(:any)'] = 'TataUsaha/SiswaKeluar/detail/$1';
 
-$route['tata_usaha/profile_sekolah']  = 'TataUsaha/ProfileSekolah';            
+$route['tata_usaha/profile_sekolah']              = 'TataUsaha/ProfileSekolah';
+$route['tata_usaha/profile_sekolah/edit']['get']  = 'TataUsaha/ProfileSekolah/edit';
+$route['tata_usaha/profile_sekolah/edit']['post'] = 'TataUsaha/ProfileSekolah/update';
 
 $route['tata_usaha/nilai']                              = 'TataUsaha/Nilai';
 $route['tata_usaha/nilai/tambah/(:any)']                = 'TataUsaha/nilai/tambah/$1';

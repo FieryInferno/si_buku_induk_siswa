@@ -9,4 +9,18 @@ class ProfileSekolah extends CI_Controller {
     $data['konten'] = 'tata_usaha/profile_sekolah/index';
 		$this->load->view('tata_usaha/template', $data);
   }
+
+  public function edit()
+  {
+    $data           = $this->ModelProfileSekolah->get();
+    $data['konten'] = 'tata_usaha/profile_sekolah/edit';
+		$this->load->view('tata_usaha/template', $data);
+  }
+
+  public function update()
+  {
+    $this->ModelProfileSekolah->update();
+    $this->session->set_flashdata('pesan', 'Berhasil tambah data');
+    redirect('tata_usaha/profile_sekolah');
+  }
 }

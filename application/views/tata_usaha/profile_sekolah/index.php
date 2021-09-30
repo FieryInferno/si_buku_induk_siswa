@@ -23,12 +23,18 @@
           <div class="row align-items-center">
             <div class="col-12">
               <h3 class="mb-0">Profile Sekolah</h3>
-              <button class="btn btn-success pull-right">Edit</button>
+              <a class="btn btn-success pull-right" href="<?= base_url(); ?>tata_usaha/profile_sekolah/edit">Edit</a>
             </div>
           </div>
         </div>
         <div class="card-body">
-          <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
+          <?php
+            if ($this->session->pesan) { ?>
+            <div class="alert alert-success" role="alert">
+              <?= $this->session->pesan; ?>
+            </div>
+            <?php }
+          ?>
           <form action="#" method="post" enctype="multipart/form-data">
             <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
             <div class="pl-lg-4">
