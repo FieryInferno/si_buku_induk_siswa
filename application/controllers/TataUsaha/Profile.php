@@ -12,8 +12,18 @@ class Profile extends CI_Controller {
 
   public function update()
   {
-    $this->ModelProfile->update();
-    $this->session->set_flashdata('pesan', 'Berhasil tambah data');
-    redirect('tata_usaha/profile_sekolah');
+    $this->form_validation->set_rules('username', 'Username', 'required');
+    if ($this->input->post('password')) {
+      $this->form_validation->set_rules('password', 'Password', 'required');
+      $this->form_validation->set_rules('password_konfirmasi', 'Password Confirmation', 'matches[password]');
+    }
+
+    if ($this->form_validation->run() !== FALSE) {
+      $this->ModelProfile->update();
+      $this->session->set_flashdata('pesan', 'Berhasil edit data profile');
+    } else {
+      $this->session->set_flashdata('error', validation_errors());
+    }
+    redirect('tata_usaha/profile'); 
   }
 }

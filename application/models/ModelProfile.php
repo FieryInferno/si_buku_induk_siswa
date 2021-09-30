@@ -10,16 +10,13 @@ class ModelProfile extends CI_Model {
 
   public function update()
   {
-    $this->db->update('profile_sekolah', [
-      'npsn'              => $this->input->post('npsn'),
-      'bentuk_pendidikan' => $this->input->post('bentuk_pendidikan'),
-      'status'            => $this->input->post('status'),
-      'provinsi'          => $this->input->post('provinsi'),
-      'kabupaten'         => $this->input->post('kabupaten'),
-      'kecamatan'         => $this->input->post('kecamatan'),
-      'email'             => $this->input->post('email'),
-      'operator'          => $this->input->post('operator'),
-      'kepala_sekolah'    => $this->input->post('kepala_sekolah'),
-    ], ['id_profile_sekolah'  => '1']);
+    $data['username']   = $this->input->post('username');
+    $data['updated_at'] = date('Y-m-d');
+
+    if ($this->input->post('password')) {
+      $data['password'] = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+    }
+
+    $this->db->update('user', $data, ['id_user'  => $this->session->id_user]);
   }
 }

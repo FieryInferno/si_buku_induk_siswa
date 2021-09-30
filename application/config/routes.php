@@ -24,7 +24,6 @@ $route['tata_usaha/profile_sekolah/edit']['get']  = 'TataUsaha/ProfileSekolah/ed
 $route['tata_usaha/profile_sekolah/edit']['post'] = 'TataUsaha/ProfileSekolah/update';
 
 $route['tata_usaha/profile']              = 'TataUsaha/Profile';
-$route['tata_usaha/profile/edit']['get']  = 'TataUsaha/Profile/edit';
 $route['tata_usaha/profile/edit']['post'] = 'TataUsaha/Profile/update';
 
 $route['tata_usaha/nilai']                              = 'TataUsaha/Nilai';

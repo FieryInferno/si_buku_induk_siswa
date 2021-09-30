@@ -26,12 +26,18 @@
             </div>
           </div>
         </div>
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url(); ?>tata_usaha/profile/edit" method="post" enctype="multipart/form-data">
           <div class="card-body">
             <?php
               if ($this->session->pesan) { ?>
               <div class="alert alert-success" role="alert">
                 <?= $this->session->pesan; ?>
+              </div>
+              <?php }
+              
+              if ($this->session->error) { ?>
+              <div class="alert alert-danger" role="alert">
+                <?= $this->session->error; ?>
               </div>
               <?php }
             ?>
