@@ -53,7 +53,7 @@ class Login extends CI_Controller {
               'id_user'   => $data['id_user']
             ]);
             if ($data['level']  == 'siswa') {
-              $siswa  = $this->db->get_where('siswa', ['id_user'  => $data['id_user']])->row_array();
+              $siswa  = $this->db->get_where('siswa', ['user_id'  => $data['id_user']])->row_array();
               $this->session->set_userdata(['id_kelas'  => $siswa['kelas']]);
             }
             switch ($data['level']) {
