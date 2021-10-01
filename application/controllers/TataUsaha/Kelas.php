@@ -108,9 +108,9 @@ class Kelas extends CI_Controller {
 
   public function mataPelajaran($id_kelas)
   {
-    $data['konten']   = 'tata_usaha/kelas/mata_pelajaran/index'; 
-    $data['kelas']    = $this->ModelKelas->mataPelajaran($id_kelas);
-    $data['id_kelas'] = $id_kelas;
+    $data['konten']         = 'tata_usaha/kelas/mata_pelajaran/index'; 
+    $data['mata_pelajaran'] = $this->ModelKelas->mataPelajaran($id_kelas);
+    $data['id_kelas']       = $id_kelas;
 		$this->load->view('tata_usaha/template', $data);
   }
 

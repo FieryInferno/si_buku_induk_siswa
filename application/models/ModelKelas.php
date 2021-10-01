@@ -64,7 +64,6 @@ class ModelKelas extends CI_Model {
 
   public function mataPelajaran($id_kelas)
   {
-    $this->db->join('mata_pelajaran', 'kelas_mata_pelajaran.id_mata_pelajaran = mata_pelajaran.id_mata_pelajaran');
-    return $this->db->get_where('kelas_mata_pelajaran', ['id_kelas' => $id_kelas])->result_array();
+    return $this->db->get_where('mata_pelajaran', ['kelas_id' => $id_kelas])->result_array();
   }
 }

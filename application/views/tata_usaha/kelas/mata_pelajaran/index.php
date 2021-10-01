@@ -31,16 +31,18 @@
               <thead class="thead-dark">
                 <tr>
                   <th scope="col" class="sort" data-sort="budget">Mata Pelajaran</th>
+                  <th scope="col" class="sort" data-sort="budget">Nama Guru</th>
                   <th scope="col" class="sort" data-sort="status">Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">
                 <?php
-                  foreach ($kelas as $key) { ?>
+                  foreach ($mata_pelajaran as $key) { ?>
                     <tr>
                       <td><?= $key['nama_mata_pelajaran']; ?></td>
+                      <td><?= $key['nama_guru']; ?></td>
                       <td>
-                        <a href="<?= base_url('tata_usaha/kelas/mata_pelajaran/hapus/' . $id_kelas . '/' . $key['id_kelas_mata_pelajaran']); ?>" class="btn btn-danger">Hapus</a>
+                        <a href="<?= base_url('tata_usaha/kelas/mata_pelajaran/hapus/' . $id_kelas . '/' . $key['id_mata_pelajaran']); ?>" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
                   <?php }
