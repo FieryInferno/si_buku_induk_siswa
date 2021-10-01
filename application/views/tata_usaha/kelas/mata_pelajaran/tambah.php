@@ -28,32 +28,44 @@
             </div>
           </div>
         </div>
-        <div class="card-body bg-transparent border-0">
-          <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
-          <form action="<?= base_url('tata_usaha/kelas/mata_pelajaran/tambah/' . $id_kelas); ?>" method="post">
-            <div class="table-responsive">
-              <table class="table align-items-center table-flush" id="myTable">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nama Mata Pelajaran</th>
-                  </tr>
-                </thead>
-                <tbody class="list">
-                  <?php
-                    foreach ($mata_pelajaran as $key) { ?>
-                      <tr>
-                        <td><input type="checkbox" name="mata_pelajaran[]" value="<?= $key['id_mata_pelajaran']; ?>"></td>
-                        <td><?= $key['nama_mata_pelajaran']; ?></td>
-                      </tr>
-                    <?php }
-                  ?>
-                </tbody>
-              </table>
+        <form action="<?= base_url('tata_usaha/kelas/mata_pelajaran/tambah/' . $id_kelas); ?>" method="post">
+          <div class="card-body bg-transparent border-0">
+            <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
+            <div class="form-group">
+              <label class="form-control-label" for="input-username">Nama Mata Pelajaran</label>
+              <input type="text" id="input-username" class="form-control" placeholder="Nama Mata Pelajaran" name="nama_mata_pelajaran" required>
             </div>
-            <button type="submit" class="btn btn-success">Pilih</button>
-          </form>
-        </div>
+            <div class="form-group">
+              <label class="form-control-label" for="input-username">Nama Guru</label>
+              <input type="text" id="input-username" class="form-control" placeholder="Nama Guru" name="nama_guru" required>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahMataPelajaran">Tambah</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="tambahMataPelajaran" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Tambah</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Anda yakin akan menambahkan data?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Tambah</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>

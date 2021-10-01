@@ -50,12 +50,11 @@ class ModelKelas extends CI_Model {
 
   public function tambahMataPelajaran($id_kelas)
   {
-    foreach ($this->input->post('mata_pelajaran') as $key) {
-      $this->db->insert('kelas_mata_pelajaran', [
-        'id_kelas'          => $id_kelas,
-        'id_mata_pelajaran' => $key
-      ]);
-    }
+    $this->db->insert('mata_pelajaran', [
+      'nama_mata_pelajaran' => $this->input->post('nama_mata_pelajaran'),
+      'nama_guru'           => $this->input->post('nama_guru'),
+      'kelas_id'            => $id_kelas
+    ]);
   }
 
   public function hapusAnggota($id_siswa)

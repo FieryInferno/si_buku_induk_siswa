@@ -30,15 +30,18 @@ $route['tata_usaha/nilai']                              = 'TataUsaha/Nilai';
 $route['tata_usaha/nilai/tambah/(:any)']                = 'TataUsaha/nilai/tambah/$1';
 $route['tata_usaha/nilai/edit/(:any)']                  = 'TataUsaha/nilai/edit/$1';
 $route['tata_usaha/nilai/cetak']                        = 'TataUsaha/nilai/cetak';
-$route['tata_usaha/kelas']                              = 'TataUsaha/Kelas';
-$route['tata_usaha/kelas/tambah']                       = 'TataUsaha/Kelas/tambah';
-$route['tata_usaha/kelas/edit/(:any)']                  = 'TataUsaha/Kelas/edit/$1';
-$route['tata_usaha/kelas/hapus/(:any)']                 = 'TataUsaha/kelas/hapus/$1';
-$route['tata_usaha/kelas/lihat/(:any)']                 = 'TataUsaha/kelas/lihat/$1';
-$route['tata_usaha/kelas/anggota/tambah/(:any)']        = 'TataUsaha/kelas/tambahAnggota/$1';
-$route['tata_usaha/kelas/anggota/hapus/(:any)/(:any)']  = 'TataUsaha/kelas/hapusAnggota/$1/$2';
-$route['tata_usaha/kelas/mata_pelajaran/(:any)']        = 'TataUsaha/kelas/mataPelajaran/$1';
-$route['tata_usaha/kelas/mata_pelajaran/tambah/(:any)'] = 'TataUsaha/kelas/tambahMataPelajaran/$1';
+
+$route['tata_usaha/kelas']                                      = 'TataUsaha/Kelas';
+$route['tata_usaha/kelas/tambah']                               = 'TataUsaha/Kelas/tambah';
+$route['tata_usaha/kelas/edit/(:any)']                          = 'TataUsaha/Kelas/edit/$1';
+$route['tata_usaha/kelas/hapus/(:any)']                         = 'TataUsaha/kelas/hapus/$1';
+$route['tata_usaha/kelas/lihat/(:any)']                         = 'TataUsaha/kelas/lihat/$1';
+$route['tata_usaha/kelas/anggota/tambah/(:any)']                = 'TataUsaha/kelas/tambahAnggota/$1';
+$route['tata_usaha/kelas/anggota/hapus/(:any)/(:any)']          = 'TataUsaha/kelas/hapusAnggota/$1/$2';
+$route['tata_usaha/kelas/mata_pelajaran/(:any)']                = 'TataUsaha/kelas/mataPelajaran/$1';
+$route['tata_usaha/kelas/mata_pelajaran/tambah/(:any)']['get']  = 'TataUsaha/kelas/tambahMataPelajaran/$1';
+$route['tata_usaha/kelas/mata_pelajaran/tambah/(:any)']['post'] = 'TataUsaha/kelas/storeMataPelajaran/$1';
+
 $route['tata_usaha/mata_pelajaran']                     = 'TataUsaha/MataPelajaran';
 $route['tata_usaha/mata_pelajaran/tambah']              = 'TataUsaha/MataPelajaran/tambah';
 $route['tata_usaha/mata_pelajaran/edit/(:any)']         = 'TataUsaha/MataPelajaran/edit/$1';
