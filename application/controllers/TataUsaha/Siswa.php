@@ -74,11 +74,11 @@ class Siswa extends CI_Controller {
     redirect('tata_usaha/siswa');
   }
 
-  public function cetak($id_user)
+  public function cetak($id_siswa)
   {
     $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left');
-    $data = $this->db->get_where('siswa', ['id_user'  => $id_user])->row_array();
-		$this->load->view('tata_usaha/biodataSiswaPdf', $data);
+    $data = $this->db->get_where('siswa', ['id_siswa'  => $id_siswa])->row_array();
+		$this->load->view('tata_usaha/siswa/cetak', $data);
   }
 
   public function siswaKeluar()

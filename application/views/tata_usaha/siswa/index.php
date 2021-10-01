@@ -53,51 +53,11 @@
                       <td><?= $key['jenis_kelamin']; ?></td>
                       <td><?= $key['nama_kelas']; ?></td>
                       <td>
-                        <a href="<?= base_url('tata_usaha/siswa/' . $key['id_siswa']); ?>" class="btn btn-sm btn-primary">Detail Siswa</a>
-                        
-                        <!-- <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#registrasi<?= $key['id_user']; ?>">
-                          Registrasi
-                        </button>
-                        
-                        <div class="modal fade" id="registrasi<?= $key['id_user']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Registrasi</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <form action="<?= base_url('tata_usaha/siswa/registrasi/' . $key['id_user']); ?>" method="post">
-                                <div class="modal-body">
-                                  <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Status</label>
-                                    <div class="col-sm-8">
-                                      <select name="status" id="status" class="form-control">
-                                        <option value="aktif" <?= $key['status'] == 'aktif' ? 'selected' : '' ; ?>>Aktif</option>
-                                        <option value="pindah" <?= $key['status'] == 'pindah' ? 'selected' : '' ; ?>>Pindah</option>
-                                        <option value="alumni" <?= $key['status'] == 'alumni' ? 'selected' : '' ; ?>>Lulus</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button type="submit" class="btn btn-success">Simpan</button>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div> -->
-
-                        <!-- <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_user']); ?>" class="btn btn-sm btn-primary" target="_blank">Cetak</a> -->
-
-                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-sm btn-success">Edit</a>
-
+                        <a href="<?= base_url('tata_usaha/siswa/' . $key['id_siswa']); ?>" class="btn btn-primary" title="Detail Siswa"><i class="fas fa-info-circle"></i></a>
+                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-success" title="Edit"><i class="fas fa-edit"></i></a>
+                        <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_siswa']); ?>" class="btn btn-warning" title="Cetak"><i class="fas fa-print"></i></a>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>">
-                          Hapus
-                        </button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>" title="Hapus"><i class="fas fa-trash-alt"></i></button>
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal<?= $key['id_siswa']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -34,9 +34,6 @@
             <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
             <div class="pl-lg-4">
               <div class="row">
-                <div class="col-lg-2">
-                  <img src="<?= base_url('assets/images/' . $foto); ?>" alt="" width="100%" class="img-preview">
-                </div>
                 <div class="col-lg-10">
                   <h2>Data Pribadi</h2>
                   <div class="form-group">
@@ -117,6 +114,9 @@
                     <label class="form-control-label" for="input-email">Tanggal Lahir Ibu</label>
                     <input type="date" id="input-email" class="form-control" placeholder="NIK Ibu" name="tanggal_lahir_ibu" required value="<?= $tanggal_lahir_ibu; ?>">
                   </div>
+                </div>
+                <div class="col-lg-2">
+                  <img src="<?= base_url('assets/images/' . $foto); ?>" alt="" width="100%" class="img-preview">
                 </div>
               </div>
               <!-- Button trigger modal -->
