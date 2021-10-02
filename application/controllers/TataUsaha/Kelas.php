@@ -143,4 +143,33 @@ class Kelas extends CI_Controller {
     }
     redirect('tata_usaha/kelas/mata_pelajaran/' . $id_kelas);
   }
+
+  public function editMataPelajaran($id_mata_pelajaran)
+  {
+    $data             = $this->ModelMataPelajaran->getById($id_mata_pelajaran);
+    $data['konten']   = 'tata_usaha/kelas/mata_pelajaran/edit';
+		$this->load->view('tata_usaha/template', $data);
+  }
+
+  public function updateMataPelajaran($id_mata_pelajaran)
+  {
+    $this->form_validation->set_rules('nama_mata_pelajaran', 'Nama Mata Pelajaran', 'required');
+    $this->form_validation->set_rules('nama_guru', 'Nama Guru', 'required');
+
+    if ($this->form_validation->run() !== FALSE) {
+      $this->ModelMataPelajaran->edit($id_mata_pelajaran);
+      $this->session->set_flashdata('pesan', 
+        '<div class="alert alert-success" role="alert">
+          Berhasil edit data
+        </div>'
+      );  
+    } else {
+      $this->session->set_flashdata('pesan', 
+        '<div class="alert alert-success" role="alert">
+          Berhasil tambah data
+        </div>'
+      );
+    }
+    redirect('tata_usaha/kelas/mata_pelajaran/' . $id_kelas);
+  }
 }

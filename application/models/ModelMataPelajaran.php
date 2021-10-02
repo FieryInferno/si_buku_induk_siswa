@@ -15,7 +15,10 @@ class ModelMataPelajaran extends CI_Model {
 
   public function edit($id_mata_pelajaran)
   {
-    $this->db->update('mata_pelajaran', ['nama_mata_pelajaran' => $this->input->post('nama_mata_pelajaran')], ['id_mata_pelajaran'  => $id_mata_pelajaran]);
+    $this->db->update('mata_pelajaran', [
+      'nama_mata_pelajaran' => $this->input->post('nama_mata_pelajaran'),
+      'nama_guru'           => $this->input->post('nama_guru')
+    ], ['id_mata_pelajaran'  => $id_mata_pelajaran]);
   }
 
   public function getById($id_mata_pelajaran)

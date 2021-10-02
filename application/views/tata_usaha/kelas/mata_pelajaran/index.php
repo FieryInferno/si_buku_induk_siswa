@@ -42,7 +42,8 @@
                       <td><?= $key['nama_mata_pelajaran']; ?></td>
                       <td><?= $key['nama_guru']; ?></td>
                       <td>
-                        <a href="<?= base_url('tata_usaha/kelas/mata_pelajaran/hapus/' . $id_kelas . '/' . $key['id_mata_pelajaran']); ?>" class="btn btn-danger">Hapus</a>
+                        <a href="<?= base_url('tata_usaha/kelas/mata_pelajaran/edit/' . $key['id_mata_pelajaran']); ?>" class="btn btn-success" title="Edit"><i class="fas fa-edit"></i></a>
+                        <a href="<?= base_url('tata_usaha/kelas/mata_pelajaran/hapus/' . $key['id_mata_pelajaran']); ?>" class="btn btn-danger" title="Hapus"><i class="fas fa-trash-alt"></i></a>
                       </td>
                     </tr>
                   <?php }

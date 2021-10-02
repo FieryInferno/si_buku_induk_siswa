@@ -41,6 +41,8 @@ $route['tata_usaha/kelas/anggota/hapus/(:any)/(:any)']          = 'TataUsaha/kel
 $route['tata_usaha/kelas/mata_pelajaran/(:any)']                = 'TataUsaha/kelas/mataPelajaran/$1';
 $route['tata_usaha/kelas/mata_pelajaran/tambah/(:any)']['get']  = 'TataUsaha/kelas/tambahMataPelajaran/$1';
 $route['tata_usaha/kelas/mata_pelajaran/tambah/(:any)']['post'] = 'TataUsaha/kelas/storeMataPelajaran/$1';
+$route['tata_usaha/kelas/mata_pelajaran/edit/(:any)']['get']    = 'TataUsaha/kelas/editMataPelajaran/$1';
+$route['tata_usaha/kelas/mata_pelajaran/edit/(:any)']['post']   = 'TataUsaha/kelas/updateMataPelajaran/$1';
 
 $route['tata_usaha/mata_pelajaran']                     = 'TataUsaha/MataPelajaran';
 $route['tata_usaha/mata_pelajaran/tambah']              = 'TataUsaha/MataPelajaran/tambah';
