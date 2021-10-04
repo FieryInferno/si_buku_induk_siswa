@@ -24,7 +24,7 @@
         <div class="card-header bg-transparent border-0">
           <div class="row align-items-center">
             <div class="col-8">
-              <h3 class="mb-0">Edit Mata Pelajaran <?= password_hash('admin', PASSWORD_DEFAULT); ?></h3>
+              <h3 class="mb-0">Edit Mata Pelajaran</h3>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
             <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
             <div class="form-group">
               <label class="form-control-label" for="input-username">Nama Mata Pelajaran</label>
-              <input type="hidden">
+              <input type="hidden" value="<?= $kelas_id; ?>" name="id_kelas">
               <input type="text" id="input-username" class="form-control" placeholder="Nama Mata Pelajaran" name="nama_mata_pelajaran" required value="<?= $nama_mata_pelajaran; ?>">
             </div>
             <div class="form-group">

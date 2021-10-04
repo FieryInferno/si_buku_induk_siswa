@@ -170,6 +170,6 @@ class Kelas extends CI_Controller {
         </div>'
       );
     }
-    redirect('tata_usaha/kelas/mata_pelajaran/' . $id_kelas);
+    redirect('tata_usaha/kelas/mata_pelajaran/' . $this->input->post('id_kelas'));
   }
 }
