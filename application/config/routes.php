@@ -26,10 +26,12 @@ $route['tata_usaha/profile_sekolah/edit']['post'] = 'TataUsaha/ProfileSekolah/up
 $route['tata_usaha/profile']              = 'TataUsaha/Profile';
 $route['tata_usaha/profile/edit']['post'] = 'TataUsaha/Profile/update';
 
-$route['tata_usaha/nilai']                              = 'TataUsaha/Nilai';
-$route['tata_usaha/nilai/tambah/(:any)']                = 'TataUsaha/nilai/tambah/$1';
-$route['tata_usaha/nilai/edit/(:any)']                  = 'TataUsaha/nilai/edit/$1';
-$route['tata_usaha/nilai/cetak']                        = 'TataUsaha/nilai/cetak';
+$route['tata_usaha/nilai']                  = 'TataUsaha/Nilai';
+$route['tata_usaha/nilai/cari_siswa']       = 'TataUsaha/nilai/cariSiswa';
+$route['tata_usaha/nilai/tambah_semester']  = 'TataUsaha/nilai/tambahSemester';
+// $route['tata_usaha/nilai/tambah/(:any)']  = 'TataUsaha/nilai/tambah/$1';
+// $route['tata_usaha/nilai/edit/(:any)']    = 'TataUsaha/nilai/edit/$1';
+// $route['tata_usaha/nilai/cetak']          = 'TataUsaha/nilai/cetak';
 
 $route['tata_usaha/kelas']                                      = 'TataUsaha/Kelas';
 $route['tata_usaha/kelas/tambah']                               = 'TataUsaha/Kelas/tambah';

@@ -160,4 +160,9 @@ class ModelSiswa extends CI_Model {
   {
     return $this->db->get_where('siswa', ['id_siswa'  => $id_siswa])->row_array();
   }
+
+  public function getByNisn($nisn)
+  {
+    return $this->db->get_where('siswa', ['nisn' => $nisn])->row_array();
+  }
 }

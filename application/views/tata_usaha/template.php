@@ -53,15 +53,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= base_url(); ?>tata_usaha/nilai">
-                <i class="ni ni-pin-3 text-primary"></i>
-                <span class="nav-link-text">Nilai</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="<?= base_url(); ?>tata_usaha/kelas">
                 <i class="ni ni-single-02 text-yellow"></i>
                 <span class="nav-link-text">Kelas</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url(); ?>tata_usaha/nilai">
+                <i class="ni ni-pin-3 text-primary"></i>
+                <span class="nav-link-text">Nilai</span>
               </a>
             </li>
             <li class="nav-item">

@@ -9,10 +9,22 @@ class Nilai extends CI_Controller {
   
 	public function index()
 	{
-    $data['konten'] = 'tata_usaha/nilai'; 
-    $data['nilai']  = $this->ModelNilai->getAll();
+    $data['konten'] = 'tata_usaha/nilai/index';
 		$this->load->view('tata_usaha/template', $data);
 	}
+
+  public function cariSiswa()
+  {
+    $data           = $this->ModelSiswa->getByNisn($this->input->get('nisn'));
+    $data['konten'] = 'tata_usaha/nilai/tampil_siswa';
+		$this->load->view('tata_usaha/template', $data);
+  }
+
+  public function tambahSemester()
+  {
+    $data['konten'] = 'tata_usaha/nilai/tambah_semester';
+		$this->load->view('tata_usaha/template', $data);
+  }
   
 	public function tambah($id_siswa)
 	{
@@ -53,19 +65,6 @@ class Nilai extends CI_Controller {
   {
     $data['nilai']          = $this->ModelNilai->getAll();
     $data['mata_pelajaran'] = $this->ModelMataPelajaran->getAll();
-    // ob_start();
       $this->load->view('nilai_pdf', $data);
-    //   $html = ob_get_contents();
-    // ob_end_clean();
-    // ob_clean();
-    // $filename   = uniqid();
-    // $options  	= new Options();
-    // $options->set('isRemoteEnabled', TRUE);
-    // $dompdf = new Dompdf($options);
-    // $dompdf->loadHtml($html);
-    // $dompdf->setPaper('legal', 'landscape');
-    // $dompdf->render();
-    // $output = $dompdf->output();
-    // $dompdf->stream($filename, array("Attachment" => 0) );
   }
 }
