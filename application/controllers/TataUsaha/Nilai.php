@@ -25,6 +25,11 @@ class Nilai extends CI_Controller {
     $data['konten'] = 'tata_usaha/nilai/tambah_semester';
 		$this->load->view('tata_usaha/template', $data);
   }
+
+  public function storeSemester()
+  {
+    
+  }
   
 	public function tambah($id_siswa)
 	{

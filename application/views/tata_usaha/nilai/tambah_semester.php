@@ -22,7 +22,7 @@
         <div class="card-header bg-transparent border-0">
           <h3 class="text-dark mb-2">Data Nilai</h3>
         </div>
-        <form action="<?= base_url(); ?>" method="POST">
+        <form action="<?= base_url('tata_usaha/nilai/tambah_semester?nisn=' . $this->input->get('nisn')); ?>" method="POST">
           <div class="card-body bg-transparent border-0">
             <div class="form-group">
               <label class="form-control-label" for="input-username">Semester</label>
@@ -48,3 +48,4 @@
       </div>
     </div>
   </div>
+</div>
