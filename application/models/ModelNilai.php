@@ -15,6 +15,13 @@ class ModelNilai extends CI_Model {
 
     return $id_nilai;
   }
+  
+  public function update($id_nilai, $semester)
+  {
+    $this->db->update('nilai', [
+      'nama_semester' => $semester
+    ], ['id_nilai'  => $id_nilai]);
+  }
 
   public function storeDetail($id_nilai, $mata_pelajaran, $nilai)
   {
@@ -89,5 +96,10 @@ class ModelNilai extends CI_Model {
     $nilai['detail']                = $detail;
 
     return $nilai;
+  }
+
+  public function deleteDetail($id_nilai)
+  {
+    $this->db->delete('detail_nilai', ['nilai_id' => $id_nilai]);
   }
 }

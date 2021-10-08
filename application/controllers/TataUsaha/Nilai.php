@@ -51,6 +51,22 @@ class Nilai extends CI_Controller {
     $data['id_siswa'] = $siswa['id_siswa'];
 		$this->load->view('tata_usaha/template', $data);
   }
+
+  public function updateSemester()
+  {
+    $mata_pelajaran = $this->input->post('mata_pelajaran');
+    $nilai          = $this->input->post('nilai');
+
+    $this->ModelNilai->update($this->input->post('id_nilai'), $this->input->post('semester'));
+    $this->ModelNilai->deleteDetail($this->input->post('id_nilai'));
+    
+    for ($i=0; $i < count($mata_pelajaran); $i++) {
+      $this->ModelNilai->storeDetail($this->input->post('id_nilai'), $mata_pelajaran[$i], $nilai[$i]);
+    }
+    
+    $this->session->set_flashdata('sukses', 'Berhasil edit data semester');
+    redirect('tata_usaha/nilai/cari_siswa?nisn=' . $this->input->get('nisn'));
+  }
   
 	public function tambah($id_siswa)
 	{

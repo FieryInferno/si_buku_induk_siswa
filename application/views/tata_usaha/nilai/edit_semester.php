@@ -22,11 +22,12 @@
         <div class="card-header bg-transparent border-0">
           <h3 class="text-dark mb-2">Data Nilai</h3>
         </div>
-        <form action="<?= base_url('tata_usaha/nilai/tambah_semester?nisn=' . $this->input->get('nisn')); ?>" method="POST">
+        <form action="<?= base_url('tata_usaha/nilai/edit_semester?nisn=' . $this->input->get('nisn')); ?>" method="POST">
           <div class="card-body bg-transparent border-0">
             <div class="form-group">
               <label class="form-control-label" for="input-username">Semester</label>
               <input type="hidden" name="id_siswa" value="<?= $id_siswa; ?>">
+              <input type="hidden" name="id_nilai" value="<?= $id_nilai; ?>">
               <input type="text" id="input-username" class="form-control" placeholder="Masukan Semester" name="semester" required value="<?= $nama_semester; ?>">
             </div>
             <div class="form-group" id="mataPelajaran">
