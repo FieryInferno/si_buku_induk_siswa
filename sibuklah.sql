@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 07, 2021 at 02:37 PM
+-- Host: localhost
+-- Generation Time: Oct 08, 2021 at 08:08 AM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,8 +18,21 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `buku_induk_siswa`
+-- Database: `sibuklah`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detail_nilai`
+--
+
+CREATE TABLE `detail_nilai` (
+  `id_detail_nilai` int(11) NOT NULL,
+  `nilai_id` varchar(191) NOT NULL,
+  `mata_pelajaran` varchar(191) NOT NULL,
+  `nilai` int(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -67,10 +80,9 @@ INSERT INTO `mata_pelajaran` (`id_mata_pelajaran`, `kelas_id`, `nama_mata_pelaja
 --
 
 CREATE TABLE `nilai` (
-  `id_nilai` int(11) NOT NULL,
+  `id_nilai` varchar(191) NOT NULL,
   `siswa_id` int(11) NOT NULL,
-  `nama_mata_pelajaran` int(11) NOT NULL,
-  `nilai` int(191) NOT NULL
+  `nama_semester` varchar(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -169,12 +181,19 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `level`, `created_at`, `updated_at`) VALUES
-('1', 'cici_febriani', '$2y$10$mqGx7g.wvqnX39YHh.ZQLeQ/WxEDNHsDAgJ3lVb.bDhWcHTCnJPlO', 'tu', NULL, '2021-09-30 00:00:00'),
+('1', 'tatausaha', '$2y$10$O9OtkIMLYdYD/HGZ5cLACuHkksCvZQd94miUtvhnYbBKHbE2d1n9K', 'tu', NULL, '2021-10-08 00:00:00'),
 ('6143f5367a83f', 'MBagasSetia', '$2y$10$9v09Y1JUGCgtbijxtV3ylO9dQGz3L9DUF/rLqj1YOvw07yN3ihr8K', 'siswa', '2021-09-17 00:00:00', NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `detail_nilai`
+--
+ALTER TABLE `detail_nilai`
+  ADD PRIMARY KEY (`id_detail_nilai`),
+  ADD KEY `nilai_id` (`nilai_id`);
 
 --
 -- Indexes for table `kelas`
@@ -194,8 +213,7 @@ ALTER TABLE `mata_pelajaran`
 --
 ALTER TABLE `nilai`
   ADD PRIMARY KEY (`id_nilai`),
-  ADD KEY `id_siswa` (`siswa_id`),
-  ADD KEY `id_mata_pelajaran` (`nama_mata_pelajaran`);
+  ADD KEY `id_siswa` (`siswa_id`);
 
 --
 -- Indexes for table `profile_sekolah`
@@ -226,6 +244,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `detail_nilai`
+--
+ALTER TABLE `detail_nilai`
+  MODIFY `id_detail_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
@@ -236,12 +260,6 @@ ALTER TABLE `kelas`
 --
 ALTER TABLE `mata_pelajaran`
   MODIFY `id_mata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `nilai`
---
-ALTER TABLE `nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `profile_sekolah`
@@ -266,11 +284,16 @@ ALTER TABLE `siswa_keluar`
 --
 
 --
+-- Constraints for table `detail_nilai`
+--
+ALTER TABLE `detail_nilai`
+  ADD CONSTRAINT `detail_nilai_ibfk_1` FOREIGN KEY (`nilai_id`) REFERENCES `nilai` (`id_nilai`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `nilai`
 --
 ALTER TABLE `nilai`
-  ADD CONSTRAINT `nilai_ibfk_1` FOREIGN KEY (`siswa_id`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `nilai_ibfk_2` FOREIGN KEY (`nama_mata_pelajaran`) REFERENCES `mata_pelajaran` (`id_mata_pelajaran`);
+  ADD CONSTRAINT `nilai_ibfk_1` FOREIGN KEY (`siswa_id`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
