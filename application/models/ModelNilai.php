@@ -21,12 +21,25 @@ class ModelNilai extends CI_Model {
     return $data;
 	}
 
-  public function store($id_siswa, $mata_pelajaran, $nilai)
+  public function store($id_siswa, $semester)
   {
+    $id_nilai = uniqid();
+
     $this->db->insert('nilai', [
-      'siswa_id'            => $id_siswa,
-      'nama_mata_pelajaran' => $mata_pelajaran,
-      'nilai'               => $nilai
+      'id_nilai'      => $id_nilai,
+      'siswa_id'      => $id_siswa,
+      'nama_semester' => $semester
+    ]);
+
+    return $id_nilai;
+  }
+
+  public function storeDetail($id_nilai, $mata_pelajaran, $nilai)
+  {
+    $this->db->insert('detail_nilai', [
+      'nilai_id'        => $id_nilai,
+      'mata_pelajaran'  => $mata_pelajaran,
+      'nilai'           => $nilai
     ]);
   }
 
@@ -57,14 +70,21 @@ class ModelNilai extends CI_Model {
 
   public function getById($id_siswa)
   {
-    $siswa  = $this->db->get_where('siswa', ['id_siswa' => $id_siswa])->row_array();
-    $this->db->join('mata_pelajaran', 'kelas_mata_pelajaran.id_mata_pelajaran = mata_pelajaran.id_mata_pelajaran');
-    $this->db->join('nilai', 'nilai.id_mata_pelajaran = mata_pelajaran.id_mata_pelajaran', 'left outer');
-    $this->db->where('nilai.id_siswa', $id_siswa);
-    $this->db->select('mata_pelajaran.id_mata_pelajaran, mata_pelajaran.nama_mata_pelajaran, nilai.nilai');
-    return $this->db->get_where('kelas_mata_pelajaran', [
-      'nilai.id_siswa'                => $id_siswa,
-      'kelas_mata_pelajaran.id_kelas' => $siswa['kelas']
-    ])->result_array();
+    $this->db->select('id_nilai, nama_semester');
+    $nilai  = $this->db->get_where('nilai', ['siswa_id'  => $id_siswa])->result_array();
+
+    for ($i=0; $i < count($nilai); $i++) {
+      $key    = $nilai[$i];
+      $detail = $this->db->get_where('detail_nilai', ['nilai_id' => $key['id_nilai']])->result_array();
+      $jumlah = 0;
+      foreach ($detail as $value) {
+        $jumlah += $value['nilai'];
+      }
+
+      $nilai[$i]['jumlah_mata_pelajaran'] = count($detail);
+      $nilai[$i]['rata']                  = $jumlah / count($detail);
+    }
+
+    return $nilai;
   }
 }

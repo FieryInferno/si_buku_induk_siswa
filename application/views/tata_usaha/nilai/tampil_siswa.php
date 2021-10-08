@@ -103,6 +103,20 @@
                 </tr>
               </thead>
               <tbody class="list">
+                <?php
+                  $no = 1;
+                  foreach ($nilai as $key) { ?>
+                    <tr>
+                      <td><?= $no++; ?></td>
+                      <td><?= $key['nama_semester']; ?></td>
+                      <td><?= $key['jumlah_mata_pelajaran']; ?></td>
+                      <td><?= $key['rata']; ?></td>
+                      <td>
+                        <a href="<?= base_url('tata_usaha/nilai/edit_semester?nisn=' . $this->input->get('nisn')); ?>" class="btn btn-success">Edit</a>
+                      </td>
+                    </tr>
+                  <?php }
+                ?>
               </tbody>
             </table>
           </div>
