@@ -32,9 +32,7 @@ $route['tata_usaha/nilai/tambah_semester']['get']   = 'TataUsaha/Nilai/tambahSem
 $route['tata_usaha/nilai/tambah_semester']['post']  = 'TataUsaha/Nilai/storeSemester';
 $route['tata_usaha/nilai/edit_semester']['get']     = 'TataUsaha/Nilai/editSemester';
 $route['tata_usaha/nilai/edit_semester']['post']    = 'TataUsaha/Nilai/updateSemester';
-// $route['tata_usaha/nilai/tambah/(:any)']  = 'TataUsaha/nilai/tambah/$1';
-// $route['tata_usaha/nilai/edit/(:any)']    = 'TataUsaha/nilai/edit/$1';
-// $route['tata_usaha/nilai/cetak']          = 'TataUsaha/nilai/cetak';
+$route['tata_usaha/nilai/hapus_semester']    = 'TataUsaha/Nilai/destroySemester/$1';
 
 $route['tata_usaha/kelas']                                      = 'TataUsaha/Kelas';
 $route['tata_usaha/kelas/tambah']                               = 'TataUsaha/Kelas/tambah';

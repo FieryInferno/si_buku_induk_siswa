@@ -67,6 +67,17 @@ class Nilai extends CI_Controller {
     $this->session->set_flashdata('sukses', 'Berhasil edit data semester');
     redirect('tata_usaha/nilai/cari_siswa?nisn=' . $this->input->get('nisn'));
   }
+
+  public function destroySemester()
+  {
+    $siswa  = $this->ModelSiswa->getByNisn($this->input->get('nisn'));
+    $data   = $this->ModelNilai->getById($siswa['id_siswa']);
+
+    $this->db->delete('nilai', ['id_nilai'  => $data['id_nilai']]);
+
+    $this->session->set_flashdata('sukses', 'Berhasil hapus data semester');
+    redirect('tata_usaha/nilai/cari_siswa?nisn=' . $this->input->get('nisn'));
+  }
   
 	public function tambah($id_siswa)
 	{

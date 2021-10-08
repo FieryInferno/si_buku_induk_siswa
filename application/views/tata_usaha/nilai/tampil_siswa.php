@@ -113,6 +113,7 @@
                       <td><?= $key['rata']; ?></td>
                       <td>
                         <a href="<?= base_url('tata_usaha/nilai/edit_semester?nisn=' . $this->input->get('nisn')); ?>" class="btn btn-success">Edit</a>
+                        <a href="<?= base_url('tata_usaha/nilai/hapus_semester?nisn=' . $this->input->get('nisn')); ?>" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
                   <?php }
