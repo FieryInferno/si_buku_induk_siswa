@@ -22,13 +22,20 @@ class Nilai extends CI_Controller {
 
   public function tambahSemester()
   {
+    $data           = $this->ModelSiswa->getByNisn($this->input->get('nisn'));
     $data['konten'] = 'tata_usaha/nilai/tambah_semester';
 		$this->load->view('tata_usaha/template', $data);
   }
 
   public function storeSemester()
   {
-    
+    $mata_pelajaran = $this->input->post('mata_pelajaran');
+    $nilai          = $this->input->post('nilai');
+    for ($i=0; $i < count($mata_pelajaran); $i++) {
+      $this->ModelNilai->store($this->input->post('id_siswa'), $mata_pelajaran[$i], $nilai[$i]);
+    }
+    $this->session->set_flashdata('sukses', 'Berhasil tambah data semester');
+    redirect('tata_usaha/nilai/cari_siswa?nisn=' . $this->input->get('nisn'));
   }
   
 	public function tambah($id_siswa)

@@ -23,6 +23,13 @@
           <h3 class="text-dark mb-2">Data Nilai</h3>
         </div>
         <div class="card-body bg-transparent border-0">
+          <?php
+            if ($this->session->sukses) { ?>
+              <div class="alert alert-success" role="alert">
+                <?= $this->session->sukses; ?>
+              </div>
+            <?php }
+          ?>
           <div class="row">
             <div class="col-6">
               <div class="mb-3 row">

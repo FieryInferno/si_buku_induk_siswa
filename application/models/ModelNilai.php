@@ -21,15 +21,13 @@ class ModelNilai extends CI_Model {
     return $data;
 	}
 
-  public function tambah($id_siswa)
+  public function store($id_siswa, $mata_pelajaran, $nilai)
   {
-    foreach ($this->input->post() as $key => $value) {
-      $this->db->insert('nilai', [
-        'id_siswa'          => $id_siswa,
-        'id_mata_pelajaran' => $key,
-        'nilai'             => $value
-      ]);
-    }
+    $this->db->insert('nilai', [
+      'siswa_id'            => $id_siswa,
+      'nama_mata_pelajaran' => $mata_pelajaran,
+      'nilai'               => $nilai
+    ]);
   }
 
   public function edit($id_siswa)

@@ -26,6 +26,7 @@
           <div class="card-body bg-transparent border-0">
             <div class="form-group">
               <label class="form-control-label" for="input-username">Semester</label>
+              <input type="hidden" name="id_siswa" value="<?= $id_siswa; ?>">
               <input type="text" id="input-username" class="form-control" placeholder="Masukan Semester" name="semester" required>
             </div>
             <div class="form-group" id="mataPelajaran">
