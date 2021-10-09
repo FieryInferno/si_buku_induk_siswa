@@ -49,7 +49,7 @@ class ModelSiswa extends CI_Model {
       'tanggal_masuk'       => $this->input->post('tanggal_masuk'),
       'asal_sekolah'        => $this->input->post('asal_sekolah'),
       'no_ijazah'           => $this->input->post('no_ijazah'),
-      'no_akte'             => $this->input->post('no_akte'),
+      'no_akte'             => $this->input->post('no_akte')
     ]);
   }
 
@@ -88,7 +88,11 @@ class ModelSiswa extends CI_Model {
       'nik_ibu'             => $this->input->post('nik_ibu'),
       'tanggal_lahir_ibu'   => $this->input->post('tanggal_lahir_ibu'),
       'foto'                => $foto,
-      'updated_at'          => date('Y-m-d h:i:s')
+      'updated_at'          => date('Y-m-d h:i:s'),
+      'tanggal_masuk'       => $this->input->post('tanggal_masuk'),
+      'asal_sekolah'        => $this->input->post('asal_sekolah'),
+      'no_ijazah'           => $this->input->post('no_ijazah'),
+      'no_akte'             => $this->input->post('no_akte')
     ], ['id_siswa'  => $id_siswa]);
   }
 
