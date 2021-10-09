@@ -44,6 +44,26 @@
         <div class="col-span-6">: <?= $nik; ?></div>
       </div>
       <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-1 text-right">3</div>
+        <div class="col-span-5">Tanggal Masuk</div>
+        <div class="col-span-6">: <?= $tanggal_masuk; ?></div>
+      </div>
+      <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-1 text-right">3</div>
+        <div class="col-span-5">Asal Sekolah</div>
+        <div class="col-span-6">: <?= $asal_sekolah; ?></div>
+      </div>
+      <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-1 text-right">3</div>
+        <div class="col-span-5">No. Ijazah</div>
+        <div class="col-span-6">: <?= $no_ijazah; ?></div>
+      </div>
+      <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-1 text-right">3</div>
+        <div class="col-span-5">No Akte</div>
+        <div class="col-span-6">: <?= $no_akte; ?></div>
+      </div>
+      <div class="grid grid-cols-12 gap-4">
         <div class="col-span-1 text-right">4</div>
         <div class="col-span-5">Tempat Lahir</div>
         <div class="col-span-6">: <?= $tempat_lahir; ?></div>
