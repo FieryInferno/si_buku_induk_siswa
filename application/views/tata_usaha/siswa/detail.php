@@ -56,6 +56,22 @@
                     <p class="form-control"><?= $nik; ?></p>
                   </div>
                   <div class="form-group">
+                    <label class="form-control-label" for="input-email">Tanggal Masuk</label>
+                    <p class="form-control"><?= tgl_indo($tanggal_masuk); ?></p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Asal Sekolah</label>
+                    <p class="form-control"><?= $asal_sekolah; ?></p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">No. Ijazah</label>
+                    <p class="form-control"><?= $no_ijazah; ?></p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">No. Akte Kelahiran</label>
+                    <p class="form-control"><?= $no_akte; ?></p>
+                  </div>
+                  <div class="form-group">
                     <label class="form-control-label" for="input-email">Tempat Lahir</label>
                     <p class="form-control"><?= $tempat_lahir; ?></p>
                   </div>
