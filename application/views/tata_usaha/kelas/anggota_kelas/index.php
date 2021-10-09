@@ -39,7 +39,7 @@
                 <?php
                   foreach ($kelas as $key) { ?>
                     <tr>
-                      <td><?= $key['no_induk']; ?></td>
+                      <td><?= $key['nisn']; ?></td>
                       <td><?= $key['nama']; ?></td>
                       <td>
                         <a href="<?= base_url('tata_usaha/kelas/anggota/hapus/' . $id_kelas . '/' . $key['id_siswa']); ?>" class="btn btn-danger">Hapus</a>

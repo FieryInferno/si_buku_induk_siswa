@@ -45,7 +45,7 @@
                     foreach ($siswa as $key) { ?>
                       <tr>
                         <td><input type="checkbox" name="siswa[]" value="<?= $key['id_siswa']; ?>"></td>
-                        <td><?= $key['no_induk']; ?></td>
+                        <td><?= $key['nisn']; ?></td>
                         <td><?= $key['nama']; ?></td>
                       </tr>
                     <?php }
