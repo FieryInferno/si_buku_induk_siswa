@@ -42,7 +42,6 @@
                       <td><?= $key['nama_wali_kelas']; ?></td>
                       <td>
                         <a href="<?= base_url('tata_usaha/kelas/lihat/' . $key['id_kelas']); ?>" class="btn btn-primary">Lihat Anggota</a>
-                        <a href="<?= base_url('tata_usaha/kelas/mata_pelajaran/' . $key['id_kelas']); ?>" class="btn btn-info">Mata Pelajaran</a>
                         <a href="<?= base_url('tata_usaha/kelas/edit/' . $key['id_kelas']); ?>" class="btn btn-success">Edit</a>
 
                         <!-- Button trigger modal -->
