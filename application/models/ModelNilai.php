@@ -89,14 +89,17 @@ class ModelNilai extends CI_Model {
     $nilai  = $this->db->get_where('nilai', ['siswa_id'  => $id_siswa])->row_array();
 
     $detail = $this->db->get_where('detail_nilai', ['nilai_id' => $nilai['id_nilai']])->result_array();
-    $jumlah = 0;
+    $jumlah_pengetahuan   = 0;
+    $jumlah_keterampilan  = 0;
 
     foreach ($detail as $value) {
-      $jumlah += $value['nilai'];
+      $jumlah_pengetahuan   += $value['pengetahuan'];
+      $jumlah_keterampilan  += $value['keterampilan'];
     }
 
     $nilai['jumlah_mata_pelajaran'] = count($detail);
-    $nilai['rata']                  = $jumlah / count($detail);
+    $nilai['rata_pengetahuan']      = $jumlah_pengetahuan / count($detail);
+    $nilai['rata_keterampilan']     = $jumlah_keterampilan / count($detail);
     $nilai['detail']                = $detail;
 
     return $nilai;

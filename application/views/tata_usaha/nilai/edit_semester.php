@@ -34,11 +34,14 @@
               <?php
                 foreach ($detail as $key) { ?>
                   <div class="row">
-                    <div class="col-10">
+                    <div class="col-8">
                       <input type="text" id="input-username" class="form-control" placeholder="Masukan Mata Pelajaran" name="mata_pelajaran[]" required value="<?= $key['mata_pelajaran']; ?>">
                     </div>
                     <div class="col-2">
-                      <input type="text" id="input-username" class="form-control" placeholder="Masukan Nilai" name="nilai[]" requiredv value="<?= $key['nilai']; ?>"> 
+                      <input type="text" id="input-username" class="form-control" placeholder="Pengetahuan" name="pengetahuan[]" required value="<?= $key['pengetahuan']; ?>">
+                    </div>
+                    <div class="col-2">
+                      <input type="text" id="input-username" class="form-control" placeholder="Keterampilan" name="keterampilan[]" required value="<?= $key['keterampilan']; ?>">
                     </div>
                   </div>
                 <?php }

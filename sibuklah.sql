@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 09, 2021 at 04:56 AM
+-- Generation Time: Oct 09, 2021 at 05:08 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -34,6 +34,13 @@ CREATE TABLE `detail_nilai` (
   `pengetahuan` int(191) NOT NULL,
   `keterampilan` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `detail_nilai`
+--
+
+INSERT INTO `detail_nilai` (`id_detail_nilai`, `nilai_id`, `mata_pelajaran`, `pengetahuan`, `keterampilan`) VALUES
+(7, '616106413bbad', 'Fisika', 98, 78);
 
 -- --------------------------------------------------------
 
@@ -86,6 +93,13 @@ CREATE TABLE `nilai` (
   `siswa_id` int(11) NOT NULL,
   `nama_semester` varchar(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `nilai`
+--
+
+INSERT INTO `nilai` (`id_nilai`, `siswa_id`, `nama_semester`) VALUES
+('616106413bbad', 18, 'Ganjil');
 
 -- --------------------------------------------------------
 
@@ -255,7 +269,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `detail_nilai`
 --
 ALTER TABLE `detail_nilai`
-  MODIFY `id_detail_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_detail_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `kelas`
