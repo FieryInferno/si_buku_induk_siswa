@@ -186,11 +186,14 @@
 
     function tambahMataPelajaran() {
       $mapel  = `<div class="row">
-                  <div class="col-10">
+                  <div class="col-8">
                     <input type="text" id="input-username" class="form-control" placeholder="Masukan Mata Pelajaran" name="mata_pelajaran[]" required>
                   </div>
                   <div class="col-2">
-                    <input type="text" id="input-username" class="form-control" placeholder="Masukan Nilai" name="nilai[]" required>
+                    <input type="text" id="input-username" class="form-control" placeholder="Masukan Nilai Pengetahuan" name="pengetahuan[]" required>
+                  </div>
+                  <div class="col-2">
+                    <input type="text" id="input-username" class="form-control" placeholder="Masukan Nilai Keterampilan" name="keterampilan[]" required>
                   </div>
                 </div>`;
 
@@ -199,7 +202,7 @@
 
     function hapusMataPelajaran() {
       var parent = document.getElementById("mataPelajaran");
-	    parent.removeChild(parent.lastChild);
+      parent.removeChild(parent.lastChild);
     }
   </script>
 </body>

@@ -98,7 +98,8 @@
                   <th scope="col">No.</th>
                   <th scope="col">Semester</th>
                   <th scope="col">Jumlah Mata Pelajaran</th>
-                  <th scope="col">Nilai Rata - Rata</th>
+                  <th scope="col">Rata - Rata Pengetahuan</th>
+                  <th scope="col">Rata - Rata Keterampilan</th>
                   <th scope="col">Aksi</th>
                 </tr>
               </thead>
@@ -110,7 +111,8 @@
                       <td><?= $no++; ?></td>
                       <td><?= $key['nama_semester']; ?></td>
                       <td><?= $key['jumlah_mata_pelajaran']; ?></td>
-                      <td><?= $key['rata']; ?></td>
+                      <td><?= $key['rata_pengetahuan']; ?></td>
+                      <td><?= $key['rata_keterampilan']; ?></td>
                       <td>
                         <a href="<?= base_url('tata_usaha/nilai/edit_semester?nisn=' . $this->input->get('nisn')); ?>" class="btn btn-success">Edit</a>
                         <a href="<?= base_url('tata_usaha/nilai/hapus_semester?nisn=' . $this->input->get('nisn')); ?>" class="btn btn-danger">Hapus</a>

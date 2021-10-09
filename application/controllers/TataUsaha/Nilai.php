@@ -31,12 +31,13 @@ class Nilai extends CI_Controller {
   public function storeSemester()
   {
     $mata_pelajaran = $this->input->post('mata_pelajaran');
-    $nilai          = $this->input->post('nilai');
+    $pengetahuan    = $this->input->post('pengetahuan');
+    $keterampilan   = $this->input->post('keterampilan');
 
     $id_nilai = $this->ModelNilai->store($this->input->post('id_siswa'), $this->input->post('semester'));
     
     for ($i=0; $i < count($mata_pelajaran); $i++) {
-      $this->ModelNilai->storeDetail($id_nilai, $mata_pelajaran[$i], $nilai[$i]);
+      $this->ModelNilai->storeDetail($id_nilai, $mata_pelajaran[$i], $pengetahuan[$i], $keterampilan[$i]);
     }
     
     $this->session->set_flashdata('sukses', 'Berhasil tambah data semester');

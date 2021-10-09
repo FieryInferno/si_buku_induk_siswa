@@ -23,12 +23,13 @@ class ModelNilai extends CI_Model {
     ], ['id_nilai'  => $id_nilai]);
   }
 
-  public function storeDetail($id_nilai, $mata_pelajaran, $nilai)
+  public function storeDetail($id_nilai, $mata_pelajaran, $pengetahuan, $keterampilan)
   {
     $this->db->insert('detail_nilai', [
       'nilai_id'        => $id_nilai,
       'mata_pelajaran'  => $mata_pelajaran,
-      'nilai'           => $nilai
+      'pengetahuan'     => $pengetahuan,
+      'keterampilan'    => $keterampilan
     ]);
   }
 
@@ -63,16 +64,19 @@ class ModelNilai extends CI_Model {
     $nilai  = $this->db->get_where('nilai', ['siswa_id'  => $id_siswa])->result_array();
 
     for ($i=0; $i < count($nilai); $i++) {
-      $key    = $nilai[$i];
-      $detail = $this->db->get_where('detail_nilai', ['nilai_id' => $key['id_nilai']])->result_array();
-      $jumlah = 0;
+      $key                  = $nilai[$i];
+      $detail               = $this->db->get_where('detail_nilai', ['nilai_id' => $key['id_nilai']])->result_array();
+      $jumlah_pengetahuan   = 0;
+      $jumlah_keterampilan  = 0;
 
       foreach ($detail as $value) {
-        $jumlah += $value['nilai'];
+        $jumlah_pengetahuan   += $value['pengetahuan'];
+        $jumlah_keterampilan  += $value['keterampilan'];
       }
 
       $nilai[$i]['jumlah_mata_pelajaran'] = count($detail);
-      $nilai[$i]['rata']                  = $jumlah / count($detail);
+      $nilai[$i]['rata_pengetahuan']      = $jumlah_pengetahuan / count($detail);
+      $nilai[$i]['rata_keterampilan']     = $jumlah_keterampilan / count($detail);
       $nilai[$i]['detail']                = $detail;
     }
 

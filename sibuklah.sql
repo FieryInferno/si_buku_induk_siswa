@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 08, 2021 at 08:08 AM
+-- Generation Time: Oct 09, 2021 at 04:56 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -31,7 +31,8 @@ CREATE TABLE `detail_nilai` (
   `id_detail_nilai` int(11) NOT NULL,
   `nilai_id` varchar(191) NOT NULL,
   `mata_pelajaran` varchar(191) NOT NULL,
-  `nilai` int(191) NOT NULL
+  `pengetahuan` int(191) NOT NULL,
+  `keterampilan` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -51,7 +52,8 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `nama_wali_kelas`) VALUES
-(8, 'X IPA 2', 'Suhendar');
+(8, 'X IPA 2', 'Suhendar'),
+(9, 'SI 1', 'Rian Piarna');
 
 -- --------------------------------------------------------
 
@@ -139,15 +141,20 @@ CREATE TABLE `siswa` (
   `tanggal_lahir_ibu` date NOT NULL,
   `foto` varchar(191) NOT NULL,
   `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL
+  `updated_at` datetime DEFAULT NULL,
+  `tanggal_masuk` date NOT NULL,
+  `asal_sekolah` varchar(191) NOT NULL,
+  `no_ijazah` varchar(191) NOT NULL,
+  `no_akte` varchar(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `user_id`, `nama`, `kelas`, `status`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `nisn`, `nis`, `nik`, `anak_ke`, `nama_ayah`, `nik_ayah`, `tanggal_lahir_ayah`, `nama_ibu`, `nik_ibu`, `tanggal_lahir_ibu`, `foto`, `created_at`, `updated_at`) VALUES
-(18, '6143f5367a83f', 'M. Bagas Setia', NULL, 'aktif', 'Subang', 'Subang', '1998-02-11', 'laki-laki', '3213012611980001', '3213012611980001', '3213012611980001', '1', 'Dadang Supriatna', '3213012611980001', '1980-02-11', 'Dedeh', '3213012611980001', '1998-11-27', 'Arsenal1.png', NULL, '2021-09-17 00:00:00');
+INSERT INTO `siswa` (`id_siswa`, `user_id`, `nama`, `kelas`, `status`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `nisn`, `nis`, `nik`, `anak_ke`, `nama_ayah`, `nik_ayah`, `tanggal_lahir_ayah`, `nama_ibu`, `nik_ibu`, `tanggal_lahir_ibu`, `foto`, `created_at`, `updated_at`, `tanggal_masuk`, `asal_sekolah`, `no_ijazah`, `no_akte`) VALUES
+(18, '6143f5367a83f', 'M. Bagas Setia', '9', 'aktif', 'Subang', 'Subang', '1998-02-11', 'laki-laki', '3213012611980001', '3213012611980001', '3213012611980001', '1', 'Dadang Supriatna', '3213012611980001', '1980-02-11', 'Dedeh', '3213012611980001', '1998-11-27', 'Arsenal1.png', NULL, '2021-10-09 04:24:20', '2021-10-20', 'SMP 1 Sagalaherang', '123456789', '123456789'),
+(20, '6160fb86c0458', 'Randy', '9', 'aktif', 'Subang', 'Bandung', '2021-10-20', 'laki-laki', '123456789', '123456789', '123456789', '2', 'Dadang Supriatna', '123456789', '2021-10-05', 'Dedeh', '123456789', '2021-10-27', 'retropus.jpeg', '2021-10-09 04:16:38', NULL, '2021-10-12', 'SMP 1 Jalancagak', '123456789', '123456789');
 
 -- --------------------------------------------------------
 
@@ -182,7 +189,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `level`, `created_at`, `updated_at`) VALUES
 ('1', 'tatausaha', '$2y$10$O9OtkIMLYdYD/HGZ5cLACuHkksCvZQd94miUtvhnYbBKHbE2d1n9K', 'tu', NULL, '2021-10-08 00:00:00'),
-('6143f5367a83f', 'MBagasSetia', '$2y$10$9v09Y1JUGCgtbijxtV3ylO9dQGz3L9DUF/rLqj1YOvw07yN3ihr8K', 'siswa', '2021-09-17 00:00:00', NULL);
+('6143f5367a83f', 'MBagasSetia', '$2y$10$9v09Y1JUGCgtbijxtV3ylO9dQGz3L9DUF/rLqj1YOvw07yN3ihr8K', 'siswa', '2021-09-17 00:00:00', NULL),
+('6160fb86c0458', 'Randy', '$2y$10$MPVvJ0CMsdm6lQxwumbgvu4SyCJ0nTEaJQ3.K/fpD8EQwgd7o2cOa', 'siswa', '2021-10-09 04:16:38', NULL);
 
 --
 -- Indexes for dumped tables
@@ -253,7 +261,7 @@ ALTER TABLE `detail_nilai`
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`
@@ -271,7 +279,7 @@ ALTER TABLE `profile_sekolah`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `siswa_keluar`
