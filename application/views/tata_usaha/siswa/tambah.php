@@ -72,6 +72,22 @@
                     <input type="text" id="input-email" class="form-control" placeholder="NIK" name="nik" required>
                   </div>
                   <div class="form-group">
+                    <label class="form-control-label" for="input-email">Tanggal Masuk</label>
+                    <input type="date" class="form-control" name="tanggal_masuk" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Asal Sekolah</label>
+                    <input type="text" class="form-control" placeholder="Asal Sekolah" name="asal_sekolah" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">No. Ijazah</label>
+                    <input type="text" class="form-control" placeholder="No. Ijazah" name="no_ijazah" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">No. Akte Kelahiran</label>
+                    <input type="text" class="form-control" placeholder="no_akte" name="no_akte" required>
+                  </div>
+                  <div class="form-group">
                     <label class="form-control-label" for="input-email">Tempat Lahir</label>
                     <input type="text" id="input-email" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" required>
                   </div>

@@ -24,7 +24,7 @@ class ModelSiswa extends CI_Model {
       'username'    => $username,
       'password'    => password_hash($username, PASSWORD_DEFAULT),
       'level'       => 'siswa',
-      'created_at'  => date('Y-m-d')
+      'created_at'  => date('Y-m-d h:i:s')
     ]);
     
     $this->db->insert('siswa', [
@@ -45,7 +45,11 @@ class ModelSiswa extends CI_Model {
       'nik_ibu'             => $this->input->post('nik_ibu'),
       'tanggal_lahir_ibu'   => $this->input->post('tanggal_lahir_ibu'),
       'foto'                => $foto,
-      'created_at'          => date('Y-m-d')
+      'created_at'          => date('Y-m-d h:i:s'),
+      'tanggal_masuk'       => $this->input->post('tanggal_masuk'),
+      'asal_sekolah'        => $this->input->post('asal_sekolah'),
+      'no_ijazah'           => $this->input->post('no_ijazah'),
+      'no_akte'             => $this->input->post('no_akte'),
     ]);
   }
 
@@ -64,7 +68,7 @@ class ModelSiswa extends CI_Model {
     $this->db->update('user', [
       'username'    => $username,
       'password'    => password_hash($username, PASSWORD_DEFAULT),
-      'updated_at'  => date('Y-m-d')
+      'updated_at'  => date('Y-m-d h:i:s')
     ], ['id_user' => $siswa['id_user']]);
 
     $this->db->update('siswa', [
@@ -84,7 +88,7 @@ class ModelSiswa extends CI_Model {
       'nik_ibu'             => $this->input->post('nik_ibu'),
       'tanggal_lahir_ibu'   => $this->input->post('tanggal_lahir_ibu'),
       'foto'                => $foto,
-      'updated_at'          => date('Y-m-d')
+      'updated_at'          => date('Y-m-d h:i:s')
     ], ['id_siswa'  => $id_siswa]);
   }
 
@@ -139,7 +143,7 @@ class ModelSiswa extends CI_Model {
   private function uploadFoto()
   {
     $config['upload_path']          = './assets/images';
-    $config['allowed_types']        = 'gif|jpg|png';
+    $config['allowed_types']        = 'gif|jpg|png|jpeg';
 
     $this->upload->initialize($config);
 
