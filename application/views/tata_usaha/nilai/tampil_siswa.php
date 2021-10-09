@@ -111,8 +111,8 @@
                       <td><?= $no++; ?></td>
                       <td><?= $key['nama_semester']; ?></td>
                       <td><?= $key['jumlah_mata_pelajaran']; ?></td>
-                      <td><?= $key['rata_pengetahuan']; ?></td>
-                      <td><?= $key['rata_keterampilan']; ?></td>
+                      <td><?= round($key['rata_pengetahuan'], 1); ?></td>
+                      <td><?= round($key['rata_keterampilan'], 1); ?></td>
                       <td>
                         <a href="<?= base_url('tata_usaha/nilai/edit_semester?nisn=' . $this->input->get('nisn')); ?>" class="btn btn-success">Edit</a>
                         <a href="<?= base_url('tata_usaha/nilai/hapus_semester?nisn=' . $this->input->get('nisn')); ?>" class="btn btn-danger">Hapus</a>
