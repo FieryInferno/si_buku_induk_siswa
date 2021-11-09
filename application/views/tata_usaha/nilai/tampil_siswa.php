@@ -114,8 +114,17 @@
                       <td><?= round($key['rata_pengetahuan'], 1); ?></td>
                       <td><?= round($key['rata_keterampilan'], 1); ?></td>
                       <td>
-                        <a href="<?= base_url('tata_usaha/nilai/edit_semester?nisn=' . $this->input->get('nisn')); ?>" class="btn btn-success">Edit</a>
-                        <a href="<?= base_url('tata_usaha/nilai/hapus_semester?nisn=' . $this->input->get('nisn')); ?>" class="btn btn-danger">Hapus</a>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Aksi
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Detail</a>
+                            <a href="<?= base_url('tata_usaha/nilai/edit_semester?nisn=' . $this->input->get('nisn')); ?>" class="dropdown-item">Edit</a>
+                            <!-- Button trigger modal -->
+                            <a href="<?= base_url('tata_usaha/nilai/hapus_semester?nisn=' . $this->input->get('nisn')); ?>" class="dropdown-item">Hapus</a>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   <?php }
