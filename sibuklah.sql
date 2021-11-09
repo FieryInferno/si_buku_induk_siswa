@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 09, 2021 at 05:08 AM
+-- Generation Time: Nov 09, 2021 at 10:10 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -40,7 +40,9 @@ CREATE TABLE `detail_nilai` (
 --
 
 INSERT INTO `detail_nilai` (`id_detail_nilai`, `nilai_id`, `mata_pelajaran`, `pengetahuan`, `keterampilan`) VALUES
-(7, '616106413bbad', 'Fisika', 98, 78);
+(10, '61610c953046f', 'Fisika', 78, 87),
+(11, '61610c953046f', 'Matematika peminatan', 89, 70),
+(12, '61610c953046f', 'Biologin', 80, 80);
 
 -- --------------------------------------------------------
 
@@ -99,7 +101,7 @@ CREATE TABLE `nilai` (
 --
 
 INSERT INTO `nilai` (`id_nilai`, `siswa_id`, `nama_semester`) VALUES
-('616106413bbad', 18, 'Ganjil');
+('61610c953046f', 18, 'Ganjil');
 
 -- --------------------------------------------------------
 
@@ -125,7 +127,7 @@ CREATE TABLE `profile_sekolah` (
 --
 
 INSERT INTO `profile_sekolah` (`id_profile_sekolah`, `npsn`, `bentuk_pendidikan`, `status`, `kecamatan`, `kabupaten`, `provinsi`, `kepala_sekolah`, `operator`, `email`) VALUES
-(1, '19981127', 'Negeri', 'Negeri', 'Jalancagak', 'Subang', 'Jawa Barat', 'Nana Suryana', 'M. Bagas Setia', 'bagassetia271@gmail.com');
+(1, '19981127', 'SMA Negeri 1 Jalancagak', 'Negeri', 'Jalancagak', 'Subang', 'Jawa tengah', 'Nana Suryana', 'M. Bagas Setia', 'bagassetia271@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -138,7 +140,7 @@ CREATE TABLE `siswa` (
   `user_id` varchar(191) NOT NULL,
   `nama` varchar(191) NOT NULL,
   `kelas` varchar(191) DEFAULT NULL,
-  `status` enum('aktif','alumni','pindah') NOT NULL,
+  `status` enum('aktif','lulus','pindah','mengundurkan_diri') NOT NULL,
   `alamat` text NOT NULL,
   `tempat_lahir` varchar(191) NOT NULL,
   `tanggal_lahir` date DEFAULT NULL,
@@ -202,7 +204,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `level`, `created_at`, `updated_at`) VALUES
-('1', 'tatausaha', '$2y$10$O9OtkIMLYdYD/HGZ5cLACuHkksCvZQd94miUtvhnYbBKHbE2d1n9K', 'tu', NULL, '2021-10-08 00:00:00'),
+('1', 'tatausaha', '$2y$10$QWlUfX9ogHoJQuzgSBneG.m2yMZQb5NewbXvqqqOYXcoKWnao4GU2', 'tu', NULL, '2021-11-09 00:00:00'),
 ('6143f5367a83f', 'MBagasSetia', '$2y$10$9v09Y1JUGCgtbijxtV3ylO9dQGz3L9DUF/rLqj1YOvw07yN3ihr8K', 'siswa', '2021-09-17 00:00:00', NULL),
 ('6160fb86c0458', 'Randy', '$2y$10$MPVvJ0CMsdm6lQxwumbgvu4SyCJ0nTEaJQ3.K/fpD8EQwgd7o2cOa', 'siswa', '2021-10-09 04:16:38', NULL);
 
@@ -269,7 +271,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `detail_nilai`
 --
 ALTER TABLE `detail_nilai`
-  MODIFY `id_detail_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_detail_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `kelas`

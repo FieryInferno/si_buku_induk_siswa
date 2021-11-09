@@ -57,6 +57,7 @@
                             <a href="<?= base_url('tata_usaha/siswa/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-primary" title="Detail Siswa"><i class="fas fa-info-circle"></i> Detail</a>
                             <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-success" title="Edit"><i class="fas fa-edit"></i> Edit</a>
                             <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-warning" title="Cetak"><i class="fas fa-print"></i> Cetak</a>
+                            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#registrasi<?= $key['id_siswa']; ?>" title="Registrasi"><i class="fas fa-retweet"></i> Register</button>
                             <div class="dropdown-divider"></div>
                             <!-- Button trigger modal -->
                             <button type="button" class="dropdown-item btn btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>" title="Hapus"><i class="fas fa-trash-alt"></i> Hapus</button>
@@ -81,6 +82,44 @@
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                   <button type="submit" class="btn btn-danger">Hapus</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="modal fade" id="registrasi<?= $key['id_siswa']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Register Siswa</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <form action="<?= base_url('tata_usaha/siswa/register/' . $key['id_siswa']); ?>" method="post">
+                                <div class="modal-body">
+                                  <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-3 col-form-label">Tanggal</label>
+                                    <div class="col-sm-9">
+                                      <input type="date" class="form-control" name="tanggal">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label">Alasan Keluar</label>
+                                    <div class="col-sm-9">
+                                      <select name="alasan" id="alasan" class="form-control">
+                                        <option value="" disabled>Pilih Alasan</option>
+                                        <option value="lulus">Lulus</option>
+                                        <option value="pindah">Pindah</option>
+                                        <option value="mengundurkan_diri">Mengundurkan Diri</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary">Register</button>
                                 </div>
                               </form>
                             </div>
