@@ -50,16 +50,6 @@
                     <input type="text" id="input-email" class="form-control" placeholder="Nama Siswa" name="nama" required>
                   </div>
                   <div class="form-group">
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="jenis_kelamin1" name="jenis_kelamin" class="custom-control-input" value="laki-laki">
-                      <label class="custom-control-label" for="jenis_kelamin1">Laki - Laki</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="jenis_kelamin2" name="jenis_kelamin" class="custom-control-input" value="perempuan">
-                      <label class="custom-control-label" for="jenis_kelamin2">Perempuan</label>
-                    </div>
-                  </div>
-                  <div class="form-group">
                     <label class="form-control-label" for="input-email">NISN</label>
                     <input type="text" id="input-email" class="form-control" placeholder="NISN" name="nisn" required>
                   </div>
@@ -72,8 +62,34 @@
                     <input type="text" id="input-email" class="form-control" placeholder="NIK" name="nik" required>
                   </div>
                   <div class="form-group">
+                    <label class="form-control-label" for="input-email">Tempat Lahir</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Tanggal Lahir</label>
+                    <input type="date" id="input-email" class="form-control" placeholder="NIK" name="tanggal_lahir" required>
+                  </div>
+                  <div class="form-group">
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jenis_kelamin1" name="jenis_kelamin" class="custom-control-input" value="laki-laki">
+                      <label class="custom-control-label" for="jenis_kelamin1">Laki - Laki</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jenis_kelamin2" name="jenis_kelamin" class="custom-control-input" value="perempuan">
+                      <label class="custom-control-label" for="jenis_kelamin2">Perempuan</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Anak Ke-</label>
+                    <input type="text" id="input-email" class="form-control" placeholder="Anak Ke-" name="anak_ke" required>
+                  </div>
+                  <div class="form-group">
                     <label class="form-control-label" for="input-email">Tanggal Masuk</label>
                     <input type="date" class="form-control" name="tanggal_masuk" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Jurusan</label>
+                    <input type="text" class="form-control" name="jurusan" required placeholder="Masukan Jurusan">
                   </div>
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Asal Sekolah</label>
@@ -88,20 +104,8 @@
                     <input type="text" class="form-control" placeholder="no_akte" name="no_akte" required>
                   </div>
                   <div class="form-group">
-                    <label class="form-control-label" for="input-email">Tempat Lahir</label>
-                    <input type="text" id="input-email" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" required>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-email">Tanggal Lahir</label>
-                    <input type="date" id="input-email" class="form-control" placeholder="NIK" name="tanggal_lahir" required>
-                  </div>
-                  <div class="form-group">
                     <label class="form-control-label" for="input-email">Alamat</label>
-                    <input type="text" id="input-email" class="form-control" placeholder="Alamat" name="alamat" required>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-email">Anak Ke-</label>
-                    <input type="text" id="input-email" class="form-control" placeholder="Anak Ke-" name="anak_ke" required>
+                    <textarea name="alamat" id="alamat" class="form-control" cols="30" rows="10" placeholder="Masukan Alamat"></textarea>
                   </div>
 
                   <h2>Data Ayah Kandung</h2>
