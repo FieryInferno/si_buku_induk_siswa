@@ -103,23 +103,12 @@ class ModelSiswa extends CI_Model {
     $this->db->delete('user', ['id_user' => $siswa['user_id']]);
   }
 
-  public function registrasi($id_user)
+  public function registrasi($id_siswa)
   {
-    $this->db->update('siswa', ['status'  => $this->input->post('status')], ['id_user'  => $id_user]);
-
-    if ($this->input->post('status') == 'pindah' || $this->input->post('status') == 'alumni') {
-      $siswa_keluar = $this->db->get_where('siswa_keluar', ['id_user' => $id_user])->row_array();
-      if ($siswa_keluar) {
-        $this->db->update('siswa_keluar', ['tanggal_siswa_keluar'  => date('Y-m-d')], ['id_user' => $id_user]);
-      } else {
-        $this->db->insert('siswa_keluar', [
-          'id_user'               => $id_user,
-          'tanggal_siswa_keluar'  => date('Y-m-d')
-        ]);
-      }
-    } else {
-      $this->db->delete('siswa_keluar', ['id_user'  => $id_user]);
-    }
+    $this->db->update('siswa', [
+      'status'  => $this->input->post('alasan'),
+      'tanggal_siswa_keluar'  => $this->input->post('tanggal_siswa_keluar')
+    ], ['id_siswa'  => $id_siswa]);
   }
 
   public function getBiodata()
@@ -131,10 +120,9 @@ class ModelSiswa extends CI_Model {
 
   public function getSiswaKeluar()
   {
-    $this->db->join('siswa', 'siswa.user_id = siswa_keluar.user_id');
     $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left outer');
-    if ($this->input->get('tahun')) $this->db->where('year(tanggal_siswa_keluar)', $this->input->get('tahun'));
-    return $this->db->get('siswa_keluar')->result_array();
+    $this->db->where('status !=', 'aktif');
+    return $this->db->get('siswa')->result_array();
   }
 
   public function mataPelajaran($id_siswa)

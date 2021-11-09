@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Siswa extends CI_Controller {
   
-	public function index($status = null)
+	public function index($status = 'aktif')
 	{
     $data['konten'] = 'tata_usaha/siswa/index'; 
     $data['siswa']  = $this->ModelSiswa->getAll($status);
@@ -63,9 +63,9 @@ class Siswa extends CI_Controller {
     redirect('tata_usaha/siswa');
   }
 
-  public function registrasi($id_user)
+  public function registrasi($id_siswa)
   {
-    $this->ModelSiswa->registrasi($id_user);
+    $this->ModelSiswa->registrasi($id_siswa);
     $this->session->set_flashdata('pesan', 
       '<div class="alert alert-success" role="alert">
         Berhasil registrasi data

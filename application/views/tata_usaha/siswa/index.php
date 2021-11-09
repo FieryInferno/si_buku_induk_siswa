@@ -102,7 +102,7 @@
                                   <div class="form-group row">
                                     <label for="staticEmail" class="col-sm-3 col-form-label">Tanggal</label>
                                     <div class="col-sm-9">
-                                      <input type="date" class="form-control" name="tanggal">
+                                      <input type="date" class="form-control" name="tanggal_siswa_keluar">
                                     </div>
                                   </div>
                                   <div class="form-group row">

@@ -23,7 +23,7 @@
           <h3 class="text-dark mb-0">Data Siswa Keluar</h3>
         </div>
         <div class="card-body bg-transparent border-0">
-          <form action="" method="get">
+          <!-- <form action="" method="get">
             <div class="row">
               <div class="col-lg-6">
                 <div class="form-group">
@@ -46,7 +46,7 @@
               </div>
             </div>
             <button class="btn btn-primary mb-3" type="submit">Filter</button>
-          </form>
+          </form> -->
           <div class="table-responsive">
             <table class="table align-items-center table-flush" id="myTable">
               <thead class="thead-dark">
@@ -57,6 +57,7 @@
                   <th scope="col">Tempat/Tanggal Lahir</th>
                   <th scope="col">Kelas</th>
                   <th scope="col">Status</th>
+                  <th scope="col">Tanggal Keluar</th>
                   <th scope="col">Aksi</th>
                 </tr>
               </thead>
@@ -64,14 +65,15 @@
                 <?php
                   foreach ($siswa as $key) { ?>
                     <tr>
-                      <td><?= $key['no_induk']; ?></td>
+                      <td><?= $key['nisn']; ?></td>
                       <td><?= $key['nama']; ?></td>
                       <td><?= $key['alamat']; ?></td>
                       <td><?= $key['tempat_lahir'] . '/' . tgl_indo($key['tanggal_lahir']); ?></td>
                       <td><?= $key['nama_kelas']; ?></td>
                       <td><?= $key['status']; ?></td>
+                      <td><?= tgl_indo($key['tanggal_siswa_keluar']); ?></td>
                       <td>
-                        <a href="<?= base_url('tata_usaha/siswa_keluar/detail/' . $key['id_user']); ?>" class="btn btn-primary">Lihat Detail</a>  
+                        <a href="<?= base_url('tata_usaha/siswa_keluar/detail/' . $key['id_siswa']); ?>" class="btn btn-primary">Lihat Detail</a>  
                       </td>
                     </tr>
                   <?php }
