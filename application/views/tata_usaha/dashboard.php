@@ -77,8 +77,65 @@
     <div class="col-xl-12">
       <div class="card">
         <div class="card-header bg-transparent">
+          <h1>Profile Sekolah</h1>
         </div>
         <div class="card-body">
+          <form>
+            <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">NPSN</label>
+              <div class="col-sm-10">
+                <p class="form-control"><?= $npsn; ?></p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Nama Sekolah</label>
+              <div class="col-sm-10">
+                <p class="form-control"><?= $bentuk_pendidikan; ?></p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Status</label>
+              <div class="col-sm-10">
+                <p class="form-control"><?= $status; ?></p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Kecamatan</label>
+              <div class="col-sm-10">
+                <p class="form-control"><?= $kecamatan; ?></p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Kabupaten</label>
+              <div class="col-sm-10">
+                <p class="form-control"><?= $kabupaten; ?></p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Provinsi</label>
+              <div class="col-sm-10">
+                <p class="form-control"><?= $provinsi; ?></p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Kepala Sekolah</label>
+              <div class="col-sm-10">
+                <p class="form-control"><?= $kepala_sekolah; ?></p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Operator</label>
+              <div class="col-sm-10">
+                <p class="form-control"><?= $operator; ?></p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <p class="form-control"><?= $email; ?></p>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
