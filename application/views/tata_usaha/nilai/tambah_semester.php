@@ -31,8 +31,11 @@
             </div>
             <div class="form-group" id="mataPelajaran">
               <div class="row">
-                <div class="col-8">
+                <div class="col-4">
                   <input type="text" id="input-username" class="form-control" placeholder="Masukan Mata Pelajaran" name="mata_pelajaran[]" required>
+                </div>
+                <div class="col-4">
+                  <input type="text" id="input-username" class="form-control" placeholder="Masukan Nama Guru" name="nama_guru[]" required>
                 </div>
                 <div class="col-2">
                   <input type="text" id="input-username" class="form-control" placeholder="Pengetahuan" name="pengetahuan[]" required>
