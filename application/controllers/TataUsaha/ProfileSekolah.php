@@ -20,7 +20,7 @@ class ProfileSekolah extends CI_Controller {
   public function update()
   {
     $this->ModelProfileSekolah->update();
-    $this->session->set_flashdata('pesan', 'Berhasil tambah data');
-    redirect('tata_usaha/profile_sekolah');
+    $this->session->set_flashdata('pesan', 'Berhasil edit profile sekolah');
+    redirect('tata_usaha/profile');
   }
 }

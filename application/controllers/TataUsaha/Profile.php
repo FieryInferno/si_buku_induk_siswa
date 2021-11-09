@@ -5,8 +5,9 @@ class Profile extends CI_Controller {
   
   public function index()
   {
-    $data           = $this->ModelProfile->get();
-    $data['konten'] = 'tata_usaha/profile/index';
+    $data             = $this->ModelProfileSekolah->get();
+    $data['profile']  = $this->ModelProfile->get();
+    $data['konten']   = 'tata_usaha/profile/index';
 		$this->load->view('tata_usaha/template', $data);
   }
 
