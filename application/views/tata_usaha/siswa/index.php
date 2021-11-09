@@ -22,10 +22,6 @@
         <div class="card-header bg-transparent border-0">
           <h3 class="text-dark mb-0">Data Siswa</h3>
           <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/tambah">Tambah</a>
-          <!-- <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa">Semua Data</a>
-          <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/aktif">Aktif</a>
-          <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/alumni">Alumni</a>
-          <a class="btn btn-primary text-white" href="<?= base_url(); ?>tata_usaha/siswa/pindah">Pindah</a> -->
           <?= $this->session->pesan ? $this->session->pesan : '' ; ?>
         </div>
         <div class="card-body bg-transparent border-0">
@@ -53,11 +49,19 @@
                       <td><?= $key['jenis_kelamin']; ?></td>
                       <td><?= $key['nama_kelas']; ?></td>
                       <td>
-                        <a href="<?= base_url('tata_usaha/siswa/' . $key['id_siswa']); ?>" class="btn btn-primary" title="Detail Siswa"><i class="fas fa-info-circle"></i></a>
-                        <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="btn btn-success" title="Edit"><i class="fas fa-edit"></i></a>
-                        <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_siswa']); ?>" class="btn btn-warning" title="Cetak"><i class="fas fa-print"></i></a>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>" title="Hapus"><i class="fas fa-trash-alt"></i></button>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Aksi
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="<?= base_url('tata_usaha/siswa/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-primary" title="Detail Siswa"><i class="fas fa-info-circle"></i> Detail</a>
+                            <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-success" title="Edit"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-warning" title="Cetak"><i class="fas fa-print"></i> Cetak</a>
+                            <div class="dropdown-divider"></div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="dropdown-item btn btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>" title="Hapus"><i class="fas fa-trash-alt"></i> Hapus</button>
+                          </div>
+                        </div>
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal<?= $key['id_siswa']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
