@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 09, 2021 at 10:16 AM
+-- Generation Time: Nov 09, 2021 at 11:30 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -31,6 +31,7 @@ CREATE TABLE `detail_nilai` (
   `id_detail_nilai` int(11) NOT NULL,
   `nilai_id` varchar(191) NOT NULL,
   `mata_pelajaran` varchar(191) NOT NULL,
+  `nama_guru` varchar(191) NOT NULL,
   `pengetahuan` int(191) NOT NULL,
   `keterampilan` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -39,10 +40,10 @@ CREATE TABLE `detail_nilai` (
 -- Dumping data for table `detail_nilai`
 --
 
-INSERT INTO `detail_nilai` (`id_detail_nilai`, `nilai_id`, `mata_pelajaran`, `pengetahuan`, `keterampilan`) VALUES
-(10, '61610c953046f', 'Fisika', 78, 87),
-(11, '61610c953046f', 'Matematika peminatan', 89, 70),
-(12, '61610c953046f', 'Biologin', 80, 80);
+INSERT INTO `detail_nilai` (`id_detail_nilai`, `nilai_id`, `mata_pelajaran`, `nama_guru`, `pengetahuan`, `keterampilan`) VALUES
+(10, '61610c953046f', 'Fisika', '', 78, 87),
+(11, '61610c953046f', 'Matematika peminatan', '', 89, 70),
+(12, '61610c953046f', 'Biologin', '', 80, 80);
 
 -- --------------------------------------------------------
 
@@ -171,7 +172,7 @@ CREATE TABLE `siswa` (
 
 INSERT INTO `siswa` (`id_siswa`, `user_id`, `nama`, `kelas`, `status`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `nisn`, `nis`, `nik`, `anak_ke`, `nama_ayah`, `nik_ayah`, `tanggal_lahir_ayah`, `nama_ibu`, `nik_ibu`, `tanggal_lahir_ibu`, `foto`, `created_at`, `updated_at`, `tanggal_masuk`, `asal_sekolah`, `no_ijazah`, `no_akte`, `tanggal_siswa_keluar`) VALUES
 (18, '6143f5367a83f', 'M. Bagas Setia', '9', 'aktif', 'Subang', 'Subang', '1998-02-11', 'laki-laki', '3213012611980001', '3213012611980001', '3213012611980001', '1', 'Dadang Supriatna', '3213012611980001', '1980-02-11', 'Dedeh', '3213012611980001', '1998-11-27', 'Arsenal1.png', NULL, '2021-10-09 04:24:20', '2021-10-20', 'SMP 1 Sagalaherang', '123456789', '123456789', '0000-00-00'),
-(20, '6160fb86c0458', 'Randy', '9', 'aktif', 'Subang', 'Bandung', '2021-10-20', 'laki-laki', '123456789', '123456789', '123456789', '2', 'Dadang Supriatna', '123456789', '2021-10-05', 'Dedeh', '123456789', '2021-10-27', 'retropus.jpeg', '2021-10-09 04:16:38', NULL, '2021-10-12', 'SMP 1 Jalancagak', '123456789', '123456789', '0000-00-00');
+(20, '6160fb86c0458', 'Randy', '9', 'lulus', 'Subang', 'Bandung', '2021-10-20', 'laki-laki', '123456789', '123456789', '123456789', '2', 'Dadang Supriatna', '123456789', '2021-10-05', 'Dedeh', '123456789', '2021-10-27', 'retropus.jpeg', '2021-10-09 04:16:38', NULL, '2021-10-12', 'SMP 1 Jalancagak', '123456789', '123456789', '2021-11-09');
 
 -- --------------------------------------------------------
 

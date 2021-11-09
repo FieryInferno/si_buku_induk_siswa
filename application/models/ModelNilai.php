@@ -23,11 +23,12 @@ class ModelNilai extends CI_Model {
     ], ['id_nilai'  => $id_nilai]);
   }
 
-  public function storeDetail($id_nilai, $mata_pelajaran, $pengetahuan, $keterampilan)
+  public function storeDetail($id_nilai, $mata_pelajaran, $nama_guru, $pengetahuan, $keterampilan)
   {
     $this->db->insert('detail_nilai', [
       'nilai_id'        => $id_nilai,
       'mata_pelajaran'  => $mata_pelajaran,
+      'nama_guru'       => $nama_guru,
       'pengetahuan'     => $pengetahuan,
       'keterampilan'    => $keterampilan
     ]);
