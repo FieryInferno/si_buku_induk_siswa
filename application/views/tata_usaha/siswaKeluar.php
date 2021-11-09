@@ -72,8 +72,42 @@
                       <td><?= $key['nama_kelas']; ?></td>
                       <td><?= $key['status']; ?></td>
                       <td><?= tgl_indo($key['tanggal_siswa_keluar']); ?></td>
+                      
                       <td>
-                        <a href="<?= base_url('tata_usaha/siswa_keluar/detail/' . $key['id_siswa']); ?>" class="btn btn-primary">Lihat Detail</a>  
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Aksi
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="<?= base_url('tata_usaha/siswa/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-primary" title="Detail Siswa"><i class="fas fa-info-circle"></i> Detail</a>
+                            <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-warning" title="Cetak"><i class="fas fa-print"></i> Cetak</a>
+                            <button type="button" class="dropdown-item btn btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_siswa']; ?>" title="Hapus"><i class="fas fa-trash-alt"></i> Hapus</button>
+                          </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal<?= $key['id_siswa']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Hapus data siswa</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <form action="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_siswa']); ?>" method="post">
+                                <input type="hidden" name="_method" name="delete">
+                                <div class="modal-body">
+                                  Anda yakin akan menghapus data siswa <?= $key['nama']; ?>?
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-danger">Hapus</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   <?php }
