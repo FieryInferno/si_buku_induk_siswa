@@ -41,11 +41,18 @@
                       <td><?= $key['nama_kelas']; ?></td>
                       <td><?= $key['nama_wali_kelas']; ?></td>
                       <td>
-                        <a href="<?= base_url('tata_usaha/kelas/lihat/' . $key['id_kelas']); ?>" class="btn btn-primary">Lihat Anggota</a>
-                        <a href="<?= base_url('tata_usaha/kelas/edit/' . $key['id_kelas']); ?>" class="btn btn-success">Edit</a>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal<?= $key['id_kelas']; ?>">Hapus</button>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Aksi
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="<?= base_url('tata_usaha/kelas/lihat/' . $key['id_kelas']); ?>" class="dropdown-item">Lihat Anggota</a>
+                            <a href="<?= base_url('tata_usaha/kelas/edit/' . $key['id_kelas']); ?>" class="dropdown-item">Edit</a>
+                            <div class="dropdown-divider"></div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal<?= $key['id_kelas']; ?>">Hapus</button>
+                          </div>
+                        </div>
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal<?= $key['id_kelas']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
