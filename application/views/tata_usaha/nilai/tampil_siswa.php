@@ -98,8 +98,6 @@
                   <th scope="col">No.</th>
                   <th scope="col">Semester</th>
                   <th scope="col">Jumlah Mata Pelajaran</th>
-                  <th scope="col">Rata - Rata Pengetahuan</th>
-                  <th scope="col">Rata - Rata Keterampilan</th>
                   <th scope="col">Aksi</th>
                 </tr>
               </thead>
@@ -111,8 +109,6 @@
                       <td><?= $no++; ?></td>
                       <td><?= $key['nama_semester']; ?></td>
                       <td><?= $key['jumlah_mata_pelajaran']; ?></td>
-                      <td><?= round($key['rata_pengetahuan'], 1); ?></td>
-                      <td><?= round($key['rata_keterampilan'], 1); ?></td>
                       <td>
                         <div class="btn-group">
                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
