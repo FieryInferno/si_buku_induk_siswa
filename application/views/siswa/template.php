@@ -46,6 +46,12 @@
                 <span class="nav-link-text">Siswa</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url(); ?>siswa/nilai">
+                <i class="ni ni-key-25 text-info"></i>
+                <span class="nav-link-text">Nilai</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

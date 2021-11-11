@@ -55,3 +55,4 @@ $route['tata_usaha/username_password/update/(:any)/(:any)'] = 'TataUsaha/Siswa/u
 
 $route['siswa']         = 'Siswa/Siswa';
 $route['siswa/biodata'] = 'Siswa/Biodata';
+$route['siswa/nilai']   = 'Siswa/Nilai';
