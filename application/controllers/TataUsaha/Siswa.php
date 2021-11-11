@@ -113,4 +113,15 @@ class Siswa extends CI_Controller {
     $data['konten'] = 'tata_usaha/editUsernamePassword'; 
 		$this->load->view('tata_usaha/template', $data);
   }
+
+  public function updateStatus($status, $id_user)
+  {
+    $this->ModelUser->updateStatus($status, $id_user);
+    $this->session->set_flashdata('pesan', 
+      '<div class="alert alert-success" role="alert">
+        Berhasil update status
+      </div>'
+    );
+    redirect('tata_usaha/username_password');
+  }
 }

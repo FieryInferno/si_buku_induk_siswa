@@ -31,6 +31,7 @@
                   <th scope="col">No. Induk</th>
                   <th scope="col">Nama</th>
                   <th scope="col">Username</th>
+                  <th scope="col">Status</th>
                   <th scope="col">Aksi</th>
                 </tr>
               </thead>
@@ -38,11 +39,28 @@
                 <?php
                   foreach ($siswa as $key) { ?>
                     <tr>
-                      <td><?= $key['no_induk']; ?></td>
+                      <td><?= $key['nisn']; ?></td>
                       <td><?= $key['nama']; ?></td>
                       <td><?= $key['username']; ?></td>
                       <td>
-                        <a href="<?= base_url('tata_usaha/username_password/edit/' . $key['id_user']); ?>" class="btn btn-sm btn-success">Edit</a>
+                        <?php
+                          switch ($key['status_user']) {
+                            case 'aktif': ?>
+                              <a href="<?= base_url('tata_usaha/username_password/update/non_aktif/' . $key['id_user']); ?>" class="btn btn-danger">Non Aktifkan</a>
+                              <?php break;
+
+                            case 'non_aktif': ?>
+                              <a href="<?= base_url('tata_usaha/username_password/update/aktif/' . $key['id_user']); ?>" class="btn btn-success">Aktifkan</a>
+                              <?php break;
+                            
+                            default:
+                              # code...
+                              break;
+                          }
+                        ?>
+                      </td>
+                      <td>
+                        <a href="<?= base_url('tata_usaha/username_password/edit/' . $key['id_user']); ?>" class="btn btn-success">Edit</a>
                       </td>
                     </tr>
                   <?php }

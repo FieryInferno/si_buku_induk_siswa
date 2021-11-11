@@ -7,13 +7,22 @@ class ModelUser extends CI_Model {
 	{
     $data = $this->db->get_where('user', ['username'  => $this->input->post('username')])->row_array();
     if ($data) {
-      if (password_verify($this->input->post('password'), $data['password'])) {
-        return $data;
+      if ($data['status_user'] == 'aktif') {
+        if (password_verify($this->input->post('password'), $data['password'])) {
+          return $data;
+        } else {
+          return 'salah_password';
+        }
       } else {
-        return 'salah_password';
+        return 'user_tidak_aktif';
       }
     } else {
       return 'salah_username';
     }
 	}
+
+  public function updateStatus($status, $id_user)
+  {
+    $this->db->update('user', ['status_user' => $status], ['id_user' => $id_user]);
+  }
 }

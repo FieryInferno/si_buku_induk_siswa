@@ -203,7 +203,7 @@
     function hapusMataPelajaran() {
       var parent = document.getElementById("mataPelajaran");
       parent.removeChild(parent.lastChild);
-    }
+    } 
   </script>
 </body>
 

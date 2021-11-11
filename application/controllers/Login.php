@@ -45,6 +45,14 @@ class Login extends CI_Controller {
               </div>'
             );
             break;
+
+            case 'user_tidak_aktif':
+              $this->session->set_flashdata('pesan', 
+                '<div class="alert alert-danger" role="alert">
+                  User tidak aktif
+                </div>'
+              );
+              break;
           
           default:
             $this->session->set_userdata([
