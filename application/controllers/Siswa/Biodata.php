@@ -9,8 +9,8 @@ class Biodata extends CI_Controller {
   
 	public function index()
 	{
-    $data           = $this->ModelSiswa->getBiodata();
-    $data['konten'] = 'siswa/biodata'; 
+    $data           = $this->ModelSiswa->find($this->session->id_siswa);
+    $data['konten'] = 'siswa/biodata';
 		$this->load->view('siswa/template', $data);
 	}
 
