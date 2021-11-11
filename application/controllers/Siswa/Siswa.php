@@ -5,6 +5,7 @@ class Siswa extends CI_Controller {
   
 	public function index()
 	{
+    $data           = $this->ModelProfileSekolah->get();
     $data['konten'] = 'siswa/dashboard'; 
 		$this->load->view('siswa/template', $data);
 	}
