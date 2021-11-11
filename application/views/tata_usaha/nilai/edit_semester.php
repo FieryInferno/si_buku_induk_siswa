@@ -34,8 +34,11 @@
               <?php
                 foreach ($detail as $key) { ?>
                   <div class="row">
-                    <div class="col-8">
+                    <div class="col-4">
                       <input type="text" id="input-username" class="form-control" placeholder="Masukan Mata Pelajaran" name="mata_pelajaran[]" required value="<?= $key['mata_pelajaran']; ?>">
+                    </div>
+                    <div class="col-4">
+                      <input type="text" id="input-username" class="form-control" placeholder="Masukan Mata Pelajaran" name="nama_guru[]" required value="<?= $key['nama_guru']; ?>">
                     </div>
                     <div class="col-2">
                       <input type="text" id="input-username" class="form-control" placeholder="Pengetahuan" name="pengetahuan[]" required value="<?= $key['pengetahuan']; ?>">
@@ -51,7 +54,7 @@
               <a class="btn btn-primary text-white" onclick="tambahMataPelajaran()"><i class="fas fa-plus"></i></a>
               <a class="btn btn-danger text-white" onclick="hapusMataPelajaran()"><i class="fas fa-minus"></i></a>
             </div>
-            <button class="btn btn-success" type="submit">Tambahkan</button>
+            <button class="btn btn-success" type="submit">Edit</button>
           </div>
         </form>
       </div>

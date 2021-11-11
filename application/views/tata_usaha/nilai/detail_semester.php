@@ -32,8 +32,11 @@
               <?php
                 foreach ($detail as $key) { ?>
                   <div class="row">
-                    <div class="col-8">
+                    <div class="col-4">
                       <p class="form-control"><?= $key['mata_pelajaran']; ?></p>
+                    </div>
+                    <div class="col-4">
+                      <p class="form-control"><?= $key['nama_guru']; ?></p>
                     </div>
                     <div class="col-2">
                       <p class="form-control"><?= $key['pengetahuan']; ?></p>

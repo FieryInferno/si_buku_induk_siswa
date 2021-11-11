@@ -73,6 +73,7 @@ class Nilai extends CI_Controller {
   public function updateSemester()
   {
     $mata_pelajaran = $this->input->post('mata_pelajaran');
+    $nama_guru      = $this->input->post('nama_guru');
     $pengetahuan    = $this->input->post('pengetahuan');
     $keterampilan   = $this->input->post('keterampilan');
 
@@ -80,7 +81,7 @@ class Nilai extends CI_Controller {
     $this->ModelNilai->deleteDetail($this->input->post('id_nilai'));
     
     for ($i=0; $i < count($mata_pelajaran); $i++) {
-      $this->ModelNilai->storeDetail($this->input->post('id_nilai'), $mata_pelajaran[$i], $pengetahuan[$i], $keterampilan[$i]);
+      $this->ModelNilai->storeDetail($this->input->post('id_nilai'), $mata_pelajaran[$i], $nama_guru[$i], $pengetahuan[$i], $keterampilan[$i]);
     }
     
     $this->session->set_flashdata('sukses', 'Berhasil edit data semester');
