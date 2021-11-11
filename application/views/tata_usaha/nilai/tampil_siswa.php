@@ -119,7 +119,7 @@
                             Aksi
                           </button>
                           <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Detail</a>
+                            <a href="<?= base_url('tata_usaha/nilai/detail?nisn=' . $this->input->get('nisn')); ?>" class="dropdown-item">Detail</a>
                             <a href="<?= base_url('tata_usaha/nilai/edit_semester?nisn=' . $this->input->get('nisn')); ?>" class="dropdown-item">Edit</a>
                             <!-- Button trigger modal -->
                             <a href="<?= base_url('tata_usaha/nilai/hapus_semester?nisn=' . $this->input->get('nisn')); ?>" class="dropdown-item">Hapus</a>

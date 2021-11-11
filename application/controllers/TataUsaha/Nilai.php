@@ -45,6 +45,14 @@ class Nilai extends CI_Controller {
     redirect('tata_usaha/nilai/cari_siswa?nisn=' . $this->input->get('nisn'));
   }
 
+  public function showSemester()
+  {
+    $siswa            = $this->ModelSiswa->getByNisn($this->input->get('nisn'));
+    $data             = $this->ModelNilai->getById($siswa['id_siswa']);
+    $data['konten']   = 'tata_usaha/nilai/detail_semester';
+		$this->load->view('tata_usaha/template', $data);
+  }
+
   public function editSemester()
   {
     $siswa            = $this->ModelSiswa->getByNisn($this->input->get('nisn'));

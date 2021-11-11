@@ -28,6 +28,7 @@ $route['tata_usaha/profile/edit']['post'] = 'TataUsaha/Profile/update';
 
 $route['tata_usaha/nilai']                          = 'TataUsaha/Nilai';
 $route['tata_usaha/nilai/cari_siswa']               = 'TataUsaha/Nilai/cariSiswa';
+$route['tata_usaha/nilai/detail']                   = 'TataUsaha/Nilai/showSemester';
 $route['tata_usaha/nilai/tambah_semester']['get']   = 'TataUsaha/Nilai/tambahSemester';
 $route['tata_usaha/nilai/tambah_semester']['post']  = 'TataUsaha/Nilai/storeSemester';
 $route['tata_usaha/nilai/edit_semester']['get']     = 'TataUsaha/Nilai/editSemester';
