@@ -8,6 +8,7 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
+  <img src="<?= base_url(); ?>assets/images/kop.jpeg" width="100%">
   <h1 class="text-center"><strong>LEMBAR BUKU INDUK SISWA</strong></h1>
   <div class="flex justify-center">
     <div class="grid grid-rows-2 grid-flow-col">
@@ -84,9 +85,6 @@
         <div class="col-span-6">: <?= $anak_ke; ?></div>
       </div>
     </div>
-    <div>
-      <img src="<?= base_url(); ?>assets/images/AC_Milan.png" alt="" width="75%" class="border-4 border-black">
-    </div>
     
     <div class="col-span-4">
       <h2><strong>DATA AYAH KANDUNG</strong></h2>
@@ -126,6 +124,22 @@
       </div>
     </div>
   </div>
+
+  <table width="100%">
+    <tr>
+      <td width="50%">
+        <img src="<?= base_url(); ?>assets/images/AC_Milan.png" alt="" width="50%" class="border-4 border-black">
+      </td>
+      <td width="50%">
+        <div>Subang, <?= tgl_indo(date('Y-m-d')); ?></div>
+        <div>Kepala Sekolah</div>
+        <br>
+        <br>
+        <br>
+        <div>Nama Kepala Sekolah</div>
+      </td>
+    </tr>
+  </table>
   <script>
     window.print();
   </script>

@@ -56,7 +56,7 @@
                           <div class="dropdown-menu">
                             <a href="<?= base_url('tata_usaha/siswa/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-primary" title="Detail Siswa"><i class="fas fa-info-circle"></i> Detail</a>
                             <a href="<?= base_url('tata_usaha/siswa/edit/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-success" title="Edit"><i class="fas fa-edit"></i> Edit</a>
-                            <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-warning" title="Cetak"><i class="fas fa-print"></i> Cetak</a>
+                            <a href="<?= base_url('tata_usaha/siswa/cetak/' . $key['id_siswa']); ?>" class="dropdown-item btn btn-warning" title="Cetak" target="_blank"><i class="fas fa-print"></i> Cetak</a>
                             <button type="button" class="dropdown-item" data-toggle="modal" data-target="#registrasi<?= $key['id_siswa']; ?>" title="Registrasi"><i class="fas fa-retweet"></i> Register</button>
                             <div class="dropdown-divider"></div>
                             <!-- Button trigger modal -->
