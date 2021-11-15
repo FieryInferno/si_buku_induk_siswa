@@ -33,17 +33,17 @@
           <div class="row">
             <div class="col-6">
               <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-3 col-form-label">Nama</label>
+                <label for="inputPassword" class="col-sm-3 col-form-label">NISN</label>
                 <div class="col-sm-9">
-                  <p class="form-control"><?= $nama; ?></p>
+                  <p class="form-control"><?= $nisn; ?></p>
                 </div>
               </div>
             </div>
             <div class="col-6">
               <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-3 col-form-label">Nama Ibu</label>
+                <label for="inputPassword" class="col-sm-3 col-form-label">Nama</label>
                 <div class="col-sm-9">
-                  <p class="form-control"><?= $nama_ibu; ?></p>
+                  <p class="form-control"><?= $nama; ?></p>
                 </div>
               </div>
             </div>
