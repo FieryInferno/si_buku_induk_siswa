@@ -48,6 +48,7 @@
                           <div class="dropdown-menu">
                             <a href="<?= base_url('tata_usaha/kelas/lihat/' . $key['id_kelas']); ?>" class="dropdown-item">Lihat Anggota</a>
                             <a href="<?= base_url('tata_usaha/kelas/edit/' . $key['id_kelas']); ?>" class="dropdown-item">Edit</a>
+                            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#naikKelas<?= $key['id_kelas']; ?>">Naik Kelas</button>
                             <div class="dropdown-divider"></div>
                             <!-- Button trigger modal -->
                             <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal<?= $key['id_kelas']; ?>">Hapus</button>
@@ -71,6 +72,32 @@
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <a href="<?= base_url('tata_usaha/kelas/hapus/' . $key['id_kelas']); ?>" class="btn btn-danger">Hapus</a>
                               </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="naikKelas<?= $key['id_kelas']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Naik Kelas</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <form action="<?= base_url('tata_usaha/kelas/naik_kelas/' . $key['id_kelas']); ?>" method="post">
+                                <div class="modal-body">
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">Nama Kelas Baru</label>
+                                    <input type="text" class="form-control" placeholder="Nama Kelas Baru" name="nama_kelas_baru">
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary">Naik Kelas</button>
+                                </div>
+                              </form>
                             </div>
                           </div>
                         </div>

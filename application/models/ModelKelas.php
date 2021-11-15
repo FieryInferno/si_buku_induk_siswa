@@ -66,4 +66,9 @@ class ModelKelas extends CI_Model {
   {
     return $this->db->get_where('mata_pelajaran', ['kelas_id' => $id_kelas])->result_array();
   }
+
+  public function naikKelas($id_kelas, $namaKelasBaru)
+  {
+    $this->db->update('kelas', ['nama_kelas'  => $namaKelasBaru], ['id_kelas' => $id_kelas]);
+  }
 }

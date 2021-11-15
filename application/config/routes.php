@@ -34,20 +34,21 @@ $route['tata_usaha/nilai/tambah_semester']['get']   = 'TataUsaha/Nilai/tambahSem
 $route['tata_usaha/nilai/tambah_semester']['post']  = 'TataUsaha/Nilai/storeSemester';
 $route['tata_usaha/nilai/edit_semester']['get']     = 'TataUsaha/Nilai/editSemester';
 $route['tata_usaha/nilai/edit_semester']['post']    = 'TataUsaha/Nilai/updateSemester';
-$route['tata_usaha/nilai/hapus_semester']    = 'TataUsaha/Nilai/destroySemester/$1';
+$route['tata_usaha/nilai/hapus_semester']           = 'TataUsaha/Nilai/destroySemester/$1';
 
-$route['tata_usaha/kelas']                                      = 'TataUsaha/Kelas';
-$route['tata_usaha/kelas/tambah']                               = 'TataUsaha/Kelas/tambah';
-$route['tata_usaha/kelas/edit/(:any)']                          = 'TataUsaha/Kelas/edit/$1';
-$route['tata_usaha/kelas/hapus/(:any)']                         = 'TataUsaha/kelas/hapus/$1';
-$route['tata_usaha/kelas/lihat/(:any)']                         = 'TataUsaha/kelas/lihat/$1';
-$route['tata_usaha/kelas/anggota/tambah/(:any)']                = 'TataUsaha/kelas/tambahAnggota/$1';
-$route['tata_usaha/kelas/anggota/hapus/(:any)/(:any)']          = 'TataUsaha/kelas/hapusAnggota/$1/$2';
+$route['tata_usaha/kelas']                              = 'TataUsaha/Kelas';
+$route['tata_usaha/kelas/tambah']                       = 'TataUsaha/Kelas/tambah';
+$route['tata_usaha/kelas/edit/(:any)']                  = 'TataUsaha/Kelas/edit/$1';
+$route['tata_usaha/kelas/hapus/(:any)']                 = 'TataUsaha/kelas/hapus/$1';
+$route['tata_usaha/kelas/lihat/(:any)']                 = 'TataUsaha/kelas/lihat/$1';
+$route['tata_usaha/kelas/anggota/tambah/(:any)']        = 'TataUsaha/kelas/tambahAnggota/$1';
+$route['tata_usaha/kelas/anggota/hapus/(:any)/(:any)']  = 'TataUsaha/kelas/hapusAnggota/$1/$2';
+$route['tata_usaha/kelas/naik_kelas/(:any)']            = 'TataUsaha/kelas/naikKelas/$1';
 
-$route['tata_usaha/mata_pelajaran']                     = 'TataUsaha/MataPelajaran';
-$route['tata_usaha/mata_pelajaran/tambah']              = 'TataUsaha/MataPelajaran/tambah';
-$route['tata_usaha/mata_pelajaran/edit/(:any)']         = 'TataUsaha/MataPelajaran/edit/$1';
-$route['tata_usaha/mata_pelajaran/hapus/(:any)']        = 'TataUsaha/MataPelajaran/hapus/$1';
+$route['tata_usaha/mata_pelajaran']               = 'TataUsaha/MataPelajaran';
+$route['tata_usaha/mata_pelajaran/tambah']        = 'TataUsaha/MataPelajaran/tambah';
+$route['tata_usaha/mata_pelajaran/edit/(:any)']   = 'TataUsaha/MataPelajaran/edit/$1';
+$route['tata_usaha/mata_pelajaran/hapus/(:any)']  = 'TataUsaha/MataPelajaran/hapus/$1';
 
 $route['tata_usaha/username_password']                      = 'TataUsaha/Siswa/usernamePassword';
 $route['tata_usaha/username_password/edit/(:any)']          = 'TataUsaha/Siswa/editUsernamePassword/$1';

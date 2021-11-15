@@ -105,4 +105,11 @@ class Kelas extends CI_Controller {
     );
     redirect('tata_usaha/kelas/lihat/' . $id_kelas);
   }
+
+  public function naikKelas($id_kelas)
+  {
+    $namaKelasBaru  = $this->input->post('nama_kelas_baru');
+    $this->ModelKelas->naikKelas($id_kelas, $namaKelasBaru);
+    redirect('tata_usaha/kelas');
+  }
 }
