@@ -34,6 +34,12 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="form-group">
+                  <label class="form-control-label" for="input-username">Nama Wali Kelas</label>
+                  <input type="text" id="input-username" class="form-control" placeholder="Nama Wali Kelas" name="nama_wali_kelas" required value="<?= $nama_wali_kelas; ?>">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
                   <label class="form-control-label" for="input-username">Nama Kelas</label>
                   <input type="text" id="input-username" class="form-control" placeholder="Nama Kelas" name="nama_kelas" required value="<?= $nama_kelas; ?>">
                 </div>

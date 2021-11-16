@@ -54,22 +54,13 @@ class Kelas extends CI_Controller {
 	public function edit($id_kelas)
 	{
     if ($this->input->post()) {
-      $this->form_validation->set_rules('nama_kelas', 'Kelas', 'trim|required|is_unique[kelas.nama_kelas]', ['is_unique' => 'Kelas sudah ada']);
-      if ($this->form_validation->run()) {
-        $this->ModelKelas->edit($id_kelas);
-        $this->session->set_flashdata('pesan', 
-          '<div class="alert alert-success" role="alert">
-            Berhasil edit data
-          </div>'
-        );
-        redirect('tata_usaha/kelas');
-      } else {
-        $this->session->set_flashdata('pesan', 
-          '<div class="alert alert-danger" role="alert">'
-            . validation_errors() . 
-          '</div>'
-        );
-      }
+      $this->ModelKelas->edit($id_kelas);
+      $this->session->set_flashdata('pesan', 
+        '<div class="alert alert-success" role="alert">
+          Berhasil edit data
+        </div>'
+      );
+      redirect('tata_usaha/kelas');
     }
     $data           = $this->ModelKelas->get($id_kelas);
     $data['konten'] = 'tata_usaha/kelas/edit';
