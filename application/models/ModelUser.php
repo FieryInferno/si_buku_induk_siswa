@@ -25,4 +25,9 @@ class ModelUser extends CI_Model {
   {
     $this->db->update('user', ['status_user' => $status], ['id_user' => $id_user]);
   }
+
+  public function get($id_user)
+  {
+    return $this->db->get_where('user', ['id_user' => $id_user])->row_array();
+  }
 }

@@ -110,8 +110,8 @@ class Siswa extends CI_Controller {
       );
       redirect('tata_usaha/username_password');
     }
-    $data           = $this->ModelSiswa->get($id_user);
-    $data['konten'] = 'tata_usaha/editUsernamePassword'; 
+    $data           = $this->ModelUser->get($id_user);
+    $data['konten'] = 'tata_usaha/editUsernamePassword';
 		$this->load->view('tata_usaha/template', $data);
   }
 
