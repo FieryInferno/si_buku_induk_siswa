@@ -161,4 +161,9 @@ class ModelSiswa extends CI_Model {
   {
     return $this->db->get_where('siswa', ['nisn' => $nisn])->row_array();
   }
+
+  public function hapusSiswaKeluar($id_siswa)
+  {
+    $this->db->update('siswa', ['status' => 'aktif'], ['id_siswa' => $id_siswa]);
+  }
 }

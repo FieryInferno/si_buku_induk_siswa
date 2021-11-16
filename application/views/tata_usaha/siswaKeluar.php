@@ -95,16 +95,12 @@
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
-                              <form action="<?= base_url('tata_usaha/siswa/hapus/' . $key['id_siswa']); ?>" method="post">
-                                <input type="hidden" name="_method" name="delete">
                                 <div class="modal-body">
                                   Anda yakin akan menghapus data siswa <?= $key['nama']; ?>?
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button type="submit" class="btn btn-danger">Hapus</button>
+                                  <a class="btn btn-danger" href="<?= base_url('tata_usaha/siswa_keluar/hapus/' . $key['id_siswa']); ?>">Hapus</a>
                                 </div>
-                              </form>
                             </div>
                           </div>
                         </div>

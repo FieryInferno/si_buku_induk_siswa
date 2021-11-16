@@ -16,4 +16,10 @@ class SiswaKeluar extends CI_Controller {
     $data['konten'] = 'tata_usaha/detailSiswaKeluar';
 		$this->load->view('tata_usaha/template', $data);
   }
+
+  public function destroy($id_siswa)
+  {
+    $this->ModelSiswa->hapusSiswaKeluar($id_siswa);
+    redirect('tata_usaha/siswa_keluar');
+  }
 }
