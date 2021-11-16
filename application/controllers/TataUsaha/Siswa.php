@@ -77,7 +77,8 @@ class Siswa extends CI_Controller {
   public function cetak($id_siswa)
   {
     $this->db->join('kelas', 'siswa.kelas = kelas.id_kelas', 'left');
-    $data = $this->db->get_where('siswa', ['id_siswa'  => $id_siswa])->row_array();
+    $data             = $this->db->get_where('siswa', ['id_siswa'  => $id_siswa])->row_array();
+    $data['sekolah']  = $this->ModelProfileSekolah->get();
 		$this->load->view('tata_usaha/siswa/cetak', $data);
   }
 

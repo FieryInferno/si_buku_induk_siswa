@@ -36,70 +36,70 @@
       </div>
       <div class="grid grid-cols-12 gap-4">
         <div class="col-span-1 text-right">2</div>
-        <div class="col-span-5">Jenis Kelamin</div>
-        <div class="col-span-6">: <?= $jenis_kelamin; ?></div>
-      </div>
-      <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">3</div>
         <div class="col-span-5">NIK</div>
         <div class="col-span-6">: <?= $nik; ?></div>
       </div>
       <div class="grid grid-cols-12 gap-4">
         <div class="col-span-1 text-right">3</div>
-        <div class="col-span-5">Tanggal Masuk</div>
-        <div class="col-span-6">: <?= $tanggal_masuk; ?></div>
-      </div>
-      <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">3</div>
-        <div class="col-span-5">Asal Sekolah</div>
-        <div class="col-span-6">: <?= $asal_sekolah; ?></div>
-      </div>
-      <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">3</div>
-        <div class="col-span-5">No. Ijazah</div>
-        <div class="col-span-6">: <?= $no_ijazah; ?></div>
-      </div>
-      <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">3</div>
-        <div class="col-span-5">No Akte</div>
-        <div class="col-span-6">: <?= $no_akte; ?></div>
-      </div>
-      <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">4</div>
         <div class="col-span-5">Tempat Lahir</div>
         <div class="col-span-6">: <?= $tempat_lahir; ?></div>
       </div>
       <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">5</div>
+        <div class="col-span-1 text-right">4</div>
         <div class="col-span-5">Tanggal Lahir</div>
         <div class="col-span-6">: <?= tgl_indo($tanggal_lahir); ?></div>
       </div>
       <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-1 text-right">5</div>
+        <div class="col-span-5">Jenis Kelamin</div>
+        <div class="col-span-6">: <?= $jenis_kelamin; ?></div>
+      </div>
+      <div class="grid grid-cols-12 gap-4">
         <div class="col-span-1 text-right">6</div>
-        <div class="col-span-5">Alamat</div>
-        <div class="col-span-6">: <?= $alamat; ?></div>
+        <div class="col-span-5">Anak ke -</div>
+        <div class="col-span-6">: <?= $anak_ke; ?></div>
       </div>
       <div class="grid grid-cols-12 gap-4">
         <div class="col-span-1 text-right">7</div>
-        <div class="col-span-5">Anak ke -</div>
-        <div class="col-span-6">: <?= $anak_ke; ?></div>
+        <div class="col-span-5">Tanggal Masuk</div>
+        <div class="col-span-6">: <?= tgl_indo($tanggal_masuk); ?></div>
+      </div>
+      <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-1 text-right">8</div>
+        <div class="col-span-5">Asal Sekolah</div>
+        <div class="col-span-6">: <?= $asal_sekolah; ?></div>
+      </div>
+      <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-1 text-right">9</div>
+        <div class="col-span-5">No Ijazah</div>
+        <div class="col-span-6">: <?= $no_ijazah; ?></div>
+      </div>
+      <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-1 text-right">10</div>
+        <div class="col-span-5">No Akte</div>
+        <div class="col-span-6">: <?= $no_akte; ?></div>
+      </div>
+      <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-1 text-right">11</div>
+        <div class="col-span-5">Alamat</div>
+        <div class="col-span-6">: <?= $alamat; ?></div>
       </div>
     </div>
     
     <div class="col-span-4">
       <h2><strong>DATA AYAH KANDUNG</strong></h2>
       <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">8</div>
+        <div class="col-span-1 text-right">12</div>
         <div class="col-span-5">Nama Ayah Kandung</div>
         <div class="col-span-6">: <?= $nama_ayah; ?></div>
       </div>
       <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">9</div>
+        <div class="col-span-1 text-right">13</div>
         <div class="col-span-5">NIK Ayah</div>
         <div class="col-span-6">: <?= $nik_ayah; ?></div>
       </div>
       <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">10</div>
+        <div class="col-span-1 text-right">14</div>
         <div class="col-span-5">Tanggal Lahir Ayah</div>
         <div class="col-span-6">: <?= tgl_indo($tanggal_lahir_ayah); ?></div>
       </div>
@@ -108,17 +108,17 @@
     <div class="col-span-4">
       <h2><strong>DATA IBU KANDUNG</strong></h2>
       <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">11</div>
+        <div class="col-span-1 text-right">15</div>
         <div class="col-span-5">Nama Ibu Kandung</div>
         <div class="col-span-6">: <?= $nama_ibu; ?></div>
       </div>
       <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">12</div>
+        <div class="col-span-1 text-right">16</div>
         <div class="col-span-5">NIK Ibu</div>
         <div class="col-span-6">: <?= $nik_ibu; ?></div>
       </div>
       <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-1 text-right">13</div>
+        <div class="col-span-1 text-right">17</div>
         <div class="col-span-5">Tanggal Lahir Ibu</div>
         <div class="col-span-6">: <?= tgl_indo($tanggal_lahir_ibu); ?></div>
       </div>
@@ -136,7 +136,7 @@
         <br>
         <br>
         <br>
-        <div>Nama Kepala Sekolah</div>
+        <div><?= $sekolah['kepala_sekolah']; ?></div>
       </td>
     </tr>
   </table>
