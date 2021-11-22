@@ -92,7 +92,7 @@ class Siswa extends CI_Controller {
   public function usernamePassword()
   {
     $data['konten'] = 'tata_usaha/usernamePassword'; 
-    $data['siswa']  = $this->ModelSiswa->getAll('aktif');
+    $data['siswa']  = $this->ModelSiswa->getAll();
 		$this->load->view('tata_usaha/template', $data);
   }
 
