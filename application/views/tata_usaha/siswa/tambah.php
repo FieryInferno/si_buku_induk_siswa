@@ -41,7 +41,7 @@
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Foto</label>
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="foto" onchange="previewImg()" name="foto" required>
+                      <input type="file" class="custom-file-input" id="foto" onchange="previewImg()" name="foto">
                       <label class="custom-file-label" for="customFileLang">Select file</label>
                     </div>
                   </div>

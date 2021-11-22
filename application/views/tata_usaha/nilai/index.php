@@ -24,8 +24,15 @@
         </div>
         <form action="<?= base_url(); ?>tata_usaha/nilai/cari_siswa" method="get">
           <div class="card-body bg-transparent border-0">
+            <?php
+              if ($this->session->error) { ?>
+                <div class="alert alert-danger">
+                  <?= $this->session->error; ?>
+                </div>
+              <?php }
+            ?>
             <div class="form-group">
-              <label class="form-control-label" for="input-username">Nama Kelas</label>
+              <label class="form-control-label" for="input-username">NISN SISWA</label>
               <input type="text" id="input-username" class="form-control" placeholder="Masukan NISN Siswa" name="nisn" required>
             </div>
             <button class="btn btn-success" type="submit">Cari</button>
