@@ -24,18 +24,30 @@
         </div>
         <form action="<?= base_url(); ?>tata_usaha/nilai/cari_siswa" method="get">
           <div class="card-body bg-transparent border-0">
-            <?php
-              if ($this->session->error) { ?>
-                <div class="alert alert-danger">
-                  <?= $this->session->error; ?>
-                </div>
-              <?php }
-            ?>
-            <div class="form-group">
-              <label class="form-control-label" for="input-username">NISN SISWA</label>
-              <input type="text" id="input-username" class="form-control" placeholder="Masukan NISN Siswa" name="nisn" required>
-            </div>
-            <button class="btn btn-success" type="submit">Cari</button>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush" id="myTable">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">No. Induk</th>
+                  <th scope="col">Nama</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                <?php
+                  foreach ($siswa as $key) { ?>
+                    <tr>
+                      <td><?= $key['nisn']; ?></td>
+                      <td><?= $key['nama']; ?></td>
+                      <td>
+                        <a href="<?= base_url('tata_usaha/nilai/cari_siswa?nisn=' . $key['nisn']); ?>" class="btn btn-primary">Tambah Nilai</a>
+                      </td>
+                    </tr>
+                  <?php }
+                ?>
+              </tbody>
+            </table>
+          </div>
           </div>
         </form>
       </div>
